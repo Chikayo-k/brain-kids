@@ -130,6 +130,36 @@ main {
   color: #feb823;
 }
 
+/* Footer */
+footer {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 203, 127, 0.1);
+  padding: 5%;
+  margin-top: 5%;
+}
+
+footer a {
+  padding: 5%;
+  font-size: 2rem;
+}
+
+.fa-square-facebook {
+  color: #4267b2;
+  background-color: white;
+}
+
+.fa-youtube {
+  color: #ff0000;
+  background-color: white;
+}
+
+.fa-square-twitter {
+  color: #1da1f2;
+  background-color: white;
+}
+
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {
