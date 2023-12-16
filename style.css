@@ -181,6 +181,10 @@ footer a {
     background: url(./assets/images/math.webp) no-repeat center center/cover;
     width: 100%;
   }
+
+  .math-img {
+    display: none;
+  }
 }
 
 /* Media query: tablets and larger (768px and up)*/
