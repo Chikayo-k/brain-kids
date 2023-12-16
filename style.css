@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: url("./assets/images/star.webp") no-repeat center center/cover;
 }
 
 a {
@@ -91,6 +92,7 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: white;
 }
 
 .math-img {
