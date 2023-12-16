@@ -85,6 +85,10 @@ main {
   width: 80%;
 }
 
+.card-shadow {
+  box-shadow: 0 4px 9px rgb(100, 130, 243, 0.3);
+}
+
 .math-img {
   width: 100%;
 }
