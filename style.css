@@ -19,3 +19,40 @@ a {
 .hidden {
   display: none;
 }
+
+/* Header */
+
+.header-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-div {
+  width: 40%;
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+}
+
+.sign-up-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.sign-up-div div {
+  background-color: #6482f3;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-btn {
+  color: white;
+  padding: 8%;
+  font-size: 1.4rem;
+}
