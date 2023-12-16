@@ -98,6 +98,34 @@ main {
   padding: 3% 0;
 }
 
+.start-btn {
+  background-color: #f9643f;
+  color: white;
+  border: 0;
+  box-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0, 0.2);
+  font-size: 1.4rem;
+  padding: 3%;
+}
+
+.functions {
+  font-size: 1.4rem;
+  margin: 5% 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.setting {
+  color: #00cb7f;
+}
+
+.score {
+  color: #6482f3;
+}
+
+.sound {
+  color: #feb823;
+}
+
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {
