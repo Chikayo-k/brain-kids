@@ -87,6 +87,10 @@ main {
 
 .card-shadow {
   box-shadow: 0 4px 9px rgb(100, 130, 243, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .math-img {
@@ -168,6 +172,15 @@ footer a {
   .sign-up-div {
     width: 40%;
   }
+
+  .card-shadow {
+    flex-direction: row;
+  }
+
+  .game-img-div {
+    background: url(./assets/images/math.webp) no-repeat center center/cover;
+    width: 100%;
+  }
 }
 
 /* Media query: tablets and larger (768px and up)*/
@@ -182,6 +195,10 @@ footer a {
 
   .sign-up-div {
     width: 20%;
+  }
+
+  #game {
+    width: 60%;
   }
 }
 
