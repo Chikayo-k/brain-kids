@@ -20,6 +20,15 @@ a {
   display: none;
 }
 
+h2 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 /* Header */
 
 header {
@@ -58,6 +67,35 @@ header {
   color: white;
   padding: 8%;
   font-size: 1.4rem;
+}
+
+/* Main */
+main {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+}
+
+.math-img {
+  width: 100%;
+}
+
+.game-content {
+  margin: 3%;
+}
+
+.game-p {
+  text-align: left;
+  padding: 3% 0;
 }
 
 /* Media query: larger phone and landscape (576px and up)*/
