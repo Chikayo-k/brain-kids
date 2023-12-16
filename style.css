@@ -22,6 +22,9 @@ a {
 
 /* Header */
 
+header {
+  margin: 2%;
+}
 .header-div {
   display: flex;
   justify-content: space-between;
@@ -55,4 +58,33 @@ a {
   color: white;
   padding: 8%;
   font-size: 1.4rem;
+}
+
+/* Media query: larger phone and landscape (576px and up)*/
+@media screen and (min-width: 576px) {
+  .logo-div {
+    width: 25%;
+  }
+  .sign-up-div {
+    width: 40%;
+  }
+}
+
+/* Media query: tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+}
+
+/* Media query: laptop and larger (992px and up)*/
+@media screen and (min-width: 992px) {
+  .logo-div {
+    width: 12%;
+  }
+
+  .sign-up-div {
+    width: 20%;
+  }
+}
+
+/* Media query: 1200px and larger (1200px and up)*/
+@media screen and (min-width: 1200px) {
 }
