@@ -179,7 +179,7 @@ footer a {
   }
 
   .game-img-div {
-    background: url(./assets/images/math.webp) no-repeat center center/cover;
+    background: url(../images/math.webp) no-repeat center center/cover;
     width: 100%;
   }
 
