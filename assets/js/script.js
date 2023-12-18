@@ -56,3 +56,15 @@ audio_button[0].addEventListener("click", function () {
     audio_button[0].classList.add("fa-volume-xmark");
   }
 });
+
+//Start button functionality
+
+/**
+ * redirect to the game.html page
+ */
+function to_game_page() {
+  return (window.location.href = "../../game.html");
+}
+
+const start_button = document.getElementsByClassName("start-btn");
+start_button[0].addEventListener("click", to_game_page, false);
