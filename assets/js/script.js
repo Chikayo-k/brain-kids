@@ -17,3 +17,42 @@ change_background(size);
 size.addEventListener("change", function () {
   change_background(size);
 });
+
+//Set the sound button functionality
+
+let audio_button = document.getElementsByClassName("sound");
+let count = 0;
+let audio = new Audio("../assets/audio/background_track.mp3");
+
+/**
+ * Play audio
+ */
+function play_audio() {
+  audio.play();
+  audio.loop = true;
+  audio.volume = 0.08;
+}
+
+/**
+ * Stop audio
+ */
+function stop_audio() {
+  audio.pause();
+  audio.currentTime = 0;
+  count = 0;
+}
+
+audio_button[0].addEventListener("click", function () {
+  count++;
+  if (count <= 1) {
+    play_audio();
+    //Change the speaker icon
+    audio_button[0].classList.remove("fa-volume-xmark");
+    audio_button[0].classList.add("fa-volume-high");
+  } else {
+    stop_audio();
+    //change the speaker icon
+    audio_button[0].classList.remove("fa-volume-high");
+    audio_button[0].classList.add("fa-volume-xmark");
+  }
+});
