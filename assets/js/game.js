@@ -7,6 +7,7 @@ document.body.style.background =
 let start = "false";
 let level = 0;
 let count = 0;
+let answer_number;
 
 // Show level 0 when the page load and set start true
 
@@ -31,10 +32,12 @@ function games_starts(level) {
 
   if (count < 3) {
     show_addition(num1, num2);
-
+    display_options();
+    answer();
     count++;
   } else if (count < 6) {
     show_subtraction(num1, num2);
+    display_options();
     count++;
   } else {
     console.log("Next Level");
@@ -72,10 +75,10 @@ function answer() {
 
   if (operator === "+") {
     let answer = question_num1 + question_num2;
-    return answer;
+    return (answer_number = answer);
   } else if (operator === "-") {
     let answer = question_num1 - question_num2;
-    return answer;
+    return (answer_number = answer);
   } else {
     alert("something went wrong");
     throw "something went wrong";
@@ -109,7 +112,28 @@ function display_options() {
   let options_html = "";
 
   for (let i in options) {
-    options_html += `<div>${options[i]}</div>`;
+    options_html += `<div class="display-answers">${options[i]}</div>`;
   }
   document.getElementById("pick-answer").innerHTML = options_html;
+
+  check_answer();
+}
+
+/**
+ * Check if the answer is correct or not and display result
+ */
+function check_answer() {
+  let clicked_button = document.querySelectorAll(".display-answers");
+
+  for (let i = 0; i < clicked_button.length; i++) {
+    clicked_button[i].addEventListener("click", function (event) {
+      let selected_ans = event.target.innerText;
+      if (selected_ans == answer_number) {
+        alert("Your answer is right");
+        games_starts(level);
+      } else {
+        alert("Try it again");
+      }
+    });
+  }
 }
