@@ -169,6 +169,14 @@ footer a {
 .questions {
   width: 100%;
   height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.questions span {
+  padding: 3%;
 }
 
 .game-answers {
