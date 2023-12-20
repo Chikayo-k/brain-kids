@@ -86,11 +86,11 @@ function answer() {
  * Generate 3 random numbers plus the correct answer and places in a random position each time
  */
 function option_numbers() {
-  let collect_answer = answer();
-  let options = [collect_answer];
+  let correct_answer = answer();
+  let options = [correct_answer];
 
   for (let i = 0; options.length < 4; i++) {
-    const number = Math.floor(Math.random() * 5) + collect_answer;
+    const number = Math.floor(Math.random() * 5) + correct_answer;
 
     if (!options.includes(number)) {
       options.push(number);
@@ -98,4 +98,18 @@ function option_numbers() {
   }
   let shuffle_options = options.sort(() => Math.random() - 0.5);
   return shuffle_options;
+}
+
+/**
+ * Display answer options
+ */
+function display_options() {
+  let options = option_numbers();
+  console.log(options);
+  let options_html = "";
+
+  for (let i in options) {
+    options_html += `<div>${options[i]}</div>`;
+  }
+  document.getElementById("pick-answer").innerHTML = options_html;
 }
