@@ -41,7 +41,7 @@ function games_starts(level) {
     level++;
     // next_level(level);
   }
-  console.log(level);
+  console.log(answer());
 }
 
 /**
@@ -60,4 +60,24 @@ function show_subtraction(num1, num2) {
   document.getElementById("num1").innerHTML = num1 > num2 ? num1 : num2;
   document.getElementById("num2").innerHTML = num2 < num1 ? num2 : num1;
   document.getElementById("operator").innerHTML = "-";
+}
+
+/**
+ * Calculate the answer
+ */
+function answer() {
+  let question_num1 = parseInt(document.getElementById("num1").innerText);
+  let question_num2 = parseInt(document.getElementById("num2").innerText);
+  let operator = document.getElementById("operator").innerText;
+
+  if (operator === "+") {
+    let answer = question_num1 + question_num2;
+    return answer;
+  } else if (operator === "-") {
+    let answer = question_num1 - question_num2;
+    return answer;
+  } else {
+    alert("something went wrong");
+    throw "something went wrong";
+  }
 }
