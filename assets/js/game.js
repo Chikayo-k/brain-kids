@@ -27,7 +27,7 @@ function games_starts(level) {
   let num2 = Math.floor(Math.random() * 10);
 
   //  Render additional questions and subtraction questions three times each.
-  //  After that the level will be up.
+  //  After that the level will increase.
 
   if (count < 3) {
     show_addition(num1, num2);
@@ -45,7 +45,7 @@ function games_starts(level) {
 }
 
 /**
- * Display additional question
+ * Display addition question
  */
 function show_addition(num1, num2) {
   document.getElementById("num1").innerHTML = num1;
@@ -82,6 +82,9 @@ function answer() {
   }
 }
 
+/**
+ * Generate 3 random numbers plus the correct answer and places in a random position each time
+ */
 function option_numbers() {
   let collect_answer = answer();
   let options = [collect_answer];
