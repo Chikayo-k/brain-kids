@@ -81,3 +81,18 @@ function answer() {
     throw "something went wrong";
   }
 }
+
+function option_numbers() {
+  let collect_answer = answer();
+  let options = [collect_answer];
+
+  for (let i = 0; options.length < 4; i++) {
+    const number = Math.floor(Math.random() * 5) + collect_answer;
+
+    if (!options.includes(number)) {
+      options.push(number);
+    }
+  }
+  let shuffle_options = options.sort(() => Math.random() - 0.5);
+  return shuffle_options;
+}
