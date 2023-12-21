@@ -126,14 +126,34 @@ function check_answer() {
   let clicked_button = document.querySelectorAll(".display-answers");
 
   for (let i = 0; i < clicked_button.length; i++) {
-    clicked_button[i].addEventListener("click", function (event) {
-      let selected_ans = event.target.innerText;
-      if (selected_ans == answer_number) {
-        alert("Your answer is right");
+    clicked_button[i].addEventListener("click", function () {
+      let selected_ans = parseInt(this.innerText);
+      if (selected_ans === answer_number) {
         games_starts(level);
+        let alt = "a bunny is happy";
+        let file_name = "bunny";
+        animation(file_name, alt);
       } else {
-        alert("Try it again");
+        let alt = "a bunny is encouraging";
+        let file_name = "encouraging";
+        animation(file_name, alt);
       }
     });
   }
+}
+
+/**
+ *show animation 1.5 seconds
+ */
+function animation(name, alt) {
+  let display_place = document.getElementsByClassName("animation-hide")[0];
+  let animation_html = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
+
+  display_place.innerHTML = animation_html;
+
+  display_place.classList.remove("animation-hide");
+
+  setTimeout(function () {
+    display_place.classList.add("animation-hide");
+  }, 1500);
 }

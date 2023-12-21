@@ -218,6 +218,23 @@ footer a {
   width: 100%;
 }
 
+/* animation */
+
+.animation {
+  width: 40%;
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+}
+
+.animation img {
+  width: 100%;
+}
+
+.animation-hide {
+  display: none;
+}
+
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {
@@ -252,6 +269,11 @@ footer a {
   .game-answers {
     width: 50%;
   }
+
+  /* animation */
+  .animation {
+    width: 30%;
+  }
 }
 
 /* Media query: tablets and larger (768px and up)*/
@@ -273,6 +295,11 @@ footer a {
 
   #game {
     width: 60%;
+  }
+
+  /* animation */
+  .animation {
+    width: 15%;
   }
 }
 
