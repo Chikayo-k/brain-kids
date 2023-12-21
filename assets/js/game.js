@@ -133,10 +133,14 @@ function check_answer() {
         let alt = "a bunny is happy";
         let file_name = "bunny";
         animation(file_name, alt);
+        let sound_name = "correct";
+        sound_effect(sound_name);
       } else {
-        let alt = "a bunny is encouraging";
-        let file_name = "encouraging";
+        alt = "a bunny is encouraging";
+        file_name = "encouraging";
         animation(file_name, alt);
+        sound_name = "mistake";
+        sound_effect(sound_name);
       }
     });
   }
@@ -156,4 +160,13 @@ function animation(name, alt) {
   setTimeout(function () {
     display_place.classList.add("animation-hide");
   }, 1500);
+}
+
+/**
+ * Play sound effect
+ */
+function sound_effect(sound_name) {
+  let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
+  sound.volume = 0.1;
+  sound.play();
 }
