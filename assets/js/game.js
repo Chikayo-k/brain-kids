@@ -173,6 +173,7 @@ function animation(name, alt) {
 function sound_effect(sound_name) {
   let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
   sound.volume = 0.1;
+  sound.duration = 0.1;
   sound.play();
 }
 
@@ -184,5 +185,7 @@ function next_level() {
   count = 0;
   level++;
   level_place.innerHTML = `Level ${level}`;
+  let sound_name = "clap";
+  sound_effect(sound_name);
   games_starts();
 }
