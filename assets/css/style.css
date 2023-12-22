@@ -247,6 +247,39 @@ footer a {
   display: none;
 }
 
+/* Game Over */
+
+.game-over {
+  font-size: 2.5rem;
+  color: #6482f3;
+  margin-bottom: 20%;
+}
+
+.your-score {
+  font-size: 1.5rem;
+}
+
+.game-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20% 0;
+}
+
+.game-option a {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.score-game {
+  background-color: #00cb7f;
+  padding: 5%;
+}
+
+.home {
+  background-color: #f9643f;
+  padding: 5%;
+}
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {

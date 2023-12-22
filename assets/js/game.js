@@ -8,6 +8,7 @@ let start = false;
 let level = 0;
 let count = 0;
 let score = 0;
+let score_memory = [];
 let life = 3;
 let answer_number;
 let level_place = document.getElementsByClassName("level")[0];
@@ -147,6 +148,8 @@ function check_answer() {
         //Increase the score by one
         score++;
         display_score_life(score, life);
+      } else if (life === 1) {
+        game_over();
       } else {
         alt = "a bunny is encouraging";
         file_name = "encouraging";
@@ -208,4 +211,28 @@ function display_score_life(score, life) {
   let score_life_place = document.getElementsByClassName("score-level")[0];
   let score_life_html = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
   score_life_place.innerHTML = score_life_html;
+}
+
+/**
+ *Display game over pop up and audio when game ends
+ */
+function game_over() {
+  count = 0;
+  level = 0;
+
+  //Display game over card
+  let game_over_place = document.getElementsByClassName("game-screen")[0];
+  let game_over_html = `<div class="game-over-div">
+                            <p class="game-over">Game Over</p>
+                            <p class="your-score">Your Score: ${score}<p>                      
+                          <div class="game-option">
+                            <a class="score-game" href="score.html">Score</a>
+                            <a class="home" href="index.html">Home</a>
+                          </div>
+                       <div>`;
+  game_over_place.innerHTML = game_over_html;
+
+  //Play audio
+  let sound_name = "game-over";
+  sound_effect(sound_name);
 }
