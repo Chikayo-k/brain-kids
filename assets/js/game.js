@@ -7,6 +7,8 @@ document.body.style.background =
 let start = false;
 let level = 0;
 let count = 0;
+let score = 0;
+let life = 3;
 let answer_number;
 let level_place = document.getElementsByClassName("level")[0];
 
@@ -17,6 +19,7 @@ window.addEventListener("load", function () {
     level_place.innerHTML = `Level ${level}`;
     start = true;
     games_starts();
+    display_score_life(score, life);
   }
 });
 
@@ -140,12 +143,20 @@ function check_answer() {
         animation(file_name, alt);
         let sound_name = "correct";
         sound_effect(sound_name);
+
+        //Increase the score by one
+        score++;
+        display_score_life(score, life);
       } else {
         alt = "a bunny is encouraging";
         file_name = "encouraging";
         animation(file_name, alt);
         sound_name = "mistake";
         sound_effect(sound_name);
+
+        //Decrease the life by one
+        life--;
+        display_score_life(score, life);
       }
     });
   }
@@ -188,4 +199,13 @@ function next_level() {
   let sound_name = "clap";
   sound_effect(sound_name);
   games_starts();
+}
+
+/**
+ * Display Score and Life
+ */
+function display_score_life(score, life) {
+  let score_life_place = document.getElementsByClassName("score-level")[0];
+  let score_life_html = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
+  score_life_place.innerHTML = score_life_html;
 }

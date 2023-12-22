@@ -192,6 +192,18 @@ footer a {
   padding: 0 5%;
 }
 
+.score-level {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3%;
+  color: #6482f3;
+}
+
+.score-level p {
+  padding: 0 5%;
+}
+
 .game-answers {
   display: flex;
   flex-direction: column;
