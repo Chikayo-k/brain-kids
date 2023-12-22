@@ -4,7 +4,7 @@ document.body.style.background =
 
 // //Math game
 
-let start = "false";
+let start = false;
 let level = 0;
 let count = 0;
 let answer_number;
@@ -13,7 +13,7 @@ let level_place = document.getElementsByClassName("level")[0];
 // Show level 0 when the page load and set start true
 
 window.addEventListener("load", function () {
-  if (start) {
+  if (!start) {
     level_place.innerHTML = `Level ${level}`;
     start = true;
     games_starts();
@@ -164,7 +164,7 @@ function animation(name, alt) {
 
   setTimeout(function () {
     display_place.classList.add("animation-hide");
-  }, 1500);
+  }, 700);
 }
 
 /**
