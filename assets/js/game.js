@@ -8,27 +8,26 @@ let start = "false";
 let level = 0;
 let count = 0;
 let answer_number;
+let level_place = document.getElementsByClassName("level")[0];
 
 // Show level 0 when the page load and set start true
 
 window.addEventListener("load", function () {
   if (start) {
-    let level_place = document.getElementsByClassName("level")[0];
     level_place.innerHTML = `Level ${level}`;
     start = true;
-    games_starts(level);
+    games_starts();
   }
 });
 
 /**
  * Game stars
  */
-function games_starts(level) {
-  let num1 = Math.floor(Math.random() * 10);
-  let num2 = Math.floor(Math.random() * 10);
-
+function games_starts() {
   //  Render additional questions and subtraction questions three times each.
   //  After that the level will increase.
+  let num1 = generate_num(level);
+  let num2 = generate_num(level);
 
   if (count < 3) {
     show_addition(num1, num2);
@@ -41,10 +40,16 @@ function games_starts(level) {
     count++;
   } else {
     console.log("Next Level");
-    level++;
-    // next_level(level);
+    next_level();
   }
-  console.log(answer());
+}
+
+/**
+ * Generate numbers for math quiz
+ */
+function generate_num(level) {
+  let difficulty = 5 * level;
+  return (num1 = Math.floor(Math.random() * 10) + difficulty);
 }
 
 /**
@@ -169,4 +174,15 @@ function sound_effect(sound_name) {
   let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
   sound.volume = 0.1;
   sound.play();
+}
+
+/**
+ * Add level by one and display.
+ * then move on to the next question.
+ */
+function next_level() {
+  count = 0;
+  level++;
+  level_place.innerHTML = `Level ${level}`;
+  games_starts();
 }
