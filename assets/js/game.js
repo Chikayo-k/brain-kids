@@ -223,6 +223,8 @@ function display_score_life(score, life) {
 function game_over() {
   count = 0;
   level = 0;
+  score_memory.push(score);
+  console.log(score_memory);
 
   //Display game over card
   let game_over_place = document.getElementsByClassName("game-screen")[0];
@@ -230,7 +232,6 @@ function game_over() {
                             <p class="game-over">Game Over</p>
                             <p class="your-score">Your Score: ${score}<p>                      
                           <div class="game-option">
-                            <a class="score-game" href="score.html">Score</a>
                             <a class="home" href="index.html">Home</a>
                           </div>
                        <div>`;
