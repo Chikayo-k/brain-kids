@@ -1,3 +1,4 @@
+"use strict";
 //Add background image
 document.body.style.background =
   'url("../assets/images/puzzle.png") center center/cover';
@@ -6,8 +7,12 @@ document.body.style.background =
 
 let start = false;
 let level = 0;
+let num1;
 let count = 0;
 let score = 0;
+let file_name;
+let sound_name;
+let alt;
 let score_memory = [];
 let life = 3;
 let answer_number;
@@ -139,10 +144,10 @@ function check_answer() {
       let selected_ans = parseInt(this.innerText);
       if (selected_ans === answer_number) {
         games_starts(level);
-        let alt = "a bunny is happy";
-        let file_name = "bunny";
+        alt = "a bunny is happy";
+        file_name = "bunny";
         animation(file_name, alt);
-        let sound_name = "correct";
+        sound_name = "correct";
         sound_effect(sound_name);
 
         //Increase the score by one
@@ -187,7 +192,6 @@ function animation(name, alt) {
 function sound_effect(sound_name) {
   let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
   sound.volume = 0.1;
-  sound.duration = 0.1;
   sound.play();
 }
 
@@ -199,7 +203,7 @@ function next_level() {
   count = 0;
   level++;
   level_place.innerHTML = `Level ${level}`;
-  let sound_name = "clap";
+  sound_name = "clap";
   sound_effect(sound_name);
   games_starts();
 }
@@ -233,6 +237,6 @@ function game_over() {
   game_over_place.innerHTML = game_over_html;
 
   //Play audio
-  let sound_name = "game-over";
+  sound_name = "game-over";
   sound_effect(sound_name);
 }
