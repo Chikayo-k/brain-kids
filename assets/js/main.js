@@ -2,7 +2,7 @@
  * Add background image when the screen size is over 576px and remove when not
  */
 function change_background(size) {
-  if (size.matches) {
+  if (size.matches && document.URL.includes("index.html")) {
     document.body.style.background =
       'url("../assets/images/star.webp") center center/cover';
   } else {
