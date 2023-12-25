@@ -47,7 +47,41 @@
     <main>
 
         <div id="game">
-            <div class="card-shadow">
+
+            <div class="card-shadow game-screen game-hide">
+
+
+                <div class="level-question">
+                    <div class="level-div">
+                        <h2 class="level"></h2>
+                    </div>
+                    <div class="question">
+                        <span id="num1">0</span>
+                        <span id="operator">+</span>
+                        <span id="num2">0</span>
+                        <span>=</span>
+                    </div>
+                    <div class="score-level">
+                        <p>Score: 0</p>
+                        <p>Life: 3</p>
+                    </div>
+                </div>
+
+                <div class="game-answers">
+                    <div>
+                        <!-- <h2>Answer</h2> -->
+                        <p class="game-p">Pick one answer</p>
+                        <div id="pick-answer">
+                            <div>10</div>
+                            <div>10</div>
+                            <div>10</div>
+                            <div>10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-shadow start-page">
                 <div class="game-img-div">
                     <img class="math-img" src="./assets/images/math.webp" alt="children are playing a math game">
                 </div>
@@ -71,6 +105,9 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="animation animation-hide">
         </div>
 
     </main>

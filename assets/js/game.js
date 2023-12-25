@@ -6,7 +6,7 @@
  * Add background image when the screen size is over 576px and remove when not
  */
 function change_background(size) {
-  if (size.matches && document.URL.includes("index.html")) {
+  if (size.matches) {
     document.body.style.background =
       'url("../assets/images/star.webp") center center/cover';
   } else {
@@ -18,7 +18,7 @@ const size = window.matchMedia("(min-width: 576px)");
 
 change_background(size);
 
-if (document.URL.includes("index.html")) {
+if (document.URL) {
   size.addEventListener("change", function () {
     change_background(size);
   });
@@ -48,7 +48,7 @@ function stop_audio() {
   audio_count = 0;
 }
 
-if (document.URL.includes("index.html")) {
+if (document.URL) {
   audio_button[0].addEventListener("click", function () {
     audio_count++;
     if (audio_count <= 1) {
@@ -65,28 +65,7 @@ if (document.URL.includes("index.html")) {
   });
 }
 
-//Start button functionality
-
-/**
- * redirect to the game.html page
- */
-function to_game_page() {
-  return (window.location.href = "../../game.html");
-}
-
-const start_button = document.getElementsByClassName("start-btn");
-if (document.URL.includes("index.html")) {
-  start_button[0].addEventListener("click", to_game_page, false);
-}
-
-//Add background image
-if (document.URL.includes("game.html")) {
-  document.body.style.background =
-    'url("../assets/images/puzzle.png") center center/cover';
-}
-
-////////////////////// game.html page settings//////////////////////
-
+//Game variables
 let start = false;
 let level = 0;
 let num1;
@@ -100,16 +79,28 @@ let life = 3;
 let answer_number;
 let level_place = document.getElementsByClassName("level")[0];
 
-// Show level 0 when the page load and set start true
+//Start button functionality
 
-window.addEventListener("load", function () {
-  if (!start && document.URL.includes("game.html")) {
+/**
+ * Start page will be updated to the game page
+ * and game starts
+ */
+function show_game_Page() {
+  const game_div = document.getElementsByClassName("game-screen")[0];
+  game_div.classList.remove("game-hide");
+  const start_page = document.getElementsByClassName("start-page")[0];
+  start_page.classList.add("start-hide");
+
+  if (!start) {
     level_place.innerHTML = `Level ${level}`;
     start = true;
     games_starts();
     display_score_life(score, life);
   }
-});
+}
+
+const start_button = document.getElementsByClassName("start-btn")[0];
+start_button.addEventListener("click", show_game_Page);
 
 /**
  * Game stars
