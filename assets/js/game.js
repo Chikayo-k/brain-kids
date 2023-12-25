@@ -2,13 +2,18 @@
 
 ////////////////////// index.html page settings//////////////////////
 
+// background images storage
+const background_img = {
+  type1: `url("../assets/images/star.webp") center center/cover`,
+  type2: `url("../assets/images/puzzle.png") center center/cover`,
+};
+
 /**
  * Add background image when the screen size is over 576px and remove when not
  */
-function change_background(size) {
+function change_background(size, background_img) {
   if (size.matches) {
-    document.body.style.background =
-      'url("../assets/images/star.webp") center center/cover';
+    document.body.style.background = background_img;
   } else {
     document.body.style.background = "none";
   }
@@ -16,11 +21,11 @@ function change_background(size) {
 
 const size = window.matchMedia("(min-width: 576px)");
 
-change_background(size);
+change_background(size, background_img.type1);
 
 if (document.URL) {
   size.addEventListener("change", function () {
-    change_background(size);
+    change_background(size, background_img.type1);
   });
 }
 
@@ -86,11 +91,21 @@ let level_place = document.getElementsByClassName("level")[0];
  * and game starts
  */
 function show_game_Page() {
+  //Show game page and hide start page
   const game_div = document.getElementsByClassName("game-screen")[0];
   game_div.classList.remove("game-hide");
   const start_page = document.getElementsByClassName("start-page")[0];
   start_page.classList.add("start-hide");
 
+  //Background changes
+  change_background(size, background_img.type2);
+  if (document.URL) {
+    size.addEventListener("change", function () {
+      change_background(size, background_img.type2);
+    });
+  }
+
+  //Start game settings
   if (!start) {
     level_place.innerHTML = `Level ${level}`;
     start = true;
