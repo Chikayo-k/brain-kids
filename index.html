@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -47,7 +47,51 @@
     <main>
 
         <div id="game">
-            <div class="card-shadow">
+
+
+            <div class="card-shadow game-screen game-over game-over-hide">
+                <div class="game-over-div">
+                    <p class="game-over">Game Over</p>
+                    <p class="your-score">Your Score:0
+                    <p>
+                    <div class="game-option">
+                        <button class="home">Home</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" card-shadow game-screen game game-hide">
+                <div class=" level-question">
+                    <div class="level-div">
+                        <h2 class="level"></h2>
+                    </div>
+                    <div class="question">
+                        <span id="num1">0</span>
+                        <span id="operator">+</span>
+                        <span id="num2">0</span>
+                        <span>=</span>
+                    </div>
+                    <div class="score-level">
+                        <p>Score: 0</p>
+                        <p>Life: 3</p>
+                    </div>
+                </div>
+
+                <div class="game-answers">
+                    <div>
+                        <!-- <h2>Answer</h2> -->
+                        <p class="game-p">Pick one answer</p>
+                        <div id="pick-answer">
+                            <div>10</div>
+                            <div>10</div>
+                            <div>10</div>
+                            <div>10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-shadow start-page">
                 <div class="game-img-div">
                     <img class="math-img" src="./assets/images/math.webp" alt="children are playing a math game">
                 </div>
@@ -55,7 +99,8 @@
                 <div class="game-description">
                     <div class="game-content">
                         <h2>Math Game</h2>
-                        <p class="game-p">Practice simple addition and subtraction for early-year school children to
+                        <p class="game-p">Practice simple addition and subtraction for early-year school
+                            children to
                             help
                             them build
                             confidence in mathematics.</p>
@@ -73,6 +118,9 @@
 
         </div>
 
+        <div class="animation animation-hide">
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -85,7 +133,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8111712961.js" crossorigin="anonymous"></script>
     <!-- Javascript -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/game.js"></script>
 
 </body>
 
