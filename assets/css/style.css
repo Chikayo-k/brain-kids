@@ -229,11 +229,16 @@ footer a {
   text-align: center;
   width: 100%;
 }
+
 .game-hide {
   display: none;
 }
 
 .start-hide {
+  display: none;
+}
+
+.game-over-hide {
   display: none;
 }
 

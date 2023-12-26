@@ -1,7 +1,5 @@
 "use strict";
 
-////////////////////// index.html page settings//////////////////////
-
 // background images storage
 const background_img = {
   type1: `url("../assets/images/star.webp") center center/cover`,
@@ -83,6 +81,9 @@ let score_memory = [];
 let life = 3;
 let answer_number;
 let level_place = document.getElementsByClassName("level")[0];
+const game_page = document.getElementsByClassName("game")[0];
+const start_page = document.getElementsByClassName("start-page")[0];
+const game_over_page = document.getElementsByClassName("game-over")[0];
 
 //Start button functionality
 
@@ -92,9 +93,7 @@ let level_place = document.getElementsByClassName("level")[0];
  */
 function show_game_Page() {
   //Show game page and hide start page
-  const game_div = document.getElementsByClassName("game-screen")[0];
-  game_div.classList.remove("game-hide");
-  const start_page = document.getElementsByClassName("start-page")[0];
+  game_page.classList.remove("game-hide");
   start_page.classList.add("start-hide");
 
   //Background changes
@@ -123,6 +122,7 @@ start_button.addEventListener("click", show_game_Page);
 function games_starts() {
   //  Render additional questions and subtraction questions three times each.
   //  After that the level will increase.
+
   let num1 = generate_num(level);
   let num2 = generate_num(level);
 
@@ -311,21 +311,50 @@ function display_score_life(score, life) {
 function game_over() {
   count = 0;
   level = 0;
+
   score_memory.push(score);
   console.log(score_memory);
 
   //Display game over card
-  let game_over_place = document.getElementsByClassName("game-screen")[0];
-  let game_over_html = `<div class="game-over-div">
-                            <p class="game-over">Game Over</p>
-                            <p class="your-score">Your Score: ${score}<p>                      
-                          <div class="game-option">
-                            <a class="home" href="index.html">Home</a>
-                          </div>
-                       <div>`;
-  game_over_place.innerHTML = game_over_html;
+  show_game_over();
+
+  //home button
+  const home_button = document.getElementsByClassName("home")[0];
+  home_button.addEventListener("click", show_start_Page);
 
   //Play audio
   sound_name = "game-over";
   sound_effect(sound_name);
+}
+
+/**
+ * Game over page will be displayed
+ */
+function show_game_over() {
+  const your_score = document.getElementsByClassName("your-score")[0];
+  your_score.innerHTML = `Your score is: ${score}`;
+  game_over_page.classList.toggle("game-over-hide");
+  game_page.classList.toggle("game-hide");
+}
+
+/**
+ * Game over page will be updated to the start page
+ */
+function show_start_Page() {
+  //Reset score and life
+  score = 0;
+  life = 3;
+  display_score_life(score, life);
+
+  //Show game page and hide start page
+  start_page.classList.toggle("start-hide");
+  game_over_page.classList.toggle("game-over-hide");
+
+  //Background changes
+  change_background(size, background_img.type1);
+  if (document.URL) {
+    size.addEventListener("change", function () {
+      change_background(size, background_img.type1);
+    });
+  }
 }
