@@ -31,12 +31,16 @@ if (document.URL) {
 
 let audio_button = document.getElementsByClassName("sound");
 let audio_count = 0;
-let audio = new Audio("../assets/audio/background_track.mp3");
+let audio;
+let audio_name;
+let audio_playing = false;
 
 /**
  * Play audio
  */
-function play_audio() {
+function play_audio(sound_name) {
+  if (audio_playing === true)
+    audio = new Audio(`./assets/audio/${sound_name}.mp3`);
   audio.play();
   audio.loop = true;
   audio.volume = 0.08;
@@ -54,13 +58,16 @@ function stop_audio() {
 if (document.URL) {
   audio_button[0].addEventListener("click", function () {
     audio_count++;
-    if (audio_count <= 1) {
-      play_audio();
+    if (audio_count <= 1 && audio_playing == false) {
+      audio_playing = true;
+      audio_name = "background-track";
+      play_audio(audio_name);
       //Change the speaker icon
       audio_button[0].classList.remove("fa-volume-xmark");
       audio_button[0].classList.add("fa-volume-high");
     } else {
       stop_audio();
+      audio_playing = false;
       //change the speaker icon
       audio_button[0].classList.remove("fa-volume-high");
       audio_button[0].classList.add("fa-volume-xmark");
@@ -92,6 +99,12 @@ const game_over_page = document.getElementsByClassName("game-over")[0];
  * and game starts
  */
 function show_game_Page() {
+  //Change the background music
+  if (audio_playing == true) {
+    stop_audio();
+    audio_name = "game-background";
+    play_audio(audio_name);
+  }
   //Show game page and hide start page
   game_page.classList.remove("game-hide");
   start_page.classList.add("start-hide");
@@ -278,9 +291,11 @@ function animation(name, alt) {
  * Play sound effect
  */
 function sound_effect(sound_name) {
-  let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
-  sound.volume = 0.1;
-  sound.play();
+  if (audio_playing === true) {
+    let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
+    sound.volume = 0.1;
+    sound.play();
+  }
 }
 
 /**
@@ -312,6 +327,12 @@ function game_over() {
   count = 0;
   level = 0;
 
+  if (audio_playing == true) {
+    stop_audio();
+    //Play audio
+    audio_name = "game-over";
+    play_audio(audio_name);
+  }
   score_memory.push(score);
   console.log(score_memory);
 
@@ -321,10 +342,6 @@ function game_over() {
   //home button
   const home_button = document.getElementsByClassName("home")[0];
   home_button.addEventListener("click", show_start_Page);
-
-  //Play audio
-  sound_name = "game-over";
-  sound_effect(sound_name);
 }
 
 /**
@@ -341,6 +358,12 @@ function show_game_over() {
  * Game over page will be updated to the start page
  */
 function show_start_Page() {
+  if (audio_playing === true) {
+    stop_audio();
+    audio_name = "background-track";
+    play_audio(audio_name);
+  }
+
   //Reset score and life
   score = 0;
   life = 3;
