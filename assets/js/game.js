@@ -325,7 +325,6 @@ function display_score_life(score, life) {
  */
 function game_over() {
   count = 0;
-  level = 0;
 
   if (audio_playing == true) {
     stop_audio();
@@ -367,7 +366,9 @@ function show_start_Page() {
   //Reset score and life
   score = 0;
   life = 3;
+  level = 0;
   display_score_life(score, life);
+  level_place.innerHTML = `Level ${level}`;
 
   //Show game page and hide start page
   start_page.classList.toggle("start-hide");
