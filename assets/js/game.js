@@ -382,3 +382,55 @@ function show_start_Page() {
     });
   }
 }
+
+//Score board
+
+let score_table;
+
+/**
+ * Display scores on the table
+ */
+function show_score_board() {
+  score_table = document.createElement("table");
+  score_table.id = "score-board";
+
+  let score_table_html = `
+  <thead>
+    <tr>
+      <td>Attempt</td>
+      <td>Score</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tbody>    
+  `;
+
+  score_table.innerHTML = score_table_html;
+
+  const score_tbody = score_table.getElementsByTagName("tbody")[0];
+
+  let table_html = "";
+  for (let i = 0; i < score_memory.length; i++) {
+    table_html += `
+    <tr>
+      <td>Attempt:${i + 1}</td>
+      <td>${score_memory[i]}</td>
+    </tr>  
+  `;
+  }
+
+  score_tbody.innerHTML = table_html;
+
+  const score_place = document.getElementById("score-board");
+  score_place.appendChild(score_table);
+}
+
+const score_btn = document.getElementsByClassName("score")[0];
+score_btn.addEventListener("click", show_score_board);
+
+/**
+ * Remove score table
+ */
+function delete_table() {
+  score_table.remove();
+}
