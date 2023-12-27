@@ -75,7 +75,7 @@ header {
 
 .sign-up-div div {
   background-color: #6482f3;
-  width: 70%;
+  width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,8 +83,11 @@ header {
 
 .sign-up-btn {
   color: white;
-  padding: 8%;
-  font-size: 1.4rem;
+  padding: 9%;
+  font-size: 1.3rem;
+  border: none;
+  background-color: #6482f3;
+  width: 100%;
 }
 
 /* Main */
@@ -406,4 +409,7 @@ td {
 
 /* Media query: 1200px and larger (1200px and up)*/
 @media screen and (min-width: 1200px) {
+  .sign-up-div div {
+    width: 70%;
+  }
 }
