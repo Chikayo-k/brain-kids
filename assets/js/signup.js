@@ -24,8 +24,8 @@ function show_signup_page() {
   signup_place.innerHTML = signup_form_html;
 
   //hide game start, game, game over card
-  let score_board_page = document.getElementById("scoreboard");
-  score_board_page.classList.add("score-board-hide");
+  let score_board_page = document.getElementById("score-board");
+  score_board_page.remove();
   start_page.classList.add("start-hide");
   game_page.classList.add("game-hide");
   game_over_page.classList.add("game-over-hide");
