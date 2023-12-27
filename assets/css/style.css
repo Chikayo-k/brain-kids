@@ -292,6 +292,44 @@ footer a {
   background-color: #f9643f;
   padding: 5%;
 }
+
+/* Scoreboard */
+
+#score-board {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+table,
+thead {
+  border: 1px solid #6482f3;
+}
+
+thead {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 1.2rem;
+}
+
+td {
+  width: 50%;
+  padding: 3% 0;
+}
+
+#back {
+  margin: 10% 0 10% 50%;
+  padding: 5%;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #00cb7f;
+}
+
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {

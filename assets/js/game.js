@@ -392,7 +392,7 @@ let score_table;
  */
 function show_score_board() {
   score_table = document.createElement("table");
-  score_table.id = "score-board";
+  score_table.id = "scoreboard";
 
   let score_table_html = `
   <thead>
@@ -403,6 +403,7 @@ function show_score_board() {
   </thead>
   <tbody>
   <tbody>    
+  <button id="back">Back</button> 
   `;
 
   score_table.innerHTML = score_table_html;
@@ -423,14 +424,20 @@ function show_score_board() {
 
   const score_place = document.getElementById("score-board");
   score_place.appendChild(score_table);
+
+  start_page.classList.add("start-hide");
+
+  /**
+   * Remove score table
+   */
+  function delete_table() {
+    score_table.remove();
+    start_page.classList.remove("start-hide");
+  }
+
+  const back_btn = document.getElementById("back");
+  back_btn.addEventListener("click", delete_table);
 }
 
 const score_btn = document.getElementsByClassName("score")[0];
 score_btn.addEventListener("click", show_score_board);
-
-/**
- * Remove score table
- */
-function delete_table() {
-  score_table.remove();
-}
