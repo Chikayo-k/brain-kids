@@ -5,18 +5,18 @@ const signup_btn = document.getElementById("sign-up-btn");
  */
 function show_signup_page() {
   const signup_form_html = `
-<h2>Sign Up</h2>
+<h2 class="signup-title">Sign Up</h2>
 <p class="signup-p">Thank you very much for visiting Brain Kids.<br>
     Sign up with us, to gain access to our wide range of available games.
 </p>
 <form id="signup-form">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" required><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" required><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" autocomplete="off" required><br>
-    <input type="submit" value="Submit">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" required>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" autocomplete="off" required>
+    <input id="submit" class="btn" type="submit" value="Submit">
 </form>
 `;
 

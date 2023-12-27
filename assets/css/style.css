@@ -346,6 +346,44 @@ td {
   display: none;
 }
 
+/* Sign up page */
+
+#signup {
+  margin-top: 5%;
+}
+
+.signup-title {
+  text-align: left;
+}
+
+.signup-p {
+  margin: 5% 0;
+  text-align: left;
+}
+
+#signup-form {
+  text-align: left;
+  width: 80%;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#signup-form input {
+  padding: 2%;
+  margin-bottom: 5%;
+}
+
+#submit {
+  background-color: #f9643f;
+  color: white;
+  border: 0;
+  font-size: 1.3rem;
+  width: 50%;
+  margin-top: 5%;
+  padding: 5%;
+}
+
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {
@@ -385,6 +423,12 @@ td {
   .animation {
     width: 30%;
   }
+
+  /* Sign up page */
+
+  #signup {
+    background-color: rgb(255, 255, 255, 0.5);
+  }
 }
 
 /* Media query: tablets and larger (768px and up)*/
@@ -411,6 +455,10 @@ td {
   /* animation */
   .animation {
     width: 15%;
+  }
+
+  #submit {
+    width: 20%;
   }
 }
 
