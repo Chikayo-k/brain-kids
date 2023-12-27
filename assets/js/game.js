@@ -227,7 +227,7 @@ function display_options() {
   let options_html = "";
 
   for (let i in options) {
-    options_html += `<div class="display-answers">${options[i]}</div>`;
+    options_html += `<div class="display-answers btn">${options[i]}</div>`;
   }
   document.getElementById("pick-answer").innerHTML = options_html;
 
@@ -403,7 +403,7 @@ function show_score_board() {
   </thead>
   <tbody>
   <tbody>    
-  <button id="back">Back</button> 
+  <button id="back" class="btn">Back</button> 
   `;
 
   score_table.innerHTML = score_table_html;
