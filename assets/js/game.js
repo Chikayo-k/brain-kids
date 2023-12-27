@@ -227,7 +227,7 @@ function display_options() {
   let options_html = "";
 
   for (let i in options) {
-    options_html += `<div class="display-answers">${options[i]}</div>`;
+    options_html += `<div class="display-answers btn">${options[i]}</div>`;
   }
   document.getElementById("pick-answer").innerHTML = options_html;
 
@@ -382,3 +382,62 @@ function show_start_Page() {
     });
   }
 }
+
+//Score board
+
+let score_table;
+
+/**
+ * Display scores on the table
+ */
+function show_score_board() {
+  score_table = document.createElement("table");
+  score_table.id = "scoreboard";
+
+  let score_table_html = `
+  <thead>
+    <tr>
+      <td>Attempt</td>
+      <td>Score</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tbody>    
+  <button id="back" class="btn">Back</button> 
+  `;
+
+  score_table.innerHTML = score_table_html;
+
+  const score_tbody = score_table.getElementsByTagName("tbody")[0];
+
+  let table_html = "";
+  for (let i = 0; i < score_memory.length; i++) {
+    table_html += `
+    <tr>
+      <td>Attempt:${i + 1}</td>
+      <td>${score_memory[i]}</td>
+    </tr>  
+  `;
+  }
+
+  score_tbody.innerHTML = table_html;
+
+  const score_place = document.getElementById("score-board");
+  score_place.appendChild(score_table);
+
+  start_page.classList.add("start-hide");
+
+  /**
+   * Remove score table
+   */
+  function delete_table() {
+    score_table.remove();
+    start_page.classList.remove("start-hide");
+  }
+
+  const back_btn = document.getElementById("back");
+  back_btn.addEventListener("click", delete_table);
+}
+
+const score_btn = document.getElementsByClassName("score")[0];
+score_btn.addEventListener("click", show_score_board);
