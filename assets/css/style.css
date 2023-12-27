@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad&family=Cormorant:ital,wght@1,300&family=Noto+Sans+JP:wght@300&family=Raleway+Dots&display=swap");
+
 /* General style */
 
 * {
@@ -10,6 +12,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: "Afacad", sans-serif;
 }
 
 a {
@@ -337,6 +340,10 @@ td {
   border: none;
   color: white;
   background-color: #00cb7f;
+}
+
+.score-board-hide {
+  display: none;
 }
 
 /* Media query: larger phone and landscape (576px and up)*/
