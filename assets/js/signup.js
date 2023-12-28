@@ -1,4 +1,6 @@
-const signup_btn = document.getElementById("sign-up-btn");
+const signup_btn = document.getElementsByClassName("sign-up-btn")[0];
+const back_hom_btn = document.getElementsByClassName("back-home")[0];
+const signup_place = document.getElementById("signup");
 
 /**
  * Show  Sign up page and hide different pages
@@ -20,19 +22,29 @@ function show_signup_page() {
 </form>
 `;
 
-  const signup_place = document.getElementById("signup");
   signup_place.innerHTML = signup_form_html;
 
-  //hide game start, game, game over card
-  let score_board_page = document.getElementById("score-board");
-  score_board_page.remove();
+  //hide game start page
   start_page.classList.add("start-hide");
-  game_page.classList.add("game-hide");
-  game_over_page.classList.add("game-over-hide");
 
   //Change the Sign up button to Home button
-  const signup_btn_tex = document.getElementsByClassName("sign-up-btn")[0];
-  signup_btn_tex.textContent = "Home";
+  signup_btn.classList.add("hide");
+  back_hom_btn.classList.remove("hide");
+
+  //show signup page after go back to home
+  signup_place.classList.remove("hide");
 }
 
 signup_btn.addEventListener("click", show_signup_page);
+
+/**
+ * Go back to the home page
+ */
+function go_home() {
+  signup_btn.classList.remove("hide");
+  back_hom_btn.classList.add("hide");
+  signup_place.classList.add("hide");
+  start_page.classList.remove("start-hide");
+}
+
+back_hom_btn.addEventListener("click", go_home);
