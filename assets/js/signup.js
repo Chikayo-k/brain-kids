@@ -42,7 +42,7 @@ function show_signup_page() {
 signup_btn.addEventListener("click", show_signup_page);
 
 /**
- * Go back to the home page
+ * Go back to the home page from sign up page
  */
 function go_home() {
   signup_btn.classList.remove("hide");
@@ -74,4 +74,14 @@ function submit(event) {
   confirmation_place.innerHTML = confirmation_html;
 
   signup_place.classList.add("hide");
+
+  /**
+   * Go back to the home page from successful message page
+   */
+  function goHomeSuc() {
+    start_page.classList.remove("start-hide");
+    confirmation_place.classList.add("hide");
+  }
+
+  back_hom_btn.addEventListener("click", goHomeSuc);
 }
