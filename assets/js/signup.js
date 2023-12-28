@@ -9,7 +9,7 @@ function show_signup_page() {
   const signup_form_html = `
 <h2 class="signup-title">Sign Up</h2>
 <p class="signup-p">Thank you very much for visiting Brain Kids.<br>
-    Sign up with us, to gain access to our wide range of available games.
+    Sign up with us, to gain access to upcoming games.
 </p>
 <form id="signup-form">
     <label for="fname">First name:</label>
@@ -33,6 +33,10 @@ function show_signup_page() {
 
   //show signup page after go back to home
   signup_place.classList.remove("hide");
+
+  //when clicked the submit button of the sign up form
+  let submit_form = document.getElementById("signup-form");
+  submit_form.addEventListener("submit", submit);
 }
 
 signup_btn.addEventListener("click", show_signup_page);
@@ -48,3 +52,26 @@ function go_home() {
 }
 
 back_hom_btn.addEventListener("click", go_home);
+
+/**
+ * When clicked a successful message will be displayed
+ */
+function submit(event) {
+  event.preventDefault();
+
+  const fName = document.getElementById("fname");
+  const lName = document.getElementById("lname");
+
+  let confirmation_html = `
+  <h2 class="success">Success</h2>
+  <p class="message">Hello ${fName.value} ${lName.value} !! <br> 
+     Thank you very much for registering with Brain Kids.<br>
+     You will have access to upcoming games !!
+  </p>
+  `;
+
+  const confirmation_place = document.getElementById("confirmation");
+  confirmation_place.innerHTML = confirmation_html;
+
+  signup_place.classList.add("hide");
+}
