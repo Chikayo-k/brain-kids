@@ -389,6 +389,11 @@ td {
   padding: 5%;
 }
 
+/* Successful message */
+
+.message {
+  margin: 5% 0;
+}
 /* Media query: larger phone and landscape (576px and up)*/
 @media screen and (min-width: 576px) {
   .logo-div {
