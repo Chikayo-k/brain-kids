@@ -1,6 +1,7 @@
 const signup_btn = document.getElementsByClassName("sign-up-btn")[0];
 const back_hom_btn = document.getElementsByClassName("back-home")[0];
 const signup_place = document.getElementById("signup");
+const confirmation_place = document.getElementById("confirmation");
 
 /**
  * Show  Sign up page and hide different pages
@@ -32,6 +33,7 @@ function show_signup_page() {
   back_hom_btn.classList.remove("hide");
 
   //show signup page after go back to home
+
   signup_place.classList.remove("hide");
 
   //when clicked the submit button of the sign up form
@@ -70,10 +72,10 @@ function submit(event) {
   </p>
   `;
 
-  const confirmation_place = document.getElementById("confirmation");
   confirmation_place.innerHTML = confirmation_html;
 
   signup_place.classList.add("hide");
+  confirmation_place.classList.remove("hide");
 
   /**
    * Go back to the home page from successful message page
