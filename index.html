@@ -33,9 +33,10 @@
                 </a>
             </div>
 
-            <div class="sign-up-div btn">
+            <div id="sign-up-btn" class="sign-up-div btn">
                 <div>
-                    <a class="sign-up-btn" href="signup.html" aria-label="Go to sign up page">Sign Up</a>
+                    <button class="sign-up-btn btn" aria-label="Go to sign up page">Sign Up</button>
+                    <button class="back-home btn hide">Home</button>
                 </div>
             </div>
 
@@ -50,8 +51,10 @@
 
         <div id="game">
 
-            <div id="score-board">
-            </div>
+            <div id="signup"></div>
+            <div id="confirmation"></div>
+
+            <div id="score-board"></div>
 
             <div class="card-shadow game-screen game-over game-over-hide">
                 <div class="game-over-div">
@@ -65,7 +68,7 @@
             </div>
 
             <div class=" card-shadow game-screen game game-hide">
-                <div class=" level-question">
+                <div class="level-question">
                     <div class="level-div">
                         <h2 class="level"></h2>
                     </div>
@@ -138,6 +141,7 @@
     <script src="https://kit.fontawesome.com/8111712961.js" crossorigin="anonymous"></script>
     <!-- Javascript -->
     <script src="assets/js/game.js"></script>
+    <script src="assets/js/signup.js"></script>
 
 </body>
 

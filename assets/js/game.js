@@ -108,6 +108,8 @@ function show_game_Page() {
   //Show game page and hide start page
   game_page.classList.remove("game-hide");
   start_page.classList.add("start-hide");
+  //hide signup button
+  signup_btn.classList.add("hide");
 
   //Background changes
   change_background(size, background_img.type2);
@@ -370,9 +372,10 @@ function show_start_Page() {
   display_score_life(score, life);
   level_place.innerHTML = `Level ${level}`;
 
-  //Show game page and hide start page
+  //Show game page and hide start page and sign up button
   start_page.classList.toggle("start-hide");
   game_over_page.classList.toggle("game-over-hide");
+  signup_btn.classList.remove("hide");
 
   //Background changes
   change_background(size, background_img.type1);
@@ -425,14 +428,19 @@ function show_score_board() {
   const score_place = document.getElementById("score-board");
   score_place.appendChild(score_table);
 
+  //Hide signup button and start page
   start_page.classList.add("start-hide");
+  signup_btn.classList.add("hide");
 
   /**
    * Remove score table
    */
   function delete_table() {
+    //Remove score table
     score_table.remove();
+    //Show sign up button and start page
     start_page.classList.remove("start-hide");
+    signup_btn.classList.remove("hide");
   }
 
   const back_btn = document.getElementById("back");
