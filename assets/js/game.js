@@ -281,13 +281,20 @@ function animation(name, alt) {
   let display_place = document.getElementsByClassName("animation-hide")[0];
   let animation_html = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
 
-  display_place.innerHTML = animation_html;
+  try {
+    display_place.innerHTML = animation_html;
 
-  display_place.classList.remove("animation-hide");
+    display_place.classList.remove("animation-hide");
 
-  setTimeout(function () {
-    display_place.classList.add("animation-hide");
-  }, 700);
+    setTimeout(function () {
+      display_place.classList.add("animation-hide");
+    }, 700);
+  } catch (err) {
+    //Gets an error message if you click answer before the animation displaying beforehand has gone
+    console.log(
+      "Error: Due to clicking the new answer before the animation has finished"
+    );
+  }
 }
 
 /**
