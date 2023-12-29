@@ -410,7 +410,7 @@ function show_score_board() {
   }
 
   const highestHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
-                       <button id="reset">Reset Highest Score</button>`;
+                       <button id="reset" class="btn">Reset Highest Score</button>`;
 
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.innerHTML = highestHtml;
@@ -475,7 +475,7 @@ function show_score_board() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     const highestResetHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset">Reset Highest Score</button>`;
+    <button id="reset" class="btn">Reset Highest Score</button>`;
     highestScorePlace.innerHTML = highestResetHtml;
   }
 
