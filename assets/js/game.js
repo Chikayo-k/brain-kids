@@ -415,7 +415,8 @@ function show_score_board() {
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-                       <button id="reset" class="btn">Reset Highest Score</button>`;
+                                     <button id="reset" class="btn">Reset All</button>
+                                    `;
 
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.appendChild(createHighestScoreDiv);
@@ -484,6 +485,10 @@ function show_score_board() {
     <button id="reset" class="btn">Reset Highest Score</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
+
+    //Empty score  memory array and remove display
+    score_memory = [];
+    score_tbody.remove();
   }
 
   const resetBtn = document.getElementById("reset");
