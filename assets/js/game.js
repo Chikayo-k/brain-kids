@@ -402,9 +402,15 @@ let score_table;
  * Display scores on the table
  */
 function show_score_board() {
-  let highestScoreNow = localStorage.getItem("highestScore");
+  let highestScoreNow;
+  if (localStorage.getItem("highestScore") <= 0) {
+    highestScoreNow = 0;
+  } else {
+    highestScoreNow = localStorage.getItem("highestScore");
+  }
+
   const highestHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
-                       <button>Reset Highest Score</button>`;
+                       <button id="reset">Reset Highest Score</button>`;
 
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.innerHTML = highestHtml;
@@ -460,6 +466,21 @@ function show_score_board() {
 
   const back_btn = document.getElementById("back");
   back_btn.addEventListener("click", delete_table);
+
+  /**
+   * Remove the value of highest score in the local storage
+   * and display highest score 0
+   */
+  function resetHighestScore() {
+    localStorage.setItem("highestScore", 0);
+    highestScoreNow = localStorage.getItem("highestScore");
+    const highestResetHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
+    <button id="reset">Reset Highest Score</button>`;
+    highestScorePlace.innerHTML = highestResetHtml;
+  }
+
+  const resetBtn = document.getElementById("reset");
+  resetBtn.addEventListener("click", resetHighestScore);
 }
 
 const score_btn = document.getElementsByClassName("score")[0];
