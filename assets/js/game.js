@@ -343,6 +343,14 @@ function game_over() {
   //home button
   const home_button = document.getElementsByClassName("home")[0];
   home_button.addEventListener("click", show_start_Page);
+
+  //Store the highest score in a local storage
+
+  let scoreStorageValue = localStorage.getItem("highestScore");
+
+  if (scoreStorageValue < score) {
+    localStorage.setItem("highestScore", score);
+  }
 }
 
 /**
@@ -394,6 +402,13 @@ let score_table;
  * Display scores on the table
  */
 function show_score_board() {
+  let highestScoreNow = localStorage.getItem("highestScore");
+  const highestHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
+                       <button>Reset Highest Score</button>`;
+
+  const highestScorePlace = document.getElementById("highest-score");
+  highestScorePlace.innerHTML = highestHtml;
+
   score_table = document.createElement("table");
   score_table.id = "scoreboard";
 
