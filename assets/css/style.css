@@ -311,6 +311,20 @@ footer a {
 }
 
 /* Scoreboard */
+#highest-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#reset {
+  margin: 5% 0;
+  padding: 1%;
+  border: none;
+  background-color: #f9643f;
+  color: white;
+}
 
 #score-board {
   display: flex;
@@ -438,6 +452,12 @@ td {
 
   #signup {
     background-color: rgb(255, 255, 255, 0.5);
+  }
+
+  /* Score board */
+
+  #highest-div {
+    flex-direction: row;
   }
 }
 

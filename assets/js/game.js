@@ -108,6 +108,7 @@ function show_game_Page() {
   //Show game page and hide start page
   game_page.classList.remove("game-hide");
   start_page.classList.add("start-hide");
+
   //hide signup button
   signup_btn.classList.add("hide");
 
@@ -343,6 +344,14 @@ function game_over() {
   //home button
   const home_button = document.getElementsByClassName("home")[0];
   home_button.addEventListener("click", show_start_Page);
+
+  //Store the highest score in a local storage
+
+  let scoreStorageValue = localStorage.getItem("highestScore");
+
+  if (scoreStorageValue < score) {
+    localStorage.setItem("highestScore", score);
+  }
 }
 
 /**
@@ -394,6 +403,24 @@ let score_table;
  * Display scores on the table
  */
 function show_score_board() {
+  //Set a variable of local storage value
+  let highestScoreNow;
+  if (localStorage.getItem("highestScore") <= 0) {
+    highestScoreNow = 0;
+  } else {
+    highestScoreNow = localStorage.getItem("highestScore");
+  }
+
+  //Display the highest score and a reset highest score button
+  const createHighestScoreDiv = document.createElement("div");
+  createHighestScoreDiv.id = "highest-div";
+  createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
+                                     <button id="reset" class="btn">Reset All</button>
+                                    `;
+
+  const highestScorePlace = document.getElementById("highest-score");
+  highestScorePlace.appendChild(createHighestScoreDiv);
+
   score_table = document.createElement("table");
   score_table.id = "scoreboard";
 
@@ -436,8 +463,9 @@ function show_score_board() {
    * Remove score table
    */
   function delete_table() {
-    //Remove score table
+    //Remove score table and highest score
     score_table.remove();
+    createHighestScoreDiv.remove();
     //Show sign up button and start page
     start_page.classList.remove("start-hide");
     signup_btn.classList.remove("hide");
@@ -445,6 +473,26 @@ function show_score_board() {
 
   const back_btn = document.getElementById("back");
   back_btn.addEventListener("click", delete_table);
+
+  /**
+   * Remove the value of highest score in the local storage
+   * and display highest score 0
+   */
+  function resetHighestScore() {
+    localStorage.setItem("highestScore", 0);
+    highestScoreNow = localStorage.getItem("highestScore");
+    createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
+    <button id="reset" class="btn">Reset Highest Score</button>`;
+
+    highestScorePlace.appendChild(createHighestScoreDiv);
+
+    //Empty score  memory array and remove display
+    score_memory = [];
+    score_tbody.remove();
+  }
+
+  const resetBtn = document.getElementById("reset");
+  resetBtn.addEventListener("click", resetHighestScore);
 }
 
 const score_btn = document.getElementsByClassName("score")[0];
