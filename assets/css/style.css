@@ -311,7 +311,7 @@ footer a {
 }
 
 /* Scoreboard */
-#highest-score {
+#highest-div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -456,7 +456,7 @@ td {
 
   /* Score board */
 
-  #highest-score {
+  #highest-div {
     flex-direction: row;
   }
 }

@@ -108,6 +108,7 @@ function show_game_Page() {
   //Show game page and hide start page
   game_page.classList.remove("game-hide");
   start_page.classList.add("start-hide");
+
   //hide signup button
   signup_btn.classList.add("hide");
 
@@ -402,6 +403,7 @@ let score_table;
  * Display scores on the table
  */
 function show_score_board() {
+  //Set a variable of local storage value
   let highestScoreNow;
   if (localStorage.getItem("highestScore") <= 0) {
     highestScoreNow = 0;
@@ -409,11 +411,14 @@ function show_score_board() {
     highestScoreNow = localStorage.getItem("highestScore");
   }
 
-  const highestHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
+  //Display the highest score and a reset highest score button
+  const createHighestScoreDiv = document.createElement("div");
+  createHighestScoreDiv.id = "highest-div";
+  createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
                        <button id="reset" class="btn">Reset Highest Score</button>`;
 
   const highestScorePlace = document.getElementById("highest-score");
-  highestScorePlace.innerHTML = highestHtml;
+  highestScorePlace.appendChild(createHighestScoreDiv);
 
   score_table = document.createElement("table");
   score_table.id = "scoreboard";
@@ -457,8 +462,9 @@ function show_score_board() {
    * Remove score table
    */
   function delete_table() {
-    //Remove score table
+    //Remove score table and highest score
     score_table.remove();
+    createHighestScoreDiv.remove();
     //Show sign up button and start page
     start_page.classList.remove("start-hide");
     signup_btn.classList.remove("hide");
@@ -474,9 +480,10 @@ function show_score_board() {
   function resetHighestScore() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
-    const highestResetHtml = `<h2>Highest Score:${highestScoreNow}</h2> 
+    createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
     <button id="reset" class="btn">Reset Highest Score</button>`;
-    highestScorePlace.innerHTML = highestResetHtml;
+
+    highestScorePlace.appendChild(createHighestScoreDiv);
   }
 
   const resetBtn = document.getElementById("reset");
