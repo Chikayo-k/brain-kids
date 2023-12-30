@@ -145,10 +145,7 @@ main {
   margin: 5% 0;
   display: flex;
   justify-content: space-around;
-}
-
-.setting {
-  color: #00cb7f;
+  align-items: center;
 }
 
 .score {
@@ -157,6 +154,7 @@ main {
   padding: 3%;
   background-color: white;
   text-decoration: underline;
+  font-size: 1.3rem;
 }
 
 .sound {
