@@ -152,7 +152,6 @@ function games_starts() {
     display_options();
     count++;
   } else {
-    console.log("Next Level");
     next_level();
   }
 }
@@ -226,7 +225,6 @@ function option_numbers() {
  */
 function display_options() {
   let options = option_numbers();
-  console.log(options);
   let options_html = "";
 
   for (let i in options) {
@@ -343,7 +341,6 @@ function game_over() {
     play_audio(audio_name);
   }
   score_memory.push(score);
-  console.log(score_memory);
 
   //Display game over card
   show_game_over();
@@ -353,7 +350,6 @@ function game_over() {
   home_button.addEventListener("click", show_start_Page);
 
   //Store the highest score in a local storage
-
   let scoreStorageValue = localStorage.getItem("highestScore");
 
   if (scoreStorageValue < score) {
