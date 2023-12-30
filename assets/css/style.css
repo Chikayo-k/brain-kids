@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Afacad", sans-serif;
+  position: relative;
 }
 
 a {
@@ -455,7 +456,7 @@ td {
   /* animation */
 
   .animation {
-    width: 30%;
+    width: 20%;
   }
 
   /*--- Sign up page ---*/
