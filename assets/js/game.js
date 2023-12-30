@@ -1,7 +1,7 @@
 "use strict";
 
 // background images storage
-const background_img = {
+const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
   type2: `url("./assets/images/puzzle.webp") center center/cover`,
 };
@@ -9,9 +9,9 @@ const background_img = {
 /**
  * Add background image when the screen size is over 576px and remove when not
  */
-function change_background(size, background_img) {
+function changeBackground(size, backgroundImg) {
   if (size.matches) {
-    document.body.style.background = background_img;
+    document.body.style.background = backgroundImg;
   } else {
     document.body.style.background = "none";
   }
@@ -19,28 +19,28 @@ function change_background(size, background_img) {
 
 const size = window.matchMedia("(min-width: 576px)");
 
-change_background(size, background_img.type1);
+changeBackground(size, backgroundImg.type1);
 
 if (document.URL) {
   size.addEventListener("change", function () {
-    change_background(size, background_img.type1);
+    changeBackground(size, backgroundImg.type1);
   });
 }
 
 //Set the sound button functionality
 
-let audio_button = document.getElementsByClassName("sound");
-let audio_count = 0;
+let audioButton = document.getElementsByClassName("sound");
+let audioCount = 0;
 let audio;
-let audio_name;
-let audio_playing = false;
+let audioName;
+let audioPlaying = false;
 
 /**
  * Play audio
  */
-function play_audio(sound_name) {
-  if (audio_playing === true)
-    audio = new Audio(`./assets/audio/${sound_name}.mp3`);
+function playAudio(soundName) {
+  if (audioPlaying === true)
+    audio = new Audio(`./assets/audio/${soundName}.mp3`);
   audio.play();
   audio.loop = true;
   audio.volume = 0.08;
@@ -49,28 +49,28 @@ function play_audio(sound_name) {
 /**
  * Stop audio
  */
-function stop_audio() {
+function stopAudio() {
   audio.pause();
   audio.currentTime = 0;
-  audio_count = 0;
+  audioCount = 0;
 }
 
 if (document.URL) {
-  audio_button[0].addEventListener("click", function () {
-    audio_count++;
-    if (audio_count <= 1 && audio_playing == false) {
-      audio_playing = true;
-      audio_name = "background-track";
-      play_audio(audio_name);
+  audioButton[0].addEventListener("click", function () {
+    audioCount++;
+    if (audioCount <= 1 && audioPlaying == false) {
+      audioPlaying = true;
+      audioName = "background-track";
+      playAudio(audioName);
       //Change the speaker icon
-      audio_button[0].classList.remove("fa-volume-xmark");
-      audio_button[0].classList.add("fa-volume-high");
+      audioButton[0].classList.remove("fa-volume-xmark");
+      audioButton[0].classList.add("fa-volume-high");
     } else {
-      stop_audio();
-      audio_playing = false;
+      stopAudio();
+      audioPlaying = false;
       //change the speaker icon
-      audio_button[0].classList.remove("fa-volume-high");
-      audio_button[0].classList.add("fa-volume-xmark");
+      audioButton[0].classList.remove("fa-volume-high");
+      audioButton[0].classList.add("fa-volume-xmark");
     }
   });
 }
@@ -81,16 +81,16 @@ let level = 0;
 let num1;
 let count = 0;
 let score = 0;
-let file_name;
-let sound_name;
+let fileName;
+let soundName;
 let alt;
-let score_memory = [];
+let scoreMemory = [];
 let life = 3;
-let answer_number;
-let level_place = document.getElementsByClassName("level")[0];
-const game_page = document.getElementsByClassName("game")[0];
-const start_page = document.getElementsByClassName("start-page")[0];
-const game_over_page = document.getElementsByClassName("game-over")[0];
+let answerNumber;
+let levelPlace = document.getElementsByClassName("level")[0];
+const gamePage = document.getElementsByClassName("game")[0];
+const startPage = document.getElementsByClassName("start-page")[0];
+const gameOverPage = document.getElementsByClassName("game-over")[0];
 
 //Start button functionality
 
@@ -98,69 +98,68 @@ const game_over_page = document.getElementsByClassName("game-over")[0];
  * Start page will be updated to the game page
  * and game starts
  */
-function show_game_Page() {
+function showGamePage() {
   //Change the background music
-  if (audio_playing == true) {
-    stop_audio();
-    audio_name = "game-background";
-    play_audio(audio_name);
+  if (audioPlaying == true) {
+    stopAudio();
+    audioName = "game-background";
+    playAudio(audioName);
   }
   //Show game page and hide start page
-  game_page.classList.remove("game-hide");
-  start_page.classList.add("start-hide");
+  gamePage.classList.remove("game-hide");
+  startPage.classList.add("start-hide");
 
   //hide signup button
-  signup_btn.classList.add("hide");
+  signupBtn.classList.add("hide");
 
   //Background changes
-  change_background(size, background_img.type2);
+  changeBackground(size, backgroundImg.type2);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, background_img.type2);
+      changeBackground(size, backgroundImg.type2);
     });
   }
 
   //Start game settings
   if (!start) {
-    level_place.innerHTML = `Level ${level}`;
+    levelPlace.innerHTML = `Level ${level}`;
     start = true;
-    games_starts();
-    display_score_life(score, life);
+    gameStarts();
+    displayScoreLife(score, life);
   }
 }
 
-const start_button = document.getElementsByClassName("start-btn")[0];
-start_button.addEventListener("click", show_game_Page);
+const startBtn = document.getElementsByClassName("start-btn")[0];
+startBtn.addEventListener("click", showGamePage);
 
 /**
  * Game stars
  */
-function games_starts() {
+function gameStarts() {
   //  Render additional questions and subtraction questions three times each.
   //  After that the level will increase.
 
-  let num1 = generate_num(level);
-  let num2 = generate_num(level);
+  let num1 = generateNum(level);
+  let num2 = generateNum(level);
 
   if (count < 3) {
-    show_addition(num1, num2);
-    display_options();
+    showAddition(num1, num2);
+    displayOptions();
     answer();
     count++;
   } else if (count < 6) {
-    show_subtraction(num1, num2);
-    display_options();
+    showSubtraction(num1, num2);
+    displayOptions();
     count++;
   } else {
-    console.log("Next Level");
-    next_level();
+    nextLevel();
   }
 }
 
 /**
  * Generate numbers for math quiz
  */
-function generate_num(level) {
+function generateNum(level) {
   let difficulty = 5 * level;
   return (num1 = Math.floor(Math.random() * 10) + difficulty);
 }
@@ -168,7 +167,7 @@ function generate_num(level) {
 /**
  * Display addition question
  */
-function show_addition(num1, num2) {
+function showAddition(num1, num2) {
   document.getElementById("num1").innerHTML = num1;
   document.getElementById("num2").innerHTML = num2;
   document.getElementById("operator").innerHTML = "+";
@@ -177,7 +176,7 @@ function show_addition(num1, num2) {
 /**
  * Display subtraction question
  */
-function show_subtraction(num1, num2) {
+function showSubtraction(num1, num2) {
   document.getElementById("num1").innerHTML = num1 > num2 ? num1 : num2;
   document.getElementById("num2").innerHTML = num2 < num1 ? num2 : num1;
   document.getElementById("operator").innerHTML = "-";
@@ -187,16 +186,17 @@ function show_subtraction(num1, num2) {
  * Calculate the answer
  */
 function answer() {
-  let question_num1 = parseInt(document.getElementById("num1").innerText);
-  let question_num2 = parseInt(document.getElementById("num2").innerText);
+  let questionNum1 = parseInt(document.getElementById("num1").innerText);
+  let questionNum2 = parseInt(document.getElementById("num2").innerText);
   let operator = document.getElementById("operator").innerText;
+  let answer;
 
   if (operator === "+") {
-    let answer = question_num1 + question_num2;
-    return (answer_number = answer);
+    answer = questionNum1 + questionNum2;
+    return (answerNumber = answer);
   } else if (operator === "-") {
-    let answer = question_num1 - question_num2;
-    return (answer_number = answer);
+    answer = questionNum1 - questionNum2;
+    return (answerNumber = answer);
   } else {
     alert("something went wrong");
     throw "something went wrong";
@@ -206,88 +206,89 @@ function answer() {
 /**
  * Generate 3 random numbers plus the correct answer and places in a random position each time
  */
-function option_numbers() {
-  let correct_answer = answer();
-  let options = [correct_answer];
+function optionNumbers() {
+  let correctAnswer = answer();
+  let options = [correctAnswer];
 
   for (let i = 0; options.length < 4; i++) {
-    const number = Math.floor(Math.random() * 5) + correct_answer;
+    const number = Math.floor(Math.random() * 5) + correctAnswer;
 
     if (!options.includes(number)) {
       options.push(number);
     }
   }
-  let shuffle_options = options.sort(() => Math.random() - 0.5);
-  return shuffle_options;
+  // Shuffling an array
+  //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
+  let shuffleOptions = options.sort(() => Math.random() - 0.5);
+  return shuffleOptions;
 }
 
 /**
  * Display answer options
  */
-function display_options() {
-  let options = option_numbers();
-  console.log(options);
-  let options_html = "";
+function displayOptions() {
+  let options = optionNumbers();
+  let optionsHtml = "";
 
   for (let i in options) {
-    options_html += `<div class="display-answers btn">${options[i]}</div>`;
+    optionsHtml += `<div class="display-answers btn">${options[i]}</div>`;
   }
-  document.getElementById("pick-answer").innerHTML = options_html;
+  document.getElementById("pick-answer").innerHTML = optionsHtml;
 
-  check_answer();
+  checkAnswer();
 }
 
 /**
  * Check if the answer is correct or not and display result
  */
-function check_answer() {
-  let clicked_button = document.querySelectorAll(".display-answers");
+function checkAnswer() {
+  let clickedButton = document.querySelectorAll(".display-answers");
 
-  for (let i = 0; i < clicked_button.length; i++) {
-    clicked_button[i].addEventListener("click", function () {
-      let selected_ans = parseInt(this.innerText);
-      if (selected_ans === answer_number) {
-        games_starts(level);
+  for (let i = 0; i < clickedButton.length; i++) {
+    clickedButton[i].addEventListener("click", function () {
+      let selectedAnswer = parseInt(this.innerText);
+      if (selectedAnswer === answerNumber) {
+        gameStarts(level);
         alt = "a bunny is happy";
-        file_name = "bunny";
-        animation(file_name, alt);
-        sound_name = "correct";
-        sound_effect(sound_name);
+        fileName = "bunny";
+        animation(fileName, alt);
+        soundName = "correct";
+        soundEffect(soundName);
 
         //Increase the score by one
         score++;
-        display_score_life(score, life);
+        displayScoreLife(score, life);
       } else if (life === 1) {
-        game_over();
+        gameOver();
       } else {
         alt = "a bunny is encouraging";
-        file_name = "encouraging";
-        animation(file_name, alt);
-        sound_name = "mistake";
-        sound_effect(sound_name);
+        fileName = "encouraging";
+        animation(fileName, alt);
+        soundName = "mistake";
+        soundEffect(soundName);
 
         //Decrease the life by one
         life--;
-        display_score_life(score, life);
+        displayScoreLife(score, life);
       }
     });
   }
 }
 
 /**
- *show animation 1.5 seconds
+ *show animation 0.7 seconds
  */
 function animation(name, alt) {
-  let display_place = document.getElementsByClassName("animation-hide")[0];
-  let animation_html = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
+  let displayPlace = document.getElementsByClassName("animation-hide")[0];
+  let animationHtml = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
 
   try {
-    display_place.innerHTML = animation_html;
+    displayPlace.innerHTML = animationHtml;
 
-    display_place.classList.remove("animation-hide");
+    displayPlace.classList.remove("animation-hide");
 
     setTimeout(function () {
-      display_place.classList.add("animation-hide");
+      displayPlace.classList.add("animation-hide");
     }, 700);
   } catch (err) {
     //Gets an error message if you click answer before the animation displaying beforehand has gone
@@ -300,9 +301,9 @@ function animation(name, alt) {
 /**
  * Play sound effect
  */
-function sound_effect(sound_name) {
-  if (audio_playing === true) {
-    let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
+function soundEffect(soundName) {
+  if (audioPlaying === true) {
+    let sound = new Audio(`./assets/audio/${soundName}.mp3`);
     sound.volume = 0.1;
     sound.play();
   }
@@ -312,48 +313,46 @@ function sound_effect(sound_name) {
  * Add level by one and display.
  * then move on to the next question.
  */
-function next_level() {
+function nextLevel() {
   count = 0;
   level++;
-  level_place.innerHTML = `Level ${level}`;
-  sound_name = "clap";
-  sound_effect(sound_name);
-  games_starts();
+  levelPlace.innerHTML = `Level ${level}`;
+  soundName = "clap";
+  soundEffect(soundName);
+  gameStarts();
 }
 
 /**
  * Display Score and Life
  */
-function display_score_life(score, life) {
-  let score_life_place = document.getElementsByClassName("score-level")[0];
-  let score_life_html = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
-  score_life_place.innerHTML = score_life_html;
+function displayScoreLife(score, life) {
+  let scoreLifePlace = document.getElementsByClassName("score-level")[0];
+  let scoreLifeHtml = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
+  scoreLifePlace.innerHTML = scoreLifeHtml;
 }
 
 /**
  *Display game over pop up and audio when game ends
  */
-function game_over() {
+function gameOver() {
   count = 0;
 
-  if (audio_playing == true) {
-    stop_audio();
+  if (audioPlaying == true) {
+    stopAudio();
     //Play audio
-    audio_name = "game-over";
-    play_audio(audio_name);
+    audioName = "game-over";
+    playAudio(audioName);
   }
-  score_memory.push(score);
-  console.log(score_memory);
+  scoreMemory.push(score);
 
   //Display game over card
-  show_game_over();
+  showGameOver();
 
   //home button
-  const home_button = document.getElementsByClassName("home")[0];
-  home_button.addEventListener("click", show_start_Page);
+  const homeButton = document.getElementsByClassName("home")[0];
+  homeButton.addEventListener("click", showStartPageAgain);
 
   //Store the highest score in a local storage
-
   let scoreStorageValue = localStorage.getItem("highestScore");
 
   if (scoreStorageValue < score) {
@@ -364,52 +363,52 @@ function game_over() {
 /**
  * Game over page will be displayed
  */
-function show_game_over() {
-  const your_score = document.getElementsByClassName("your-score")[0];
-  your_score.innerHTML = `Your score is: ${score}`;
-  game_over_page.classList.toggle("game-over-hide");
-  game_page.classList.toggle("game-hide");
+function showGameOver() {
+  const yourScore = document.getElementsByClassName("your-score")[0];
+  yourScore.innerHTML = `Your score is: ${score}`;
+  gameOverPage.classList.toggle("game-over-hide");
+  gamePage.classList.toggle("game-hide");
 }
 
 /**
  * Game over page will be updated to the start page
  */
-function show_start_Page() {
-  if (audio_playing === true) {
-    stop_audio();
-    audio_name = "background-track";
-    play_audio(audio_name);
+function showStartPageAgain() {
+  if (audioPlaying === true) {
+    stopAudio();
+    audioName = "background-track";
+    playAudio(audioName);
   }
 
   //Reset score and life
   score = 0;
   life = 3;
   level = 0;
-  display_score_life(score, life);
-  level_place.innerHTML = `Level ${level}`;
+  displayScoreLife(score, life);
+  levelPlace.innerHTML = `Level ${level}`;
 
   //Show game page and hide start page and sign up button
-  start_page.classList.toggle("start-hide");
-  game_over_page.classList.toggle("game-over-hide");
-  signup_btn.classList.remove("hide");
+  startPage.classList.toggle("start-hide");
+  gameOverPage.classList.toggle("game-over-hide");
+  signupBtn.classList.remove("hide");
 
   //Background changes
-  change_background(size, background_img.type1);
+  changeBackground(size, backgroundImg.type1);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, background_img.type1);
+      changeBackground(size, backgroundImg.type1);
     });
   }
 }
 
 //Score board
 
-let score_table;
+let scoreTable;
 
 /**
  * Display scores on the table
  */
-function show_score_board() {
+function showScoreBoard() {
   //Set a variable of local storage value
   let highestScoreNow;
   if (localStorage.getItem("highestScore") <= 0) {
@@ -418,7 +417,7 @@ function show_score_board() {
     highestScoreNow = localStorage.getItem("highestScore");
   }
 
-  //Display the highest score and a reset highest score button
+  //Display the highest score and a reset all score button
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
@@ -428,10 +427,10 @@ function show_score_board() {
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.appendChild(createHighestScoreDiv);
 
-  score_table = document.createElement("table");
-  score_table.id = "scoreboard";
+  scoreTable = document.createElement("table");
+  scoreTable.id = "scoreboard";
 
-  let score_table_html = `
+  let scoreTableHtml = `
   <thead>
     <tr>
       <td>Attempt</td>
@@ -443,43 +442,43 @@ function show_score_board() {
   <button id="back" class="btn">Back</button> 
   `;
 
-  score_table.innerHTML = score_table_html;
+  scoreTable.innerHTML = scoreTableHtml;
 
-  const score_tbody = score_table.getElementsByTagName("tbody")[0];
+  const scoreTbody = scoreTable.getElementsByTagName("tbody")[0];
 
-  let table_html = "";
-  for (let i = 0; i < score_memory.length; i++) {
-    table_html += `
+  let tableHtml = "";
+  for (let i = 0; i < scoreMemory.length; i++) {
+    tableHtml += `
     <tr>
       <td>Attempt:${i + 1}</td>
-      <td>${score_memory[i]}</td>
+      <td>${scoreMemory[i]}</td>
     </tr>  
   `;
   }
 
-  score_tbody.innerHTML = table_html;
+  scoreTbody.innerHTML = tableHtml;
 
-  const score_place = document.getElementById("score-board");
-  score_place.appendChild(score_table);
+  const scorePlace = document.getElementById("score-board");
+  scorePlace.appendChild(scoreTable);
 
   //Hide signup button and start page
-  start_page.classList.add("start-hide");
-  signup_btn.classList.add("hide");
+  startPage.classList.add("start-hide");
+  signupBtn.classList.add("hide");
 
   /**
    * Remove score table
    */
-  function delete_table() {
+  function deleteTable() {
     //Remove score table and highest score
-    score_table.remove();
+    scoreTable.remove();
     createHighestScoreDiv.remove();
     //Show sign up button and start page
-    start_page.classList.remove("start-hide");
-    signup_btn.classList.remove("hide");
+    startPage.classList.remove("start-hide");
+    signupBtn.classList.remove("hide");
   }
 
-  const back_btn = document.getElementById("back");
-  back_btn.addEventListener("click", delete_table);
+  const backBtn = document.getElementById("back");
+  backBtn.addEventListener("click", deleteTable);
 
   /**
    * Remove the value of highest score in the local storage
@@ -489,18 +488,18 @@ function show_score_board() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn">Reset Highest Score</button>`;
+    <button id="reset" class="btn">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
     //Empty score  memory array and remove display
-    score_memory = [];
-    score_tbody.remove();
+    scoreMemory = [];
+    scoreTbody.remove();
   }
 
   const resetBtn = document.getElementById("reset");
   resetBtn.addEventListener("click", resetHighestScore);
 }
 
-const score_btn = document.getElementsByClassName("score")[0];
-score_btn.addEventListener("click", show_score_board);
+const scoreBtn = document.getElementsByClassName("score")[0];
+scoreBtn.addEventListener("click", showScoreBoard);
