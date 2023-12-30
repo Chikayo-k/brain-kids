@@ -1,4 +1,4 @@
-const signup_btn = document.getElementsByClassName("sign-up-btn")[0];
+const signupBtn = document.getElementsByClassName("sign-up-btn")[0];
 const back_hom_btn = document.getElementsByClassName("back-home")[0];
 const signup_place = document.getElementById("signup");
 const confirmation_place = document.getElementById("confirmation");
@@ -29,7 +29,7 @@ function show_signup_page() {
   startPage.classList.add("start-hide");
 
   //Change the Sign up button to Home button
-  signup_btn.classList.add("hide");
+  signupBtn.classList.add("hide");
   back_hom_btn.classList.remove("hide");
 
   //show signup page after go back to home
@@ -41,13 +41,13 @@ function show_signup_page() {
   submit_form.addEventListener("submit", submit);
 }
 
-signup_btn.addEventListener("click", show_signup_page);
+signupBtn.addEventListener("click", show_signup_page);
 
 /**
  * Go back to the home page from sign up page
  */
 function go_home() {
-  signup_btn.classList.remove("hide");
+  signupBtn.classList.remove("hide");
   back_hom_btn.classList.add("hide");
   signup_place.classList.add("hide");
   startPage.classList.remove("start-hide");

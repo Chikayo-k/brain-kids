@@ -110,7 +110,7 @@ function show_game_Page() {
   startPage.classList.add("start-hide");
 
   //hide signup button
-  signup_btn.classList.add("hide");
+  signupBtn.classList.add("hide");
 
   //Background changes
   change_background(size, backgroundImg.type2);
@@ -349,8 +349,8 @@ function game_over() {
   show_game_over();
 
   //home button
-  const home_button = document.getElementsByClassName("home")[0];
-  home_button.addEventListener("click", show_start_Page);
+  const homeButton = document.getElementsByClassName("home")[0];
+  homeButton.addEventListener("click", show_start_Page);
 
   //Store the highest score in a local storage
   let scoreStorageValue = localStorage.getItem("highestScore");
@@ -364,8 +364,8 @@ function game_over() {
  * Game over page will be displayed
  */
 function show_game_over() {
-  const your_score = document.getElementsByClassName("your-score")[0];
-  your_score.innerHTML = `Your score is: ${score}`;
+  const yourScore = document.getElementsByClassName("your-score")[0];
+  yourScore.innerHTML = `Your score is: ${score}`;
   gameOverPage.classList.toggle("game-over-hide");
   gamePage.classList.toggle("game-hide");
 }
@@ -390,7 +390,7 @@ function show_start_Page() {
   //Show game page and hide start page and sign up button
   startPage.classList.toggle("start-hide");
   gameOverPage.classList.toggle("game-over-hide");
-  signup_btn.classList.remove("hide");
+  signupBtn.classList.remove("hide");
 
   //Background changes
   change_background(size, backgroundImg.type1);
@@ -403,7 +403,7 @@ function show_start_Page() {
 
 //Score board
 
-let score_table;
+let scoreTable;
 
 /**
  * Display scores on the table
@@ -427,10 +427,10 @@ function show_score_board() {
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.appendChild(createHighestScoreDiv);
 
-  score_table = document.createElement("table");
-  score_table.id = "scoreboard";
+  scoreTable = document.createElement("table");
+  scoreTable.id = "scoreboard";
 
-  let score_table_html = `
+  let scoreTableHtml = `
   <thead>
     <tr>
       <td>Attempt</td>
@@ -442,13 +442,13 @@ function show_score_board() {
   <button id="back" class="btn">Back</button> 
   `;
 
-  score_table.innerHTML = score_table_html;
+  scoreTable.innerHTML = scoreTableHtml;
 
-  const score_tbody = score_table.getElementsByTagName("tbody")[0];
+  const scoreTbody = scoreTable.getElementsByTagName("tbody")[0];
 
-  let table_html = "";
+  let tableHtml = "";
   for (let i = 0; i < scoreMemory.length; i++) {
-    table_html += `
+    tableHtml += `
     <tr>
       <td>Attempt:${i + 1}</td>
       <td>${scoreMemory[i]}</td>
@@ -456,29 +456,29 @@ function show_score_board() {
   `;
   }
 
-  score_tbody.innerHTML = table_html;
+  scoreTbody.innerHTML = tableHtml;
 
-  const score_place = document.getElementById("score-board");
-  score_place.appendChild(score_table);
+  const scorePlace = document.getElementById("score-board");
+  scorePlace.appendChild(scoreTable);
 
   //Hide signup button and start page
   startPage.classList.add("start-hide");
-  signup_btn.classList.add("hide");
+  signupBtn.classList.add("hide");
 
   /**
    * Remove score table
    */
   function delete_table() {
     //Remove score table and highest score
-    score_table.remove();
+    scoreTable.remove();
     createHighestScoreDiv.remove();
     //Show sign up button and start page
     startPage.classList.remove("start-hide");
-    signup_btn.classList.remove("hide");
+    signupBtn.classList.remove("hide");
   }
 
-  const back_btn = document.getElementById("back");
-  back_btn.addEventListener("click", delete_table);
+  const backBtn = document.getElementById("back");
+  backBtn.addEventListener("click", delete_table);
 
   /**
    * Remove the value of highest score in the local storage
@@ -494,12 +494,12 @@ function show_score_board() {
 
     //Empty score  memory array and remove display
     scoreMemory = [];
-    score_tbody.remove();
+    scoreTbody.remove();
   }
 
   const resetBtn = document.getElementById("reset");
   resetBtn.addEventListener("click", resetHighestScore);
 }
 
-const score_btn = document.getElementsByClassName("score")[0];
-score_btn.addEventListener("click", show_score_board);
+const scoreBtn = document.getElementsByClassName("score")[0];
+scoreBtn.addEventListener("click", show_score_board);
