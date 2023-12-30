@@ -31,7 +31,7 @@ h2 {
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .btn {
@@ -136,8 +136,8 @@ main {
 }
 
 .game-p {
-  text-align: center;
-  padding: 3% 0;
+  text-align: left;
+  padding: 3%;
 }
 
 .functions {
