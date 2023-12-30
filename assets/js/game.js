@@ -276,7 +276,7 @@ function checkAnswer() {
 }
 
 /**
- *show animation 1.5 seconds
+ *show animation 0.7 seconds
  */
 function animation(name, alt) {
   let displayPlace = document.getElementsByClassName("animation-hide")[0];
