@@ -9,7 +9,7 @@ const backgroundImg = {
 /**
  * Add background image when the screen size is over 576px and remove when not
  */
-function change_background(size, backgroundImg) {
+function changeBackground(size, backgroundImg) {
   if (size.matches) {
     document.body.style.background = backgroundImg;
   } else {
@@ -19,11 +19,11 @@ function change_background(size, backgroundImg) {
 
 const size = window.matchMedia("(min-width: 576px)");
 
-change_background(size, backgroundImg.type1);
+changeBackground(size, backgroundImg.type1);
 
 if (document.URL) {
   size.addEventListener("change", function () {
-    change_background(size, backgroundImg.type1);
+    changeBackground(size, backgroundImg.type1);
   });
 }
 
@@ -38,7 +38,7 @@ let audioPlaying = false;
 /**
  * Play audio
  */
-function play_audio(soundName) {
+function playAudio(soundName) {
   if (audioPlaying === true)
     audio = new Audio(`./assets/audio/${soundName}.mp3`);
   audio.play();
@@ -49,7 +49,7 @@ function play_audio(soundName) {
 /**
  * Stop audio
  */
-function stop_audio() {
+function stopAudio() {
   audio.pause();
   audio.currentTime = 0;
   audioCount = 0;
@@ -61,12 +61,12 @@ if (document.URL) {
     if (audioCount <= 1 && audioPlaying == false) {
       audioPlaying = true;
       audioName = "background-track";
-      play_audio(audioName);
+      playAudio(audioName);
       //Change the speaker icon
       audioButton[0].classList.remove("fa-volume-xmark");
       audioButton[0].classList.add("fa-volume-high");
     } else {
-      stop_audio();
+      stopAudio();
       audioPlaying = false;
       //change the speaker icon
       audioButton[0].classList.remove("fa-volume-high");
@@ -98,12 +98,12 @@ const gameOverPage = document.getElementsByClassName("game-over")[0];
  * Start page will be updated to the game page
  * and game starts
  */
-function show_game_Page() {
+function showGamePage() {
   //Change the background music
   if (audioPlaying == true) {
-    stop_audio();
+    stopAudio();
     audioName = "game-background";
-    play_audio(audioName);
+    playAudio(audioName);
   }
   //Show game page and hide start page
   gamePage.classList.remove("game-hide");
@@ -113,10 +113,10 @@ function show_game_Page() {
   signupBtn.classList.add("hide");
 
   //Background changes
-  change_background(size, backgroundImg.type2);
+  changeBackground(size, backgroundImg.type2);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, backgroundImg.type2);
+      changeBackground(size, backgroundImg.type2);
     });
   }
 
@@ -124,42 +124,42 @@ function show_game_Page() {
   if (!start) {
     levelPlace.innerHTML = `Level ${level}`;
     start = true;
-    games_starts();
-    display_score_life(score, life);
+    gameStarts();
+    displayScoreLife(score, life);
   }
 }
 
-const start_button = document.getElementsByClassName("start-btn")[0];
-start_button.addEventListener("click", show_game_Page);
+const startBtn = document.getElementsByClassName("start-btn")[0];
+startBtn.addEventListener("click", showGamePage);
 
 /**
  * Game stars
  */
-function games_starts() {
+function gameStarts() {
   //  Render additional questions and subtraction questions three times each.
   //  After that the level will increase.
 
-  let num1 = generate_num(level);
-  let num2 = generate_num(level);
+  let num1 = generateNum(level);
+  let num2 = generateNum(level);
 
   if (count < 3) {
-    show_addition(num1, num2);
-    display_options();
+    showAddition(num1, num2);
+    displayOptions();
     answer();
     count++;
   } else if (count < 6) {
-    show_subtraction(num1, num2);
-    display_options();
+    showSubtraction(num1, num2);
+    displayOptions();
     count++;
   } else {
-    next_level();
+    nextLevel();
   }
 }
 
 /**
  * Generate numbers for math quiz
  */
-function generate_num(level) {
+function generateNum(level) {
   let difficulty = 5 * level;
   return (num1 = Math.floor(Math.random() * 10) + difficulty);
 }
@@ -167,7 +167,7 @@ function generate_num(level) {
 /**
  * Display addition question
  */
-function show_addition(num1, num2) {
+function showAddition(num1, num2) {
   document.getElementById("num1").innerHTML = num1;
   document.getElementById("num2").innerHTML = num2;
   document.getElementById("operator").innerHTML = "+";
@@ -176,7 +176,7 @@ function show_addition(num1, num2) {
 /**
  * Display subtraction question
  */
-function show_subtraction(num1, num2) {
+function showSubtraction(num1, num2) {
   document.getElementById("num1").innerHTML = num1 > num2 ? num1 : num2;
   document.getElementById("num2").innerHTML = num2 < num1 ? num2 : num1;
   document.getElementById("operator").innerHTML = "-";
@@ -226,7 +226,7 @@ function option_numbers() {
 /**
  * Display answer options
  */
-function display_options() {
+function displayOptions() {
   let options = option_numbers();
   let optionsHtml = "";
 
@@ -248,7 +248,7 @@ function check_answer() {
     clickedButton[i].addEventListener("click", function () {
       let selected_ans = parseInt(this.innerText);
       if (selected_ans === answerNumber) {
-        games_starts(level);
+        gameStarts(level);
         alt = "a bunny is happy";
         fileName = "bunny";
         animation(fileName, alt);
@@ -257,7 +257,7 @@ function check_answer() {
 
         //Increase the score by one
         score++;
-        display_score_life(score, life);
+        displayScoreLife(score, life);
       } else if (life === 1) {
         game_over();
       } else {
@@ -269,7 +269,7 @@ function check_answer() {
 
         //Decrease the life by one
         life--;
-        display_score_life(score, life);
+        displayScoreLife(score, life);
       }
     });
   }
@@ -313,19 +313,19 @@ function sound_effect(soundName) {
  * Add level by one and display.
  * then move on to the next question.
  */
-function next_level() {
+function nextLevel() {
   count = 0;
   level++;
   levelPlace.innerHTML = `Level ${level}`;
   soundName = "clap";
   sound_effect(soundName);
-  games_starts();
+  gameStarts();
 }
 
 /**
  * Display Score and Life
  */
-function display_score_life(score, life) {
+function displayScoreLife(score, life) {
   let scoreLifePlace = document.getElementsByClassName("score-level")[0];
   let scoreLifeHtml = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
   scoreLifePlace.innerHTML = scoreLifeHtml;
@@ -338,10 +338,10 @@ function game_over() {
   count = 0;
 
   if (audioPlaying == true) {
-    stop_audio();
+    stopAudio();
     //Play audio
     audioName = "game-over";
-    play_audio(audioName);
+    playAudio(audioName);
   }
   scoreMemory.push(score);
 
@@ -375,16 +375,16 @@ function show_game_over() {
  */
 function show_start_Page() {
   if (audioPlaying === true) {
-    stop_audio();
+    stopAudio();
     audioName = "background-track";
-    play_audio(audioName);
+    playAudio(audioName);
   }
 
   //Reset score and life
   score = 0;
   life = 3;
   level = 0;
-  display_score_life(score, life);
+  displayScoreLife(score, life);
   levelPlace.innerHTML = `Level ${level}`;
 
   //Show game page and hide start page and sign up button
@@ -393,10 +393,10 @@ function show_start_Page() {
   signupBtn.classList.remove("hide");
 
   //Background changes
-  change_background(size, backgroundImg.type1);
+  changeBackground(size, backgroundImg.type1);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, backgroundImg.type1);
+      changeBackground(size, backgroundImg.type1);
     });
   }
 }
