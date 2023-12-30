@@ -3,7 +3,7 @@
 // background images storage
 const background_img = {
   type1: `url("./assets/images/star.webp") center center/cover`,
-  type2: `url("./assets/images/puzzle.png") center center/cover`,
+  type2: `url("./assets/images/puzzle.webp") center center/cover`,
 };
 
 /**
