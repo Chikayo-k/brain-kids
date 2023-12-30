@@ -187,15 +187,15 @@ function showSubtraction(num1, num2) {
  */
 function answer() {
   let questionNum1 = parseInt(document.getElementById("num1").innerText);
-  let question_num2 = parseInt(document.getElementById("num2").innerText);
+  let questionNum2 = parseInt(document.getElementById("num2").innerText);
   let operator = document.getElementById("operator").innerText;
   let answer;
 
   if (operator === "+") {
-    answer = questionNum1 + question_num2;
+    answer = questionNum1 + questionNum2;
     return (answerNumber = answer);
   } else if (operator === "-") {
-    answer = questionNum1 - question_num2;
+    answer = questionNum1 - questionNum2;
     return (answerNumber = answer);
   } else {
     alert("something went wrong");
@@ -206,7 +206,7 @@ function answer() {
 /**
  * Generate 3 random numbers plus the correct answer and places in a random position each time
  */
-function option_numbers() {
+function optionNumbers() {
   let correctAnswer = answer();
   let options = [correctAnswer];
 
@@ -227,7 +227,7 @@ function option_numbers() {
  * Display answer options
  */
 function displayOptions() {
-  let options = option_numbers();
+  let options = optionNumbers();
   let optionsHtml = "";
 
   for (let i in options) {
@@ -235,37 +235,37 @@ function displayOptions() {
   }
   document.getElementById("pick-answer").innerHTML = optionsHtml;
 
-  check_answer();
+  checkAnswer();
 }
 
 /**
  * Check if the answer is correct or not and display result
  */
-function check_answer() {
+function checkAnswer() {
   let clickedButton = document.querySelectorAll(".display-answers");
 
   for (let i = 0; i < clickedButton.length; i++) {
     clickedButton[i].addEventListener("click", function () {
-      let selected_ans = parseInt(this.innerText);
-      if (selected_ans === answerNumber) {
+      let selectedAnswer = parseInt(this.innerText);
+      if (selectedAnswer === answerNumber) {
         gameStarts(level);
         alt = "a bunny is happy";
         fileName = "bunny";
         animation(fileName, alt);
         soundName = "correct";
-        sound_effect(soundName);
+        soundEffect(soundName);
 
         //Increase the score by one
         score++;
         displayScoreLife(score, life);
       } else if (life === 1) {
-        game_over();
+        gameOver();
       } else {
         alt = "a bunny is encouraging";
         fileName = "encouraging";
         animation(fileName, alt);
         soundName = "mistake";
-        sound_effect(soundName);
+        soundEffect(soundName);
 
         //Decrease the life by one
         life--;
@@ -301,7 +301,7 @@ function animation(name, alt) {
 /**
  * Play sound effect
  */
-function sound_effect(soundName) {
+function soundEffect(soundName) {
   if (audioPlaying === true) {
     let sound = new Audio(`./assets/audio/${soundName}.mp3`);
     sound.volume = 0.1;
@@ -318,7 +318,7 @@ function nextLevel() {
   level++;
   levelPlace.innerHTML = `Level ${level}`;
   soundName = "clap";
-  sound_effect(soundName);
+  soundEffect(soundName);
   gameStarts();
 }
 
@@ -334,7 +334,7 @@ function displayScoreLife(score, life) {
 /**
  *Display game over pop up and audio when game ends
  */
-function game_over() {
+function gameOver() {
   count = 0;
 
   if (audioPlaying == true) {
@@ -346,7 +346,7 @@ function game_over() {
   scoreMemory.push(score);
 
   //Display game over card
-  show_game_over();
+  show_gameOver();
 
   //home button
   const homeButton = document.getElementsByClassName("home")[0];
@@ -363,7 +363,7 @@ function game_over() {
 /**
  * Game over page will be displayed
  */
-function show_game_over() {
+function show_gameOver() {
   const yourScore = document.getElementsByClassName("your-score")[0];
   yourScore.innerHTML = `Your score is: ${score}`;
   gameOverPage.classList.toggle("game-over-hide");
