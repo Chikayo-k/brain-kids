@@ -186,15 +186,16 @@ function show_subtraction(num1, num2) {
  * Calculate the answer
  */
 function answer() {
-  let question_num1 = parseInt(document.getElementById("num1").innerText);
+  let questionNum1 = parseInt(document.getElementById("num1").innerText);
   let question_num2 = parseInt(document.getElementById("num2").innerText);
   let operator = document.getElementById("operator").innerText;
+  let answer;
 
   if (operator === "+") {
-    let answer = question_num1 + question_num2;
+    answer = questionNum1 + question_num2;
     return (answerNumber = answer);
   } else if (operator === "-") {
-    let answer = question_num1 - question_num2;
+    answer = questionNum1 - question_num2;
     return (answerNumber = answer);
   } else {
     alert("something went wrong");
@@ -206,18 +207,20 @@ function answer() {
  * Generate 3 random numbers plus the correct answer and places in a random position each time
  */
 function option_numbers() {
-  let correct_answer = answer();
-  let options = [correct_answer];
+  let correctAnswer = answer();
+  let options = [correctAnswer];
 
   for (let i = 0; options.length < 4; i++) {
-    const number = Math.floor(Math.random() * 5) + correct_answer;
+    const number = Math.floor(Math.random() * 5) + correctAnswer;
 
     if (!options.includes(number)) {
       options.push(number);
     }
   }
-  let shuffle_options = options.sort(() => Math.random() - 0.5);
-  return shuffle_options;
+  // Shuffling an array
+  //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
+  let shuffleOptions = options.sort(() => Math.random() - 0.5);
+  return shuffleOptions;
 }
 
 /**
@@ -225,12 +228,12 @@ function option_numbers() {
  */
 function display_options() {
   let options = option_numbers();
-  let options_html = "";
+  let optionsHtml = "";
 
   for (let i in options) {
-    options_html += `<div class="display-answers btn">${options[i]}</div>`;
+    optionsHtml += `<div class="display-answers btn">${options[i]}</div>`;
   }
-  document.getElementById("pick-answer").innerHTML = options_html;
+  document.getElementById("pick-answer").innerHTML = optionsHtml;
 
   check_answer();
 }
@@ -239,10 +242,10 @@ function display_options() {
  * Check if the answer is correct or not and display result
  */
 function check_answer() {
-  let clicked_button = document.querySelectorAll(".display-answers");
+  let clickedButton = document.querySelectorAll(".display-answers");
 
-  for (let i = 0; i < clicked_button.length; i++) {
-    clicked_button[i].addEventListener("click", function () {
+  for (let i = 0; i < clickedButton.length; i++) {
+    clickedButton[i].addEventListener("click", function () {
       let selected_ans = parseInt(this.innerText);
       if (selected_ans === answerNumber) {
         games_starts(level);
@@ -276,16 +279,16 @@ function check_answer() {
  *show animation 1.5 seconds
  */
 function animation(name, alt) {
-  let display_place = document.getElementsByClassName("animation-hide")[0];
-  let animation_html = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
+  let displayPlace = document.getElementsByClassName("animation-hide")[0];
+  let animationHtml = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
 
   try {
-    display_place.innerHTML = animation_html;
+    displayPlace.innerHTML = animationHtml;
 
-    display_place.classList.remove("animation-hide");
+    displayPlace.classList.remove("animation-hide");
 
     setTimeout(function () {
-      display_place.classList.add("animation-hide");
+      displayPlace.classList.add("animation-hide");
     }, 700);
   } catch (err) {
     //Gets an error message if you click answer before the animation displaying beforehand has gone
@@ -323,9 +326,9 @@ function next_level() {
  * Display Score and Life
  */
 function display_score_life(score, life) {
-  let score_life_place = document.getElementsByClassName("score-level")[0];
-  let score_life_html = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
-  score_life_place.innerHTML = score_life_html;
+  let scoreLifePlace = document.getElementsByClassName("score-level")[0];
+  let scoreLifeHtml = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
+  scoreLifePlace.innerHTML = scoreLifeHtml;
 }
 
 /**
