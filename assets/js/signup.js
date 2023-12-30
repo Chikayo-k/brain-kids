@@ -6,7 +6,7 @@ const confirmationPlace = document.getElementById("confirmation");
 /**
  * Show  Sign up page and hide different pages
  */
-function show_signup_page() {
+function showSignUpPage() {
   const signupFormHtml = `
 <h2 class="signup-title">Sign Up</h2>
 <p class="signup-p">Thank you very much for visiting Brain Kids.<br>
@@ -41,7 +41,7 @@ function show_signup_page() {
   submitForm.addEventListener("submit", submit);
 }
 
-signupBtn.addEventListener("click", show_signup_page);
+signupBtn.addEventListener("click", showSignUpPage);
 
 /**
  * Go back to the home page from sign up page

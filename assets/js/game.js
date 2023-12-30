@@ -346,11 +346,11 @@ function gameOver() {
   scoreMemory.push(score);
 
   //Display game over card
-  show_gameOver();
+  showGameOver();
 
   //home button
   const homeButton = document.getElementsByClassName("home")[0];
-  homeButton.addEventListener("click", show_start_Page);
+  homeButton.addEventListener("click", showStartPageAgain);
 
   //Store the highest score in a local storage
   let scoreStorageValue = localStorage.getItem("highestScore");
@@ -363,7 +363,7 @@ function gameOver() {
 /**
  * Game over page will be displayed
  */
-function show_gameOver() {
+function showGameOver() {
   const yourScore = document.getElementsByClassName("your-score")[0];
   yourScore.innerHTML = `Your score is: ${score}`;
   gameOverPage.classList.toggle("game-over-hide");
@@ -373,7 +373,7 @@ function show_gameOver() {
 /**
  * Game over page will be updated to the start page
  */
-function show_start_Page() {
+function showStartPageAgain() {
   if (audioPlaying === true) {
     stopAudio();
     audioName = "background-track";
@@ -408,7 +408,7 @@ let scoreTable;
 /**
  * Display scores on the table
  */
-function show_score_board() {
+function showScoreBoard() {
   //Set a variable of local storage value
   let highestScoreNow;
   if (localStorage.getItem("highestScore") <= 0) {
@@ -468,7 +468,7 @@ function show_score_board() {
   /**
    * Remove score table
    */
-  function delete_table() {
+  function deleteTable() {
     //Remove score table and highest score
     scoreTable.remove();
     createHighestScoreDiv.remove();
@@ -478,7 +478,7 @@ function show_score_board() {
   }
 
   const backBtn = document.getElementById("back");
-  backBtn.addEventListener("click", delete_table);
+  backBtn.addEventListener("click", deleteTable);
 
   /**
    * Remove the value of highest score in the local storage
@@ -502,4 +502,4 @@ function show_score_board() {
 }
 
 const scoreBtn = document.getElementsByClassName("score")[0];
-scoreBtn.addEventListener("click", show_score_board);
+scoreBtn.addEventListener("click", showScoreBoard);
