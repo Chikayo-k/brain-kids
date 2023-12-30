@@ -4,7 +4,7 @@ const signupPlace = document.getElementById("signup");
 const confirmationPlace = document.getElementById("confirmation");
 
 /**
- * Show  Sign up page and hide different pages
+ * Show Sign up page and hide different pages
  */
 function showSignUpPage() {
   const signupFormHtml = `

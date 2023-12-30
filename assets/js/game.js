@@ -417,7 +417,7 @@ function showScoreBoard() {
     highestScoreNow = localStorage.getItem("highestScore");
   }
 
-  //Display the highest score and a reset highest score button
+  //Display the highest score and a reset all score button
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
@@ -488,7 +488,7 @@ function showScoreBoard() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn">Reset Highest Score</button>`;
+    <button id="reset" class="btn">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
