@@ -1,7 +1,7 @@
 "use strict";
 
 // background images storage
-const background_img = {
+const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
   type2: `url("./assets/images/puzzle.webp") center center/cover`,
 };
@@ -9,9 +9,9 @@ const background_img = {
 /**
  * Add background image when the screen size is over 576px and remove when not
  */
-function change_background(size, background_img) {
+function change_background(size, backgroundImg) {
   if (size.matches) {
-    document.body.style.background = background_img;
+    document.body.style.background = backgroundImg;
   } else {
     document.body.style.background = "none";
   }
@@ -19,28 +19,28 @@ function change_background(size, background_img) {
 
 const size = window.matchMedia("(min-width: 576px)");
 
-change_background(size, background_img.type1);
+change_background(size, backgroundImg.type1);
 
 if (document.URL) {
   size.addEventListener("change", function () {
-    change_background(size, background_img.type1);
+    change_background(size, backgroundImg.type1);
   });
 }
 
 //Set the sound button functionality
 
-let audio_button = document.getElementsByClassName("sound");
-let audio_count = 0;
+let audioButton = document.getElementsByClassName("sound");
+let audioCount = 0;
 let audio;
-let audio_name;
-let audio_playing = false;
+let audioName;
+let audioPlaying = false;
 
 /**
  * Play audio
  */
-function play_audio(sound_name) {
-  if (audio_playing === true)
-    audio = new Audio(`./assets/audio/${sound_name}.mp3`);
+function play_audio(soundName) {
+  if (audioPlaying === true)
+    audio = new Audio(`./assets/audio/${soundName}.mp3`);
   audio.play();
   audio.loop = true;
   audio.volume = 0.08;
@@ -52,25 +52,25 @@ function play_audio(sound_name) {
 function stop_audio() {
   audio.pause();
   audio.currentTime = 0;
-  audio_count = 0;
+  audioCount = 0;
 }
 
 if (document.URL) {
-  audio_button[0].addEventListener("click", function () {
-    audio_count++;
-    if (audio_count <= 1 && audio_playing == false) {
-      audio_playing = true;
-      audio_name = "background-track";
-      play_audio(audio_name);
+  audioButton[0].addEventListener("click", function () {
+    audioCount++;
+    if (audioCount <= 1 && audioPlaying == false) {
+      audioPlaying = true;
+      audioName = "background-track";
+      play_audio(audioName);
       //Change the speaker icon
-      audio_button[0].classList.remove("fa-volume-xmark");
-      audio_button[0].classList.add("fa-volume-high");
+      audioButton[0].classList.remove("fa-volume-xmark");
+      audioButton[0].classList.add("fa-volume-high");
     } else {
       stop_audio();
-      audio_playing = false;
+      audioPlaying = false;
       //change the speaker icon
-      audio_button[0].classList.remove("fa-volume-high");
-      audio_button[0].classList.add("fa-volume-xmark");
+      audioButton[0].classList.remove("fa-volume-high");
+      audioButton[0].classList.add("fa-volume-xmark");
     }
   });
 }
@@ -81,16 +81,16 @@ let level = 0;
 let num1;
 let count = 0;
 let score = 0;
-let file_name;
-let sound_name;
+let fileName;
+let soundName;
 let alt;
-let score_memory = [];
+let scoreMemory = [];
 let life = 3;
-let answer_number;
-let level_place = document.getElementsByClassName("level")[0];
-const game_page = document.getElementsByClassName("game")[0];
-const start_page = document.getElementsByClassName("start-page")[0];
-const game_over_page = document.getElementsByClassName("game-over")[0];
+let answerNumber;
+let levelPlace = document.getElementsByClassName("level")[0];
+const gamePage = document.getElementsByClassName("game")[0];
+const startPage = document.getElementsByClassName("start-page")[0];
+const gameOverPage = document.getElementsByClassName("game-over")[0];
 
 //Start button functionality
 
@@ -100,29 +100,29 @@ const game_over_page = document.getElementsByClassName("game-over")[0];
  */
 function show_game_Page() {
   //Change the background music
-  if (audio_playing == true) {
+  if (audioPlaying == true) {
     stop_audio();
-    audio_name = "game-background";
-    play_audio(audio_name);
+    audioName = "game-background";
+    play_audio(audioName);
   }
   //Show game page and hide start page
-  game_page.classList.remove("game-hide");
-  start_page.classList.add("start-hide");
+  gamePage.classList.remove("game-hide");
+  startPage.classList.add("start-hide");
 
   //hide signup button
   signup_btn.classList.add("hide");
 
   //Background changes
-  change_background(size, background_img.type2);
+  change_background(size, backgroundImg.type2);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, background_img.type2);
+      change_background(size, backgroundImg.type2);
     });
   }
 
   //Start game settings
   if (!start) {
-    level_place.innerHTML = `Level ${level}`;
+    levelPlace.innerHTML = `Level ${level}`;
     start = true;
     games_starts();
     display_score_life(score, life);
@@ -192,10 +192,10 @@ function answer() {
 
   if (operator === "+") {
     let answer = question_num1 + question_num2;
-    return (answer_number = answer);
+    return (answerNumber = answer);
   } else if (operator === "-") {
     let answer = question_num1 - question_num2;
-    return (answer_number = answer);
+    return (answerNumber = answer);
   } else {
     alert("something went wrong");
     throw "something went wrong";
@@ -244,13 +244,13 @@ function check_answer() {
   for (let i = 0; i < clicked_button.length; i++) {
     clicked_button[i].addEventListener("click", function () {
       let selected_ans = parseInt(this.innerText);
-      if (selected_ans === answer_number) {
+      if (selected_ans === answerNumber) {
         games_starts(level);
         alt = "a bunny is happy";
-        file_name = "bunny";
-        animation(file_name, alt);
-        sound_name = "correct";
-        sound_effect(sound_name);
+        fileName = "bunny";
+        animation(fileName, alt);
+        soundName = "correct";
+        sound_effect(soundName);
 
         //Increase the score by one
         score++;
@@ -259,10 +259,10 @@ function check_answer() {
         game_over();
       } else {
         alt = "a bunny is encouraging";
-        file_name = "encouraging";
-        animation(file_name, alt);
-        sound_name = "mistake";
-        sound_effect(sound_name);
+        fileName = "encouraging";
+        animation(fileName, alt);
+        soundName = "mistake";
+        sound_effect(soundName);
 
         //Decrease the life by one
         life--;
@@ -298,9 +298,9 @@ function animation(name, alt) {
 /**
  * Play sound effect
  */
-function sound_effect(sound_name) {
-  if (audio_playing === true) {
-    let sound = new Audio(`./assets/audio/${sound_name}.mp3`);
+function sound_effect(soundName) {
+  if (audioPlaying === true) {
+    let sound = new Audio(`./assets/audio/${soundName}.mp3`);
     sound.volume = 0.1;
     sound.play();
   }
@@ -313,9 +313,9 @@ function sound_effect(sound_name) {
 function next_level() {
   count = 0;
   level++;
-  level_place.innerHTML = `Level ${level}`;
-  sound_name = "clap";
-  sound_effect(sound_name);
+  levelPlace.innerHTML = `Level ${level}`;
+  soundName = "clap";
+  sound_effect(soundName);
   games_starts();
 }
 
@@ -334,13 +334,13 @@ function display_score_life(score, life) {
 function game_over() {
   count = 0;
 
-  if (audio_playing == true) {
+  if (audioPlaying == true) {
     stop_audio();
     //Play audio
-    audio_name = "game-over";
-    play_audio(audio_name);
+    audioName = "game-over";
+    play_audio(audioName);
   }
-  score_memory.push(score);
+  scoreMemory.push(score);
 
   //Display game over card
   show_game_over();
@@ -363,18 +363,18 @@ function game_over() {
 function show_game_over() {
   const your_score = document.getElementsByClassName("your-score")[0];
   your_score.innerHTML = `Your score is: ${score}`;
-  game_over_page.classList.toggle("game-over-hide");
-  game_page.classList.toggle("game-hide");
+  gameOverPage.classList.toggle("game-over-hide");
+  gamePage.classList.toggle("game-hide");
 }
 
 /**
  * Game over page will be updated to the start page
  */
 function show_start_Page() {
-  if (audio_playing === true) {
+  if (audioPlaying === true) {
     stop_audio();
-    audio_name = "background-track";
-    play_audio(audio_name);
+    audioName = "background-track";
+    play_audio(audioName);
   }
 
   //Reset score and life
@@ -382,18 +382,18 @@ function show_start_Page() {
   life = 3;
   level = 0;
   display_score_life(score, life);
-  level_place.innerHTML = `Level ${level}`;
+  levelPlace.innerHTML = `Level ${level}`;
 
   //Show game page and hide start page and sign up button
-  start_page.classList.toggle("start-hide");
-  game_over_page.classList.toggle("game-over-hide");
+  startPage.classList.toggle("start-hide");
+  gameOverPage.classList.toggle("game-over-hide");
   signup_btn.classList.remove("hide");
 
   //Background changes
-  change_background(size, background_img.type1);
+  change_background(size, backgroundImg.type1);
   if (document.URL) {
     size.addEventListener("change", function () {
-      change_background(size, background_img.type1);
+      change_background(size, backgroundImg.type1);
     });
   }
 }
@@ -444,11 +444,11 @@ function show_score_board() {
   const score_tbody = score_table.getElementsByTagName("tbody")[0];
 
   let table_html = "";
-  for (let i = 0; i < score_memory.length; i++) {
+  for (let i = 0; i < scoreMemory.length; i++) {
     table_html += `
     <tr>
       <td>Attempt:${i + 1}</td>
-      <td>${score_memory[i]}</td>
+      <td>${scoreMemory[i]}</td>
     </tr>  
   `;
   }
@@ -459,7 +459,7 @@ function show_score_board() {
   score_place.appendChild(score_table);
 
   //Hide signup button and start page
-  start_page.classList.add("start-hide");
+  startPage.classList.add("start-hide");
   signup_btn.classList.add("hide");
 
   /**
@@ -470,7 +470,7 @@ function show_score_board() {
     score_table.remove();
     createHighestScoreDiv.remove();
     //Show sign up button and start page
-    start_page.classList.remove("start-hide");
+    startPage.classList.remove("start-hide");
     signup_btn.classList.remove("hide");
   }
 
@@ -490,7 +490,7 @@ function show_score_board() {
     highestScorePlace.appendChild(createHighestScoreDiv);
 
     //Empty score  memory array and remove display
-    score_memory = [];
+    scoreMemory = [];
     score_tbody.remove();
   }
 

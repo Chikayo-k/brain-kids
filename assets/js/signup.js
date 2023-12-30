@@ -26,7 +26,7 @@ function show_signup_page() {
   signup_place.innerHTML = signup_form_html;
 
   //hide game start page
-  start_page.classList.add("start-hide");
+  startPage.classList.add("start-hide");
 
   //Change the Sign up button to Home button
   signup_btn.classList.add("hide");
@@ -50,7 +50,7 @@ function go_home() {
   signup_btn.classList.remove("hide");
   back_hom_btn.classList.add("hide");
   signup_place.classList.add("hide");
-  start_page.classList.remove("start-hide");
+  startPage.classList.remove("start-hide");
 }
 
 back_hom_btn.addEventListener("click", go_home);
@@ -81,7 +81,7 @@ function submit(event) {
    * Go back to the home page from successful message page
    */
   function goHomeSuc() {
-    start_page.classList.remove("start-hide");
+    startPage.classList.remove("start-hide");
     confirmation_place.classList.add("hide");
   }
 
