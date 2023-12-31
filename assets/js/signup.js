@@ -1,3 +1,5 @@
+// jshint esversion: 6
+
 const signupBtn = document.getElementsByClassName("sign-up-btn")[0];
 const backHomeBtn = document.getElementsByClassName("back-home")[0];
 const signupPlace = document.getElementById("signup");

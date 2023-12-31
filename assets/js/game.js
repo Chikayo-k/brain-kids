@@ -1,3 +1,4 @@
+// jshint esversion: 6
 // background images storage
 const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
