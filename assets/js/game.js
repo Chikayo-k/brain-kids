@@ -299,6 +299,15 @@ function animation(name, alt) {
 }
 
 /**
+ * Change colour of the text
+ */
+function wordStandOut(word) {
+  word.classList.add("change-colour");
+  setTimeout(function () {
+    word.classList.remove("change-colour");
+  }, 1000);
+}
+/**
  * Play sound effect
  */
 function soundEffect(soundName) {
@@ -319,7 +328,7 @@ function nextLevel() {
   levelPlace.innerHTML = `Level ${level}`;
   soundName = "clap";
   soundEffect(soundName);
-  gameStarts();
+  wordStandOut(levelPlace);
 }
 
 /**
@@ -336,6 +345,7 @@ function displayScoreLife(score, life) {
  */
 function gameOver() {
   count = 0;
+  start = false;
 
   if (audioPlaying == true) {
     stopAudio();
@@ -384,6 +394,7 @@ function showStartPageAgain() {
   score = 0;
   life = 3;
   level = 0;
+
   displayScoreLife(score, life);
   levelPlace.innerHTML = `Level ${level}`;
 
