@@ -197,9 +197,6 @@ function answer() {
   } else if (operator === "-") {
     answer = questionNum1 - questionNum2;
     return (answerNumber = answer);
-  } else {
-    alert("something went wrong");
-    throw "something went wrong";
   }
 }
 
@@ -294,9 +291,6 @@ function animation(name, alt) {
     }, 700);
   } catch (err) {
     //Gets an error message if you click answer before the animation displaying beforehand has gone
-    console.log(
-      "Error: Due to clicking the new answer before the animation has finished"
-    );
   }
 }
 
