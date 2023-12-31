@@ -1,5 +1,4 @@
-"use strict";
-
+// jshint esversion: 6
 // background images storage
 const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
@@ -28,7 +27,6 @@ if (document.URL) {
 }
 
 //Set the sound button functionality
-
 let audioButton = document.getElementsByClassName("sound");
 let audioCount = 0;
 let audio;
@@ -39,11 +37,12 @@ let audioPlaying = false;
  * Play audio
  */
 function playAudio(soundName) {
-  if (audioPlaying === true)
+  if (audioPlaying === true) {
     audio = new Audio(`./assets/audio/${soundName}.mp3`);
-  audio.play();
-  audio.loop = true;
-  audio.volume = 0.08;
+    audio.play();
+    audio.loop = true;
+    audio.volume = 0.08;
+  }
 }
 
 /**
@@ -87,7 +86,7 @@ let alt;
 let scoreMemory = [];
 let life = 3;
 let answerNumber;
-let levelPlace = document.getElementsByClassName("level")[0];
+const levelPlace = document.getElementsByClassName("level")[0];
 const gamePage = document.getElementsByClassName("game")[0];
 const startPage = document.getElementsByClassName("start-page")[0];
 const gameOverPage = document.getElementsByClassName("game-over")[0];
@@ -142,16 +141,18 @@ function gameStarts() {
   let num1 = generateNum(level);
   let num2 = generateNum(level);
 
-  if (count < 3) {
+  if (count <= 2) {
     showAddition(num1, num2);
     displayOptions();
     answer();
     count++;
-  } else if (count < 6) {
+  } else if (count <= 4) {
     showSubtraction(num1, num2);
     displayOptions();
     count++;
   } else {
+    showSubtraction(num1, num2);
+    displayOptions();
     nextLevel();
   }
 }
@@ -197,9 +198,6 @@ function answer() {
   } else if (operator === "-") {
     answer = questionNum1 - questionNum2;
     return (answerNumber = answer);
-  } else {
-    alert("something went wrong");
-    throw "something went wrong";
   }
 }
 
@@ -217,7 +215,7 @@ function optionNumbers() {
       options.push(number);
     }
   }
-  // Shuffling an array
+  //Shuffling an array
   //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
   let shuffleOptions = options.sort(() => Math.random() - 0.5);
   return shuffleOptions;
@@ -230,7 +228,7 @@ function displayOptions() {
   let options = optionNumbers();
   let optionsHtml = "";
 
-  for (let i in options) {
+  for (let i = 0; i < options.length; i++) {
     optionsHtml += `<div class="display-answers btn">${options[i]}</div>`;
   }
   document.getElementById("pick-answer").innerHTML = optionsHtml;
@@ -238,15 +236,17 @@ function displayOptions() {
   checkAnswer();
 }
 
+let selectedAnswer;
+
 /**
  * Check if the answer is correct or not and display result
  */
 function checkAnswer() {
-  let clickedButton = document.querySelectorAll(".display-answers");
+  const clickedButton = document.querySelectorAll(".display-answers");
 
   for (let i = 0; i < clickedButton.length; i++) {
     clickedButton[i].addEventListener("click", function () {
-      let selectedAnswer = parseInt(this.innerText);
+      selectedAnswer = parseInt(this.innerText);
       if (selectedAnswer === answerNumber) {
         gameStarts(level);
         alt = "a bunny is happy";
@@ -279,7 +279,7 @@ function checkAnswer() {
  *show animation 0.7 seconds
  */
 function animation(name, alt) {
-  let displayPlace = document.getElementsByClassName("animation-hide")[0];
+  const displayPlace = document.getElementsByClassName("animation-hide")[0];
   let animationHtml = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
 
   try {
@@ -292,12 +292,18 @@ function animation(name, alt) {
     }, 700);
   } catch (err) {
     //Gets an error message if you click answer before the animation displaying beforehand has gone
-    console.log(
-      "Error: Due to clicking the new answer before the animation has finished"
-    );
   }
 }
 
+/**
+ * Change colour of the text
+ */
+function wordStandOut(word) {
+  word.classList.add("change-colour");
+  setTimeout(function () {
+    word.classList.remove("change-colour");
+  }, 1000);
+}
 /**
  * Play sound effect
  */
@@ -319,14 +325,14 @@ function nextLevel() {
   levelPlace.innerHTML = `Level ${level}`;
   soundName = "clap";
   soundEffect(soundName);
-  gameStarts();
+  wordStandOut(levelPlace);
 }
 
 /**
  * Display Score and Life
  */
 function displayScoreLife(score, life) {
-  let scoreLifePlace = document.getElementsByClassName("score-level")[0];
+  const scoreLifePlace = document.getElementsByClassName("score-level")[0];
   let scoreLifeHtml = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
   scoreLifePlace.innerHTML = scoreLifeHtml;
 }
@@ -336,6 +342,7 @@ function displayScoreLife(score, life) {
  */
 function gameOver() {
   count = 0;
+  start = false;
 
   if (audioPlaying == true) {
     stopAudio();
@@ -384,6 +391,7 @@ function showStartPageAgain() {
   score = 0;
   life = 3;
   level = 0;
+
   displayScoreLife(score, life);
   levelPlace.innerHTML = `Level ${level}`;
 
@@ -421,7 +429,7 @@ function showScoreBoard() {
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-                                     <button id="reset" class="btn">Reset All</button>
+                                     <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
                                     `;
 
   const highestScorePlace = document.getElementById("highest-score");
@@ -439,7 +447,7 @@ function showScoreBoard() {
   </thead>
   <tbody>
   <tbody>    
-  <button id="back" class="btn">Back</button> 
+  <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
   `;
 
   scoreTable.innerHTML = scoreTableHtml;
@@ -488,7 +496,7 @@ function showScoreBoard() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn">Reset All</button>`;
+    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
