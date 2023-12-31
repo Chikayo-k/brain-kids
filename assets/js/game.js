@@ -142,16 +142,18 @@ function gameStarts() {
   let num1 = generateNum(level);
   let num2 = generateNum(level);
 
-  if (count < 3) {
+  if (count <= 2) {
     showAddition(num1, num2);
     displayOptions();
     answer();
     count++;
-  } else if (count < 6) {
+  } else if (count <= 4) {
     showSubtraction(num1, num2);
     displayOptions();
     count++;
   } else {
+    showSubtraction(num1, num2);
+    displayOptions();
     nextLevel();
   }
 }
