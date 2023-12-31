@@ -219,7 +219,7 @@ function optionNumbers() {
       options.push(number);
     }
   }
-  // Shuffling an array
+  //Shuffling an array
   //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
   let shuffleOptions = options.sort(() => Math.random() - 0.5);
   return shuffleOptions;
