@@ -62,6 +62,7 @@ p {
 header {
   margin: 2%;
 }
+
 .header-div {
   display: flex;
   justify-content: space-between;
