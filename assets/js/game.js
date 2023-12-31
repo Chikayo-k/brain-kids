@@ -85,7 +85,7 @@ let alt;
 let scoreMemory = [];
 let life = 3;
 let answerNumber;
-let levelPlace = document.getElementsByClassName("level")[0];
+const levelPlace = document.getElementsByClassName("level")[0];
 const gamePage = document.getElementsByClassName("game")[0];
 const startPage = document.getElementsByClassName("start-page")[0];
 const gameOverPage = document.getElementsByClassName("game-over")[0];
@@ -241,7 +241,7 @@ let selectedAnswer;
  * Check if the answer is correct or not and display result
  */
 function checkAnswer() {
-  let clickedButton = document.querySelectorAll(".display-answers");
+  const clickedButton = document.querySelectorAll(".display-answers");
 
   for (let i = 0; i < clickedButton.length; i++) {
     clickedButton[i].addEventListener("click", function () {
@@ -278,7 +278,7 @@ function checkAnswer() {
  *show animation 0.7 seconds
  */
 function animation(name, alt) {
-  let displayPlace = document.getElementsByClassName("animation-hide")[0];
+  const displayPlace = document.getElementsByClassName("animation-hide")[0];
   let animationHtml = ` <img src="./assets/images/${name}.webp" alt="${alt}">`;
 
   try {
@@ -331,7 +331,7 @@ function nextLevel() {
  * Display Score and Life
  */
 function displayScoreLife(score, life) {
-  let scoreLifePlace = document.getElementsByClassName("score-level")[0];
+  const scoreLifePlace = document.getElementsByClassName("score-level")[0];
   let scoreLifeHtml = `<p>Score: ${score}</p><p>Life: ${life}</p>`;
   scoreLifePlace.innerHTML = scoreLifeHtml;
 }
