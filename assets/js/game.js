@@ -27,7 +27,6 @@ if (document.URL) {
 }
 
 //Set the sound button functionality
-
 let audioButton = document.getElementsByClassName("sound");
 let audioCount = 0;
 let audio;
@@ -38,11 +37,12 @@ let audioPlaying = false;
  * Play audio
  */
 function playAudio(soundName) {
-  if (audioPlaying === true)
+  if (audioPlaying === true) {
     audio = new Audio(`./assets/audio/${soundName}.mp3`);
-  audio.play();
-  audio.loop = true;
-  audio.volume = 0.08;
+    audio.play();
+    audio.loop = true;
+    audio.volume = 0.08;
+  }
 }
 
 /**
