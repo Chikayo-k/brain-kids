@@ -1,5 +1,3 @@
-"use strict";
-
 // background images storage
 const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
@@ -232,13 +230,15 @@ function displayOptions() {
   let options = optionNumbers();
   let optionsHtml = "";
 
-  for (let i in options) {
+  for (let i = 0; i < options.length; i++) {
     optionsHtml += `<div class="display-answers btn">${options[i]}</div>`;
   }
   document.getElementById("pick-answer").innerHTML = optionsHtml;
 
   checkAnswer();
 }
+
+let selectedAnswer;
 
 /**
  * Check if the answer is correct or not and display result
@@ -248,7 +248,7 @@ function checkAnswer() {
 
   for (let i = 0; i < clickedButton.length; i++) {
     clickedButton[i].addEventListener("click", function () {
-      let selectedAnswer = parseInt(this.innerText);
+      selectedAnswer = parseInt(this.innerText);
       if (selectedAnswer === answerNumber) {
         gameStarts(level);
         alt = "a bunny is happy";
