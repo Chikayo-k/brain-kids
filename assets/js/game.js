@@ -434,7 +434,7 @@ function showScoreBoard() {
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-                                     <button id="reset" class="btn">Reset All</button>
+                                     <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
                                     `;
 
   const highestScorePlace = document.getElementById("highest-score");
@@ -452,7 +452,7 @@ function showScoreBoard() {
   </thead>
   <tbody>
   <tbody>    
-  <button id="back" class="btn">Back</button> 
+  <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
   `;
 
   scoreTable.innerHTML = scoreTableHtml;
@@ -501,7 +501,7 @@ function showScoreBoard() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn">Reset All</button>`;
+    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
