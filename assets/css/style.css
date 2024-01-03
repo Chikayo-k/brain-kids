@@ -331,8 +331,8 @@ footer a {
 }
 
 #reset {
-  margin: 5% 0;
-  padding: 1%;
+  margin: 10%;
+  padding: 5%;
   border: none;
   background-color: #e03306;
   color: white;
@@ -366,7 +366,7 @@ td {
 
 #back {
   margin: 10% 0 10% 50%;
-  padding: 5%;
+  padding: 10%;
   width: 100%;
   border: none;
   color: white;
@@ -472,6 +472,10 @@ td {
 
   /*--- Score board ---*/
 
+  #reset {
+    padding: 3%;
+  }
+
   #highest-div {
     flex-direction: row;
   }
@@ -482,6 +486,14 @@ td {
 @media screen and (min-width: 768px) {
   footer a {
     padding: 2% 5%;
+  }
+
+  #back {
+    padding: 5%;
+  }
+
+  #reset {
+    padding: 1.5%;
   }
 }
 
