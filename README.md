@@ -98,3 +98,48 @@ Social media icon colours are referenced from the [U.S BRAND COLOURS](https://us
 The Afacad font style was chosen for this website. It is clear and easy to read. [Google fonts: Afacad](https://fonts.google.com/specimen/Afacad)
 
 ![Font style image](./assets/docs/design/font-style.png)
+
+## Structure
+
+The structure implemented for this project is a single HTML page that provides different pages.
+The top of the page allows the user to access the game page, audio control that can be turned on and off, scoreboard and sign-up page. There are social media icons on the footer to promote this website in the future and allow users to give us feedback or ask questions. The logo has an anchor tag that can lead you to the start game page.
+
+- Game
+
+  The Start Game button will display the actual game screen so that the
+  user can play the game.
+
+- Game Over
+
+  Letting users know that the game is over and shows the score they have
+  gained. The home button will access the game start page.
+
+- Score
+
+  Provide the highest score and the previous attempt scores. The back
+  button has access to go back to the start game page
+
+- Sign Up
+
+  Sign-up allows users to get notifications of upcoming games. after the
+  form is filled out and the subscription button is pressed, it leads to a
+  success message to give users feedback on their sign-up
+
+### Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+### Frameworks
+
+- [Font Awesome](https://fontawesome.com/icons)
+- [Google Fonts](https://fonts.google.com/)
+- [Favicon](https://fonts.google.com/)
+
+### Tools
+
+- GitHub
+- Visual Studio Code
+- Photoshop
+- Illustrator
