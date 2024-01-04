@@ -143,3 +143,33 @@ The top of the page allows the user to access the game page, audio control that 
 - Visual Studio Code
 - Photoshop
 - Illustrator
+
+## Features
+
+### Header
+
+-     The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website.  The sign-up button leads to the sign-up page
+
+The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
+
+Desktop
+
+[Header(Desktop) image](./assets/docs/features/header-desktop.png)
+
+Mobile
+
+![Header(Mobile) image](./assets/docs/features/header-mobile.png)
+
+### Top main page
+
+- The introduction section explains to users what this game is like and explains how to play
+- The start button is clearly shown on the screen to start the game
+- An audio icon button that can be turned on and off as the user clicks it. When the button is clicked the audio icon will change to show the status of the audio.
+- A score button to show the scoreboard
+- The image uses children playing with an abacus which gives users the understanding this game is related to mathematics for children
+
+This section provides users with an understanding of the aim of the game. The audio button benefits users by having controls for the sound. To place the score button just under the start button, the user will see that there is a scoreboard feature. They can check their progress between games. With the big red standout start button, users can see at a glance where the start button is to start this game.
+
+![Main page (Desktop) image](./assets/docs/features/main-desktop.png)
+![Main page (Mobile) image](./assets/docs/features/main-mobile.png)
+![Sound on image](./assets/docs/features/sound-on.png)
