@@ -196,3 +196,14 @@ When the audio is on sound effects give the users the same feedback.
 [Correct bunny image](./assets/docs/features/bunny-correct.png)
 
 [Wrong bunny image](./assets/docs/features/bunny-wrong.png)
+
+### Game Over
+
+- Show the message “Game Over” on the screen and the score the user has gained for this attempt under it.
+- The home button is to go back to the main page where you can start the game again as well as access the other pages.
+
+This provides the user with clear feedback that the game is over. By checking the score user can confirm how many questions they answered correctly in this attempt. The red background Home button is a clear navigation for the user to go back to the main page where they have access to do the game again, check the score, change the audio setting or sign up for a subscription.
+
+![Game over (Desktop) image](./assets/docs/features/gameover-desktop.png)
+
+[Game over (Mobile) image](./assets/docs/features/gameover-mobile.png)
