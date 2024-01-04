@@ -246,3 +246,13 @@ This benefits users by letting them know that the form is successfully submitted
 ![Success message (Desktop) image](./assets/docs/features/success-desktop.png)
 
 [Success message (Mobile) image](./assets/docs/features/success-mobile.png)
+
+### Footer
+
+- Three social media icons are on the footer this allows users to give feedback on this website or game. They also inform people of news like upcoming games or updating the website.
+
+This benefits users by informing us of feedback and also showing how we can be contacted.
+
+![Footer (Desktop) image](./assets/docs/features/footer-desktop.png)
+
+[Footer (Mobile) image](./assets/docs/features/footer-mobile.png)
