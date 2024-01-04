@@ -207,3 +207,17 @@ This provides the user with clear feedback that the game is over. By checking th
 ![Game over (Desktop) image](./assets/docs/features/gameover-desktop.png)
 
 [Game over (Mobile) image](./assets/docs/features/gameover-mobile.png)
+
+### Score Page
+
+- The highest score is shown at the top of the page. This is stored in local storage so that it won’t be deleted until the reset all button on the right side is clicked or the page is closed.
+- Attempt score is stored in an array so it will add the score every time the game is finished. It will disappear if you reload the page.
+- The logo at the top of the page will refresh and clear if the screen is closed. The reset all button will also remove the attempt scores.
+- Back button brings you back to the main page
+- The Reset All button deletes the highest score and attempt score.
+
+This benefits the users as they can see how their scores are improving by checking the scoreboard.
+
+![Scoreboard (Desktop) image](./assets/docs/features/scoreboard-desktop.png)
+
+[Scoreboard (Mobile) image](./assets/docs/features/scoreboard-mobile.png)
