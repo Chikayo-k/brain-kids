@@ -221,3 +221,18 @@ This benefits the users as they can see how their scores are improving by checki
 ![Scoreboard (Desktop) image](./assets/docs/features/scoreboard-desktop.png)
 
 [Scoreboard (Mobile) image](./assets/docs/features/scoreboard-mobile.png)
+
+### Sign Up Page
+
+- The sign-up form collects the first name, last name and email address of the user. Then they can get newsletters of upcoming games.
+- Users can not submit the form until they fill out the form fully
+- Click the submit button to submit the form
+- The home button at the top will bring you back to the home page
+
+This benefits users whose parents want to let their children learn things in a fun way as they get newsletters that keep them informed about our upcoming new games.
+
+![Sign Up (Desktop) image](./assets/docs/features/signup-desktop.png)
+
+[Sign Up (Mobile) image](./assets/docs/features/signup-mobile.png)
+
+[Home button image](./assets/docs/features/home-btn.png)
