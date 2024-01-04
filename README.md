@@ -236,3 +236,13 @@ This benefits users whose parents want to let their children learn things in a f
 [Sign Up (Mobile) image](./assets/docs/features/signup-mobile.png)
 
 [Home button image](./assets/docs/features/home-btn.png)
+
+### Success Message
+
+- This screen comes out after submitting a form as a confirmation to let the user know that the form has been successfully submitted. The name that they typed is shown on the message.
+- The Home button can go back to the main page
+
+This benefits users by letting them know that the form is successfully submitted. The user's name will be included in the message making it seem more familiar.
+![Success message (Desktop) image](./assets/docs/features/success-desktop.png)
+
+[Success message (Mobile) image](./assets/docs/features/success-mobile.png)
