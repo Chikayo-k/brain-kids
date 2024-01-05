@@ -314,3 +314,8 @@ The JSHint validator has no error.
 (signup.js)
 
 ![JSHint signup.js image](./assets/docs/validation/jshint-signupjs.png)
+
+## Lighthouse
+
+![Lighthouse (Desktop) image](./assets/docs/lighthouse/desktop.png)
+![Lighthouse (Mobile) image](./assets/docs/lighthouse/mobile.png)
