@@ -286,3 +286,31 @@ There was a warning when my JavaScript file was tested saying the body of a for 
 I searched [Stack overflow](https://stackoverflow.com/questions/1963102/what-does-the-jslint-error-body-of-a-for-in-should-be-wrapped-in-an-if-statemen) and it recommends using an older style for loop to solve the issue. So I rewrote the code again and it got rid of the warning.
 
 ![Stack Overflow solution image](./assets/docs/bugs-improvements/stack-overflow.png)
+
+## Validation
+
+As all of the issues were resolved the HTML, CSS, and JavaScript validation all passed.
+
+### [HTML Validation](https://validator.w3.org/#validate_by_uri)
+
+![HTML validation image](./assets/docs/validation/html-validation.png)
+
+### [CSS Validation](https://jigsaw.w3.org/css-validator/)
+
+![CSS validation image](./assets/docs/validation/css-validation.png)
+
+### [Javascript Validation](https://jshint.com/)
+
+The JSHint validator has no error.
+
+- However, there are warnings. The signupBtn and the StartPage variables are undefined. I can ignore them because these are used across 2 separate JavaScript files and they have already been declared.
+
+- Warning saying declared within loops referencing an outer scoped variable may lead to confusing semantics. I decided to ignore the warning as this was just a warning and it didn’t have any impact on the project.
+
+(game.js)
+
+![JSHint game.js image](./assets/docs/validation/jshint-gamejs.png)
+
+(signup.js)
+
+![JSHint signup.js image](./assets/docs/validation/jshint-signupjs.png)
