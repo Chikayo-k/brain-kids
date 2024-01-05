@@ -321,3 +321,36 @@ Both desktop and mobile scores were nearly 100 %
 
 ![Lighthouse (Desktop) image](./assets/docs/lighthouse/desktop.png)
 ![Lighthouse (Mobile) image](./assets/docs/lighthouse/mobile.png)
+
+## Testing
+
+### Device test
+
+Tested with Mobile, tablet, laptop and desktop all worked
+
+### Browser test
+
+Google Chrome, Microsoft Edge, Mozilla Firefox
+
+### Features test
+
+- Tested start button works
+- Tested audio button can be turned on or off
+- Tested Score button to show the scoreboard and hide the main screen
+- Tested Sign Up button to show the sign-up form
+- Tested the sign-up form to make sure it cannot be submitted unless filled out
+- Tested Submit button works and opens the success message
+- Tested success message has the value of the user's first name and last name rendered on the screen
+- Tested the Home button to show the main screen and hide unnecessary elements
+- Tested questions are generated randomly
+- Tested level goes up. At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1
+- Tested score goes up by 1 if you click the correct answer otherwise do nothing
+- Tested lives are at 3 when the game starts. and goes down by one every time you click a wrong answer
+- Tested if the wrong answer is clicked 3 times, the game over screen shows up
+- Tested the score of the game and that it shows correctly when the game is over
+- Tested the home button hides the game over page and shows the main page
+- Tested Highest score shows and won’t be gone unless the Reset All button is clicked
+- Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)
+- Tested the Reset All button deletes both the highest score and the attempt scores
+- Tested the Back button to show the main page and hide unnecessary elements
+- Tested all the social media icons open up in an external tab
