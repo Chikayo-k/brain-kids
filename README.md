@@ -317,5 +317,7 @@ The JSHint validator has no error.
 
 ## Lighthouse
 
+Both desktop and mobile scores were nearly 100 %
+
 ![Lighthouse (Desktop) image](./assets/docs/lighthouse/desktop.png)
 ![Lighthouse (Mobile) image](./assets/docs/lighthouse/mobile.png)
