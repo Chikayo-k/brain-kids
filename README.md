@@ -365,3 +365,37 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 - Tested the Reset All button deletes both the highest score and the attempt scores
 - Tested the Back button to show the main page and hide unnecessary elements
 - Tested all the social media icons open up in an external tab
+
+### Testing User Stories
+
+**1. As a user, I want to let my children play educational games**
+
+|           |                                                                   |                                              |                  |
+| --------- | ----------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| Feature   | Action                                                            | Expected Result                              | Actual Result    |
+| Math game | Math game works with no errors that stop users from playing play. | User can enjoy playing the game as expected. | Work as expected |
+|           |                                                                   |                                              |                  |
+
+**2. As a user, I want my children to enjoy learning**
+
+|                                 |                                                                                                                                                                   |                                                                                                                |                  |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Feature                         | Action                                                                                                                                                            | Expected Result                                                                                                | Actual Result    |
+| Sound effects, Audio, Animation | After clicking the answer, 2 types of little bunnies will show depending on if the answer is correct or incorrect. A sound effect will play when the audio is on. | Users can see a bunny after clicking the answer. They can hear different sound effects depending on the answer | Work as expected |
+|                                 |                                                                                                                                                                   |                                                                                                                |                  |
+
+**3 As a user, I can use different devices**
+
+|             |                                              |                                                            |                  |
+| ----------- | -------------------------------------------- | ---------------------------------------------------------- | ---------------- |
+| Feature     | Action                                       | Expected Result                                            | Actual Result    |
+| Media query | Screen changes according to the screen size. | User can use mobile, tablet, laptop and desktop computers. | Work as expected |
+|             |                                              |                                                            |                  |
+
+**4 As a user, I can turn on or off the sound**
+
+|                                      |                                                                       |                                       |                  |
+| ------------------------------------ | --------------------------------------------------------------------- | ------------------------------------- | ---------------- |
+| Feature                              | Action                                                                | Expected Result                       | Actual Result    |
+| Audio button can be turned on or off | Click the audio button on the main page to turn the audio on and off. | Users can have control over the sound | Work as expected |
+|                                      |                                                                       |                                       |                  |
