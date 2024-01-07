@@ -445,3 +445,25 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 9. git checkout main ( switch to the main branch)
 10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
 11. Run the project and test the new changes that have been applied
+
+## Reference
+
+**Pictures, Audios, Sounds, Logo**  
+[Pexcels](https://www.pexels.com/)  
+[Pixabay](https://pixabay.com/ja/)  
+[Canva](https://www.canva.com/colors/color-palette-generator/)  
+[Adbe Colour](https://color.adobe.com/create/color-wheel)
+
+**Make branch, Marge branch**  
+[Git commands](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+
+**HTML, CSS, JavScript**  
+I used Code Institute study materials and the Math running project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.  
+[w3schools](https://www.w3schools.com/)  
+[stackoverflow](https://stackoverflow.com/)
+
+**Shuffle an array**  
+[Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)
+
+**Remove ES6 features warnings in JShint**  
+[treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
