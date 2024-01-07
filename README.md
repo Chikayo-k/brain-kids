@@ -409,33 +409,21 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 |                    |                                                                                                                         |                                                                                                              |                  |
 
 **6. As a user, I want to know if there are new games that will be released**
-
-|              |                                                                                              |                                                                                              |                  |
-| ------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------- |
-| Feature      | Action                                                                                       | Expected Result                                                                              | Actual Result    |
+| Feature | Action | Expected Result | Actual Result |
+|----------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|------------------|
 | Sign-up page | The sign-up button opens the sign-up page and a confirmation will be shown after signing up. | Users can sign up to get newsletters. Confirmation will be shown after the form is submitted | Work as expected |
-|              |                                                                                              |                                                                                              |                  |
 
 **7 As a user, I want to improve my math skills**
-
-|          |                                                                                                                                          |                                                                                        |                  |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ---------------- |
-| Feature  | Action                                                                                                                                   | Expected Result                                                                        | Actual Result    |
+| Feature | Action | Expected Result | Actual Result |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|------------------|
 | Level up | At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1 | User can see a bunny after clicking the answer. Also can hear different sounds effects | Work as expected |
-|          |                                                                                                                                          |                                                                                        |                  |
 
 **8 As a user, I want to learn but also have fun**
-
-|                                 |                                                                                                                                                                                                      |                                                                                                                                     |                  |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| Feature                         | Action                                                                                                                                                                                               | Expected Result                                                                                                                     | Actual Result    |
-| Sound effects, Audio, Animation | After clicking the answer, 2 types of little bunnies show one for a correct answer and another for the incorrect answer. Correct answer and leveling up will also play sound effects if sound is on. | Users can see bunnies after clicking the answer. Sound effects when the audio is on makes children have a more enjoyable experience | Work as expected |
-|                                 |                                                                                                                                                                                                      |                                                                                                                                     |                  |
+| Feature | Action | Expected Result | Actual Result |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|------------------|
+| Sound effects, Audio, Animation | After clicking the answer, 2 types of little bunnies show one for a correct answer and another for the incorrect answer. Correct answers and levelling up will also play sound effects if the sound is on. | Users can see bunnies after clicking the answer. Sound effects when the audio is on make children have a more enjoyable experience | Work as expected |
 
 **9. As a user, I want to see how I am improving my math skills**
-
-|            |                                                                    |                                                       |                  |
-| ---------- | ------------------------------------------------------------------ | ----------------------------------------------------- | ---------------- |
-| Feature    | Action                                                             | Expected Result                                       | Actual Result    |
+| Feature | Action | Expected Result | Actual Result |
+|-----------|---------------------------------------------------------------------|-------------------------------------------------------|------------------|
 | Scoreboard | The scoreboard button allows users to show and check their scores. | User can see their results and also the highest score | Work as expected |
-|            |
