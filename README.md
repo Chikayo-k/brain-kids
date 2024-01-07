@@ -59,24 +59,24 @@ The goal of this project is to create an interactive math game for children to e
 ### Features To Achieve These Goals
 
 - Games are only learning-based (User story 1)
-- Learning materials are game-based so children can enjoy (User stories 2,8)
+- Learning materials are game-based so children can enjoy. There are Sound effects, Audio, and Animation. (User stories 2,8)
 - The website uses a responsive design that can be seen on different devices (User stories 3)
 - Sound can be on or off (User stories 4)
 - Social media icons provided on the footer give the option to users to leave feedback or contact us. Also, BRAIN KIDS provide news (User Stories 5,6)
 - There is a sign-up page that can provide notifications of upcoming games to play in the future ( User stories 6)
 - Addition and subtraction math game is provided (User stories 7)
+- Math game level goes up which gives users more of a challenge (User stories 7)
 - Different sound effects and audio have a positive effect on users (User stories 8)
-- Math game level goes up which gives users more of a challenge (User stories 9)
 - Scoreboard allows users to show their improvements (User stories 9)
 
 ## Design
 
 As this is an educational game website for children it is catered to children, I decided to use bright colours that are cheerful and playful. The pictures in the game are chosen for children who would enjoy seeing the characters but also motivate them to learn.
 
-Desktop
+### Wireframes
 
 [Wireframe Desktop 1](./assets/docs/wireframes/wireframe-large.png)  
-[Wireframe Desktop 2](./assets/docs/wireframes/wireframe-large.png2)
+[Wireframe Desktop 2](./assets/docs/wireframes/wireframe-large2.png)
 
 [Wireframe Tablet 1](./assets/docs/wireframes/wireframe-tablet.png)  
 [Wireframe Tablet 2](./assets/docs/wireframes/wireframe-tablet2.png)
