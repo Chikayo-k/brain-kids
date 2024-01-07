@@ -373,20 +373,49 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 |-----------|-------------------------------------------------------------------|----------------------------------------------|------------------|
 | Math game | Math game works with no errors that stop users from playing play. | User can enjoy playing the game as expected. | Work as expected |
 
+<details>
+<summary>Math Game</summary>
+<img src="./assets/docs/testing/game.png"></img><br>
+<img src="./assets/docs/testing/no-error.png">
+</details>
+<br>
+
 **2. As a user, I want my children to enjoy learning**
 | Feature | Action | Expected Result | Actual Result |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|------------------|
 | Sound effects, Audio, Animation | After clicking the answer, 2 types of little bunnies will show depending on if the answer is correct or incorrect. A sound effect will play when the audio is on. | Users can see a bunny after clicking the answer. They can hear different sound effects depending on the answer | Work as expected |
+
+<details>
+<summary>Animation</summary>
+<img src="./assets/docs/testing/wrong-animation.png"></img><br>
+<img src="./assets/docs/testing/correct-animation.png">
+</details>
+<br>
 
 **3. As a user, I can use different devices**
 | Feature | Action | Expected Result | Actual Result |
 |--------------|----------------------------------------------|------------------------------------------------------------|------------------|
 | Media query | Screen changes according to the screen size. | User can use mobile, tablet, laptop and desktop computers. | Work as expected |
 
+<details>
+<summary>Different devices</summary>
+<img src="./assets/docs/testing/desktop.png"></img><br>
+<img src="./assets/docs/testing/tablet.png"></img><br>
+<img src="./assets/docs/testing/mobile.png"></img><br>
+</details>
+<br>
+
 **4. As a user, I can turn on or off the sound**
 | Feature | Action | Expected Result | Actual Result |
 |--------------------------------------|-----------------------------------------------------------------------|---------------------------------------|------------------|
 | Audio button can be turned on or off | Click the audio button on the main page to turn the audio on and off. | Users can have control over the sound | Work as expected |
+
+<details>
+<summary>Audio</summary>
+<img src="./assets/docs/testing/audio-off.png"></img><br>
+<img src="./assets/docs/testing/audio-on.png"></img><br>
+</details>
+<br>
 
 **5. As a user, I want to give feedback**
 | Feature | Action | Expected Result | Actual Result |
