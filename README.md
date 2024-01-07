@@ -73,6 +73,17 @@ The goal of this project is to create an interactive math game for children to e
 
 As this is an educational game website for children it is catered to children, I decided to use bright colours that are cheerful and playful. The pictures in the game are chosen for children who would enjoy seeing the characters but also motivate them to learn.
 
+Desktop
+
+[Wireframe Desktop 1](./assets/docs/wireframes/wireframe-large.png)  
+[Wireframe Desktop 2](./assets/docs/wireframes/wireframe-large.png2)
+
+[Wireframe Tablet 1](./assets/docs/wireframes/wireframe-tablet.png)  
+[Wireframe Tablet 2](./assets/docs/wireframes/wireframe-tablet2.png)
+
+[Wireframe Mobile 1](./assets/docs/wireframes/wireframe-mobile.png)  
+[Wireframe Mobile 2](./assets/docs/wireframes/wireframe-mobile2.png)
+
 ### Logo
 
 The base logo was found on the [Canva](https://www.canva.com/colors/color-palette-generator/) website. But it wasn’t clear when it was displayed on the website. So I made some changes with Photoshop and made the background transparent to display it better.
