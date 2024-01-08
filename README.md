@@ -25,7 +25,7 @@ Brain Kids is an educational website for children in their early years of school
    3. [Tools](#tools)
 5. [Features](#features)
    1. [Header](#header)
-   2. [Top main page](#top-main-page)
+   2. [Top Main page](#top-main-page)
    3. [Game Page](#game-page)
    4. [Game Over](#game-over)
    5. [Score Page](#score-page)
@@ -218,7 +218,7 @@ Mobile
 
 ![Header(Mobile) image](./assets/docs/features/header-mobile.png)
 
-### Top main page
+### Top Main Page
 
 - The introduction section explains to users what this game is like and explains how to play
 - The start button is clearly shown on the screen to start the game
@@ -545,7 +545,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 6. I can’t see the branch I created so I need to use a git fetch
 7. The newly created branch is pulled using git checkout with the new branch name to switch from the current branch to the new branch
 
-### Merge the branch into main
+### Merge The Branch Into Main
 
 1. Once I have finished working on the new branch and have pushed the code, I see the compare and pull request at the top.
 2. I click it and review code changes and add a description
