@@ -346,10 +346,16 @@ I searched [Stack overflow](https://stackoverflow.com/questions/1963102/what-doe
 
 ![Stack Overflow solution image](./assets/docs/bugs-improvements/stack-overflow.png)
 
-There are warnings. The signupBtn and the StartPage variables are undefined
-To fix it, I found a solution using [W3School](https://www.w3schools.com/js/js_modules.asp) that import, export and module methods can share the variables across the files. So I did try it out. This successfully solves the problem.
+There are warnings. The signupBtn and the StartPage variables are undefined.To fix it, I found a solution using [W3School](https://www.w3schools.com/js/js_modules.asp) that import, export and module methods can share the variables across the files. So I did try it out. This successfully solves the problem.
 
 ![Undefined Variable Issue](./assets/docs/bugs-improvements/undefined-variable.png)
+
+There was an error message caused by clicking the next answer before the animation of the next had finished. This was fixed using a try catch to catch the error
+
+![Try Catch Method To Salve The Issue](./assets/docs/bugs-improvements/try-catch.png)
+
+I also removed ES6 features warnings in JShint using
+[treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
 
 ## Validation
 
