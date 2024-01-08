@@ -346,6 +346,11 @@ I searched [Stack overflow](https://stackoverflow.com/questions/1963102/what-doe
 
 ![Stack Overflow solution image](./assets/docs/bugs-improvements/stack-overflow.png)
 
+There are warnings. The signupBtn and the StartPage variables are undefined
+To fix it, I found a solution using [W3School](https://www.w3schools.com/js/js_modules.asp) that import, export and module methods can share the variables across the files. So I did try it out. This successfully solves the problem.
+
+![Undefined Variable Issue](./assets/docs/bugs-improvements/undefined-variable.png)
+
 ## Validation
 
 As all of the issues were resolved the HTML, CSS, and JavaScript validation all passed.
@@ -362,9 +367,8 @@ As all of the issues were resolved the HTML, CSS, and JavaScript validation all 
 
 The JSHint validator has no error.
 
-- However, there are warnings. The signupBtn and the StartPage variables are undefined. I can ignore them because these are used across 2 separate JavaScript files and they have already been declared.
-
-- Warning saying declared within loops referencing an outer scoped variable may lead to confusing semantics. I decided to ignore the warning as this was just a warning and it didn’t have any impact on the project.
+However, there are warnings.
+Warning saying Function declared within loops referencing an outer scoped variable may lead to confusing semantics. I decided to ignore the warning as this was just a warning and it didn’t have any impact on the project.
 
 (game.js)
 
