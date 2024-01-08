@@ -4,6 +4,53 @@ Brain Kids is an educational website for children in their early years of school
 
 ![Responsive screen image](./assets/docs/introduction/response.png)
 
+## Table of Content
+
+1. [Project Goals](#project-goals)
+   1. [Target Audience](#target-audience)
+   2. [User Goals](#user-goals)
+   3. [Site Owner Goals](#site-owner-goals)
+2. [User Experience (UX)](#user-experience-ux)
+   1. [User Requirements and Expectations](#user-requirements-and-expectations)
+   2. [User Stories](#user-stories)
+   3. [Features To Achieve These Goals](#features-to-achieve-these-goals)
+3. [Design](#design)
+   1. [Wireframes](#wireframes)
+   2. [Logo](#logo)
+   3. [Colour Scheme](#colour-scheme)
+   4. [Fonts](#fonts)
+4. [Structure](#structure)
+   1. [Technologies Used](#technologies-used)
+   2. [Frameworks](#frameworks)
+   3. [Tools](#tools)
+5. [Features](#features)
+   1. [Header](#header)
+   2. [Top main page](#top-main-page)
+   3. [Game Page](#game-page)
+   4. [Game Over](#game-over)
+   5. [Score Page](#score-page)
+   6. [Sign Up Page](#sign-up-page)
+   7. [Success Message](#success-message)
+   8. [Footer](#footer)
+6. [Bugs / Improvements](#bugs--improvements)
+   1. [lighthouse](#lighthouse)
+   2. [HTML](#html)
+   3. [JavaScript](#javascript)
+7. [Validation](#validation)
+   1. [HTML Validation](#html-validation)
+   2. [CSS Validation](#css-validation)
+   3. [JavaScript Validation](#javascript-validation)
+8. [Lighthouse](#lighthouse-1)
+9. [Testing](#testing)
+   1. [Device Test](#device-test)
+   2. [Browser Test](#browser-test)
+   3. [Features Test](#features-test)
+   4. [Testing User Stories](#testing-user-stories)
+10. [Deployment](#deployment)
+    1. [Make Branch](#make-branch)
+    2. [Marge The Branch Into Main](#merge-the-branch-into-main)
+11. [Reference](#reference)
+
 ## Project Goals
 
 The goal of this project is to create an interactive math game for children to enjoy.
@@ -18,14 +65,14 @@ The goal of this project is to create an interactive math game for children to e
 - Children can have fun and learn while playing
 - User can get used to calculating addition and subtraction and build their confidence
 - It increases in difficulty but also motivates
-- Games that parents can safely give to their children
+- Games that parents can safely give to their children (No harmful content)
 
 ### Site Owner Goals
 
 - Develop a game that users can play addition and subtraction math game
 - Develop a website that is easy to navigate for children and adults
 - Provide a game that can help children to learn
-- Provide a game that can be played safely for children
+- Provide a game that can be played safely for children (No harmful content)
 - Set up a subscription service to inform users of more educational games coming in the future
 
 ## User Experience (UX)
@@ -161,7 +208,7 @@ The top of the page allows the user to access the game page, audio control that 
 
 - The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
 
-The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
+This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section
 
 Desktop
 
@@ -194,7 +241,7 @@ This section provides users with an understanding of the aim of the game. The au
 - A bunny will be shown for 0.7 seconds whether the answer clicked is correct or not
 - If the Audio is on, sound effects can be heard depending on what the users have selected whether the answer is correct or not.
 
-Questions can be seen easily by users. When the levels increase the colour of the level text will change to green for 0.7 seconds this will let users know that the level is increasing.
+Questions can be seen easily by users. When the levels increase the colour of the level text will change to green for one seconds this will let users know that the level is increasing.
 Answers are options that can be clicked to make their choice. The user has clear feedback from a little bunny which will pop up to show whether the answer the user clicked was correct or not.
 When the audio is on sound effects give the users the same feedback.
 
@@ -204,9 +251,9 @@ When the audio is on sound effects give the users the same feedback.
 
 [Level up image](./assets/docs/features/levelup.png)
 
-[Correct bunny image](./assets/docs/features/bunny-correct.png)
+[Correct - bunny image](./assets/docs/features/bunny-correct.png)
 
-[Wrong bunny image](./assets/docs/features/bunny-wrong.png)
+[Wrong - bunny image](./assets/docs/features/bunny-wrong.png)
 
 ### Game Over
 
@@ -254,6 +301,7 @@ This benefits users whose parents want to let their children learn things in a f
 - The Home button can go back to the main page
 
 This benefits users by letting them know that the form is successfully submitted. The user's name will be included in the message making it seem more familiar.
+
 ![Success message (Desktop) image](./assets/docs/features/success-desktop.png)
 
 [Success message (Mobile) image](./assets/docs/features/success-mobile.png)
@@ -310,7 +358,7 @@ As all of the issues were resolved the HTML, CSS, and JavaScript validation all 
 
 ![CSS validation image](./assets/docs/validation/css-validation.png)
 
-### [Javascript Validation](https://jshint.com/)
+### [JavaScript Validation](https://jshint.com/)
 
 The JSHint validator has no error.
 
@@ -472,7 +520,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 | Scoreboard | The scoreboard button allows users to show and check their scores. | User can see their results and also the highest score | Work as expected |
 
 <details>
-<summary>Animation, Audio</summary>
+<summary>Scoreboard</summary>
 <img src="./assets/docs/testing/score.png"></img><br>
 <img src="./assets/docs/testing/score2.png"></img><br>
 </details>
