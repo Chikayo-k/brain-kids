@@ -5,6 +5,8 @@ const backHomeBtn = document.getElementsByClassName("back-home")[0];
 const signupPlace = document.getElementById("signup");
 const confirmationPlace = document.getElementById("confirmation");
 
+import { startPage } from "./game.js";
+
 /**
  * Show Sign up page and hide different pages
  */
@@ -89,3 +91,5 @@ function submit(event) {
 
   backHomeBtn.addEventListener("click", goHomeSuc);
 }
+
+export { signupBtn };

@@ -90,6 +90,8 @@ const levelPlace = document.getElementsByClassName("level")[0];
 const gamePage = document.getElementsByClassName("game")[0];
 const startPage = document.getElementsByClassName("start-page")[0];
 const gameOverPage = document.getElementsByClassName("game-over")[0];
+//Import signup button variable from signup.js
+import { signupBtn } from "./signup.js";
 
 //Start button functionality
 
@@ -511,3 +513,5 @@ function showScoreBoard() {
 
 const scoreBtn = document.getElementsByClassName("score")[0];
 scoreBtn.addEventListener("click", showScoreBoard);
+
+export { startPage };
