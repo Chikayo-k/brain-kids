@@ -32,6 +32,7 @@ Brain Kids is an educational website for children in their early years of school
    6. [Sign Up Page](#sign-up-page)
    7. [Success Message](#success-message)
    8. [Footer](#footer)
+   9. [Future features](#future-features)
 6. [Bugs / Improvements](#bugs--improvements)
    1. [lighthouse](#lighthouse)
    2. [HTML](#html)
@@ -214,9 +215,7 @@ Desktop
 
 ![Header(Desktop) image](./assets/docs/features/header-desktop.png)
 
-Mobile
-
-![Header(Mobile) image](./assets/docs/features/header-mobile.png)
+[Header(Mobile) image](./assets/docs/features/header-mobile.png)
 
 ### Top Main Page
 
@@ -229,8 +228,8 @@ Mobile
 This section provides users with an understanding of the aim of the game. The audio button benefits users by having controls for the sound. To place the score button just under the start button, the user will see that there is a scoreboard feature. They can check their progress between games. With the big red standout start button, users can see at a glance where the start button is to start this game.
 
 ![Main page (Desktop) image](./assets/docs/features/main-desktop.png)
-![Main page (Mobile) image](./assets/docs/features/main-mobile.png)
-![Sound on image](./assets/docs/features/sound-on.png)
+[Main page (Mobile) image](./assets/docs/features/main-mobile.png)  
+[Sound on image](./assets/docs/features/sound-on.png)
 
 ### Game Page
 
@@ -318,6 +317,10 @@ This benefits users by informing us of feedback and also showing how we can be c
 ![Footer (Desktop) image](./assets/docs/features/footer-desktop.png)
 
 [Footer (Mobile) image](./assets/docs/features/footer-mobile.png)
+
+### Future features
+
+This website will add more games in the future that kids can play. The different games are all learning-based. Once a user has completed sign-up, the user will be able to access their scores will be stored in our database to help track their improvements over time
 
 ## Bugs / Improvements
 
