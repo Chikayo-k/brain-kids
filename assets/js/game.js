@@ -1,4 +1,4 @@
-// jshint esversion: 6
+// jshint esversion: 6over
 // background images storage
 const backgroundImg = {
   type1: `url("./assets/images/star.webp") center center/cover`,
@@ -441,15 +441,17 @@ function showScoreBoard() {
   scoreTable.id = "scoreboard";
 
   let scoreTableHtml = `
-  <thead>
+    <thead>
     <tr>
       <td>Attempt</td>
       <td>Score</td>
     </tr>
-  </thead>
+     <p class="no-score-message hide">You haven't made any attempt yet</p>
+    </thead>
   <tbody>
   <tbody>    
   <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
+  
   `;
 
   scoreTable.innerHTML = scoreTableHtml;
@@ -470,6 +472,12 @@ function showScoreBoard() {
 
   const scorePlace = document.getElementById("score-board");
   scorePlace.appendChild(scoreTable);
+
+  //Show message if there is no attempt otherwise hide the message
+  const noScoreMessage = document.getElementsByClassName("no-score-message")[0];
+  if (scoreMemory.length == undefined || scoreMemory.length == 0) {
+    noScoreMessage.classList.remove("hide");
+  }
 
   //Hide signup button and start page
   startPage.classList.add("start-hide");
@@ -505,6 +513,13 @@ function showScoreBoard() {
     //Empty score  memory array and remove display
     scoreMemory = [];
     scoreTbody.remove();
+
+    //Show message if there is no attempt otherwise hide the message
+    const noScoreMessage =
+      document.getElementsByClassName("no-score-message")[0];
+    if (scoreMemory.length == undefined || scoreMemory.length == 0) {
+      noScoreMessage.classList.remove("hide");
+    }
   }
 
   const resetBtn = document.getElementById("reset");

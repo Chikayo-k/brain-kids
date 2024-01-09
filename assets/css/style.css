@@ -373,6 +373,11 @@ td {
   background-color: #008553;
 }
 
+.no-score-message {
+  width: 100%;
+  margin: 5% 0 0 50%;
+}
+
 .score-board-hide {
   display: none;
 }
