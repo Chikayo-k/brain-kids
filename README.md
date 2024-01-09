@@ -538,7 +538,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 <details>
 <summary>Scoreboard</summary>
 <img src="./assets/docs/testing/score.png"></img><br>
-<img src="./assets/docs/testing/score2.png"></img><br>
+<img src="./assets/docs/testing/scoreboard-no-attempt.png"></img><br>
 </details>
 <br>
 
@@ -587,12 +587,12 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 [Git commands](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 **HTML, CSS, JavScript**  
-I used Code Institute study materials and the Math walkthrough project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.  
-[w3schools](https://www.w3schools.com/)  
-[stackoverflow](https://stackoverflow.com/)
+I used Code Institute study materials and the Math walkthrough project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.
 
-**Shuffle an array**  
-[Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)
+[w3schools](https://www.w3schools.com/)  
+[stackoverflow](https://stackoverflow.com/)  
+[Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)  
+[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
