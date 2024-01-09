@@ -409,27 +409,29 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 
 ### Features test
 
-- Tested start button works
-- Tested audio button can be turned on or off
-- Tested Score button to show the scoreboard and hide the main screen
-- Tested Sign Up button to show the sign-up form
-- Tested the sign-up form to make sure it cannot be submitted unless filled out
-- Tested Submit button works and opens the success message
-- Tested success message has the value of the user's first name and last name rendered on the screen
-- Tested the Home button to show the main screen and hide unnecessary elements
-- Tested questions are generated randomly
-- Tested level goes up. At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1
-- Tested score goes up by 1 if you click the correct answer otherwise do nothing
-- Tested lives are at 3 when the game starts. and goes down by one every time you click a wrong answer
-- Tested if the wrong answer is clicked 3 times, the game over screen shows up
-- Tested the score of the game and that it shows correctly when the game is over
-- Tested the home button hides the game over page and shows the main page
-- Tested [You haven’t made any attempt yet] message shows up when there has been no attempt at this game
-- Tested Highest score shows and won’t be gone unless the Reset All button is clicked
-- Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)
-- Tested the Reset All button deletes both the highest score and the attempt scores
-- Tested the Back button to show the main page and hide unnecessary elements
-- Tested all the social media icons open up in an external tab
+| Feature                                                                                                                                                        | Result |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Tested start button works                                                                                                                                      | Pass   |
+| Tested audio button can be turned on or off                                                                                                                    | Pass   |
+| Tested Score button to show the scoreboard and hide the main screen                                                                                            | Pass   |
+| Tested Sign Up button to show the sign-up form                                                                                                                 | Pass   |
+| Tested the sign-up form to make sure it cannot be submitted unless filled out                                                                                  | Pass   |
+| Tested Submit button works and opens the success message                                                                                                       | Pass   |
+| Tested success message has the value of the user's first name and last name rendered on the screen                                                             | Pass   |
+| Tested the Home button to show the main screen and hide unnecessary elements                                                                                   | Pass   |
+| Tested questions are generated randomly                                                                                                                        | Pass   |
+| Tested level goes up. At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1 | Pass   |
+| Tested score goes up by 1 if you click the correct answer otherwise do nothing                                                                                 | Pass   |
+| Tested lives are at 3 when the game starts. and goes down by one every time you click a wrong answer                                                           | Pass   |
+| Tested if the wrong answer is clicked 3 times, the game over screen shows up                                                                                   | Pass   |
+| Tested the score of the game and that it shows correctly when the game is over                                                                                 | Pass   |
+| Tested the home button hides the game over page and shows the main page                                                                                        | Pass   |
+| Tested [You haven’t made any attempt yet] message shows up when there has been no attempt at this game                                                         | Pass   |
+| Tested Highest score shows and won’t be gone unless the Reset All button is clicked                                                                            | Pass   |
+| Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)                    | Pass   |
+| Tested the Reset All button deletes both the highest score and the attempt scores                                                                              | Pass   |
+| Tested the Back button to show the main page and hide unnecessary elements                                                                                     | Pass   |
+| Tested all the social media icons open up in an external tab                                                                                                   | Pass   |
 
 ### Testing User Stories
 
