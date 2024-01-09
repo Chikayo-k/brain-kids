@@ -218,6 +218,7 @@ function optionNumbers() {
     }
   }
   //Shuffling an array
+  //Reference
   //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
   let shuffleOptions = options.sort(() => Math.random() - 0.5);
   return shuffleOptions;
@@ -515,6 +516,8 @@ function showScoreBoard() {
     scoreTbody.remove();
 
     //Show message if there is no attempt otherwise hide the message
+    //Reference
+    //(https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
     const noScoreMessage =
       document.getElementsByClassName("no-score-message")[0];
     if (scoreMemory.length == undefined || scoreMemory.length == 0) {
