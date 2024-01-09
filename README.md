@@ -424,6 +424,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 - Tested if the wrong answer is clicked 3 times, the game over screen shows up
 - Tested the score of the game and that it shows correctly when the game is over
 - Tested the home button hides the game over page and shows the main page
+- Tested [You haven’t made any attempt yet] message shows up when there has been no attempt at this game
 - Tested Highest score shows and won’t be gone unless the Reset All button is clicked
 - Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)
 - Tested the Reset All button deletes both the highest score and the attempt scores
