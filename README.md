@@ -273,8 +273,11 @@ This provides the user with clear feedback that the game is over. By checking th
 - The logo at the top of the page will refresh and clear if the screen is closed. The reset all button will also remove the attempt scores.
 - Back button brings you back to the main page
 - The Reset All button deletes the highest score and attempt score.
+- When there has been no attempt at this game there is a message that shows no attempt has been made on the scoreboard
 
 This benefits the users as they can see how their scores are improving by checking the scoreboard.
+
+![Scoreboard(No attempt)](./assets/docs/features/scoreboard-no-attempt.png)
 
 ![Scoreboard (Desktop) image](./assets/docs/features/scoreboard-desktop.png)
 
