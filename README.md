@@ -50,6 +50,8 @@ Brain Kids is an educational website for children in their early years of school
 10. [Deployment](#deployment)
     1. [Make Branch](#make-branch)
     2. [Marge The Branch Into Main](#merge-the-branch-into-main)
+    3. [Clone](#clone)
+    4. [Fork](#fork)
 11. [Reference](#reference)
 
 ## Project Goals
@@ -581,6 +583,19 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
 11. Run the project and test the new changes that have been applied
 
+### Clone
+
+1. clicking on the code dropdown in the main repository.
+2. Copying the SSH URL
+3. I opened my git bash terminal and cloned the project to a folder on my desktop.
+
+### Fork
+
+A Git fork is when an existing repository has a copy taken of it and it becomes its new repository no longer being attached to or tracking the commits of the original repository. I used the original project I had cloned at the start. I could not fork the project the repository as I am the owner but the steps to fork are
+
+1. Open the repository on GitHub and select the Fork dropdown
+2. Click fork you will have a full copy of the repository.
+
 ## Reference
 
 **Pictures, Audios, Sounds, Logo**  
@@ -602,3 +617,7 @@ I used Code Institute study materials and the Math walkthrough project in coming
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
+
+**GitHHub**  
+[Fork a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
+[Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
