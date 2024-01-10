@@ -208,9 +208,10 @@ The top of the page allows the user to access the game page, audio control that 
 ### Header
 
 - The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
-- The logo has an anchor tag that can lead you to the main page.
+- The logo has an anchor tag that can lead you to the main page from anywhere on the website.
 
-This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section
+This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section.<br>
+The logo on the Web page provides users with the benefit of being able to return to the main page with a single click from anywhere on the website.
 
 Desktop
 
@@ -433,6 +434,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 | Tested the Reset All button deletes both the highest score and the attempt scores                                                                              | Pass   |
 | Tested the Back button to show the main page and hide unnecessary elements                                                                                     | Pass   |
 | Tested all the social media icons open up in an external tab                                                                                                   | Pass   |
+| Tested when the logo is clicked, it returns a user to the main page                                                                                            | pass   |
 
 ### Testing User Stories
 
