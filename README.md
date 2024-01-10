@@ -161,7 +161,7 @@ The Afacad font style was chosen for this website. It is clear and easy to read.
 ## Structure
 
 The structure implemented for this project is a single HTML page that provides different pages.
-The top of the page allows the user to access the game page, audio control that can be turned on and off, scoreboard and sign-up page. There are social media icons on the footer to promote this website in the future and allow users to give us feedback or ask questions. The logo has an anchor tag that can lead you to the start game page.
+The top of the page allows the user to access the game page, audio control that can be turned on and off, scoreboard and sign-up page. There are social media icons on the footer to promote this website in the future and allow users to give us feedback or ask questions. The logo has an anchor tag that can lead you to the main page.
 
 - Game
 
@@ -208,6 +208,7 @@ The top of the page allows the user to access the game page, audio control that 
 ### Header
 
 - The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
+- The logo has an anchor tag that can lead you to the main page.
 
 This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section
 
