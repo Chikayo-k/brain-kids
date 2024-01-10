@@ -4,6 +4,9 @@ Brain Kids is an educational website for children in their early years of school
 
 ![Responsive screen image](./assets/docs/introduction/response.png)
 
+[Website](https://chikayo-k.github.io/brain-kids/)  
+[GitHub Repository](https://github.com/Chikayo-k/brain-kids/tree/improvement)
+
 ## Table of Content
 
 1. [Project Goals](#project-goals)
