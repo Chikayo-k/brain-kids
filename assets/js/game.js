@@ -90,6 +90,8 @@ const levelPlace = document.getElementsByClassName("level")[0];
 const gamePage = document.getElementsByClassName("game")[0];
 const startPage = document.getElementsByClassName("start-page")[0];
 const gameOverPage = document.getElementsByClassName("game-over")[0];
+//Import signup button variable from signup.js
+import { signupBtn } from "./signup.js";
 
 //Start button functionality
 
@@ -216,7 +218,6 @@ function optionNumbers() {
     }
   }
   //Shuffling an array
-  //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
   let shuffleOptions = options.sort(() => Math.random() - 0.5);
   return shuffleOptions;
 }
@@ -439,15 +440,17 @@ function showScoreBoard() {
   scoreTable.id = "scoreboard";
 
   let scoreTableHtml = `
-  <thead>
+    <thead>
     <tr>
       <td>Attempt</td>
       <td>Score</td>
     </tr>
-  </thead>
+     <p class="no-score-message hide">You haven't made any attempt yet</p>
+    </thead>
   <tbody>
   <tbody>    
   <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
+  
   `;
 
   scoreTable.innerHTML = scoreTableHtml;
@@ -468,6 +471,12 @@ function showScoreBoard() {
 
   const scorePlace = document.getElementById("score-board");
   scorePlace.appendChild(scoreTable);
+
+  //Show message if there is no attempt otherwise hide the message
+  const noScoreMessage = document.getElementsByClassName("no-score-message")[0];
+  if (scoreMemory.length == undefined || scoreMemory.length == 0) {
+    noScoreMessage.classList.remove("hide");
+  }
 
   //Hide signup button and start page
   startPage.classList.add("start-hide");
@@ -503,6 +512,13 @@ function showScoreBoard() {
     //Empty score  memory array and remove display
     scoreMemory = [];
     scoreTbody.remove();
+
+    //Show message if there is no attempt otherwise hide the message
+    const noScoreMessage =
+      document.getElementsByClassName("no-score-message")[0];
+    if (scoreMemory.length == undefined || scoreMemory.length == 0) {
+      noScoreMessage.classList.remove("hide");
+    }
   }
 
   const resetBtn = document.getElementById("reset");
@@ -511,3 +527,5 @@ function showScoreBoard() {
 
 const scoreBtn = document.getElementsByClassName("score")[0];
 scoreBtn.addEventListener("click", showScoreBoard);
+
+export { startPage };

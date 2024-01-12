@@ -20,41 +20,35 @@
 </head>
 
 <body>
+
     <!-- Header -->
     <header>
-
         <h1 class="hidden">BRAIN KIDS</h1>
-
         <div class="header-div">
-
             <div class="logo-div">
                 <a href="index.html" aria-label="BRAIN KIDS logo link to home page">
                     <img class="logo-img" src="assets/images/brainkids-logo.webp" alt="BRAIN KIDS logo">
                 </a>
             </div>
-
             <div id="sign-up-btn" class="sign-up-div btn">
                 <div>
                     <button class="sign-up-btn btn" aria-label="Go to sign up page">Sign Up</button>
                     <button class="back-home btn hide" aria-label="Go to Home page">Home</button>
                 </div>
             </div>
-
         </div>
-
     </header>
 
     <!-- Main -->
     <main>
-
         <div id="game">
-
+            <!-- Sign Up -->
             <div id="signup"></div>
             <div id="confirmation"></div>
-
+            <!-- Scoreboard -->
             <div id="highest-score"></div>
             <div id="score-board"></div>
-
+            <!-- Game Over -->
             <div class="card-shadow game-screen game-over game-over-hide">
                 <div class="game-over-div">
                     <p class="game-over">Game Over</p>
@@ -64,7 +58,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Game(Question, Level, Life) -->
             <div class="card-shadow game-screen game game-hide">
                 <div class="level-question">
                     <div class="level-div">
@@ -81,7 +75,7 @@
                         <p>Life: 3</p>
                     </div>
                 </div>
-
+                <!-- Answers -->
                 <div class="game-answers">
                     <div>
                         <p class="answers-p">Pick one answer</p>
@@ -94,12 +88,11 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Start Page  -->
             <div class="card-shadow start-page">
                 <div class="game-img-div">
                     <img class="math-img" src="./assets/images/math.webp" alt="children are playing a math game">
                 </div>
-
                 <div class="game-description">
                     <div class="game-content">
                         <h2>Math Game</h2>
@@ -107,21 +100,17 @@
                             children to help them build confidence in mathematics.<br>
                             Let's see what level you can reach!! You have 3 Lives before the game is over.</p>
                     </div>
-
                     <button class="start-btn btn" aria-label="Start the math game">START!</button>
-
                     <div class="functions">
                         <button class="score btn" aria-label="Check scores">Score</button>
                         <i class="fa-solid fa-volume-xmark sound btn fa-lg"></i>
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <!-- Animation -->
         <div class="animation animation-hide">
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -137,8 +126,8 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8111712961.js" crossorigin="anonymous"></script>
     <!-- Javascript -->
-    <script src="assets/js/game.js"></script>
-    <script src="assets/js/signup.js"></script>
+    <script type=module src="assets/js/game.js"></script>
+    <script type=module src="assets/js/signup.js"></script>
 
 </body>
 

@@ -40,7 +40,7 @@ p {
 }
 
 .btn:hover {
-  opacity: 0.5;
+  transform: scale(1.05);
 }
 
 .start-btn,
@@ -371,6 +371,11 @@ td {
   border: none;
   color: white;
   background-color: #008553;
+}
+
+.no-score-message {
+  width: 100%;
+  margin: 5% 0 0 50%;
 }
 
 .score-board-hide {

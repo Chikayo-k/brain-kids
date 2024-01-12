@@ -4,6 +4,9 @@ Brain Kids is an educational website for children in their early years of school
 
 ![Responsive screen image](./assets/docs/introduction/response.png)
 
+[Website](https://chikayo-k.github.io/brain-kids/)  
+[GitHub Repository](https://github.com/Chikayo-k/brain-kids/tree/improvement)
+
 ## Table of Content
 
 1. [Project Goals](#project-goals)
@@ -32,6 +35,7 @@ Brain Kids is an educational website for children in their early years of school
    6. [Sign Up Page](#sign-up-page)
    7. [Success Message](#success-message)
    8. [Footer](#footer)
+   9. [Future features](#future-features)
 6. [Bugs / Improvements](#bugs--improvements)
    1. [lighthouse](#lighthouse)
    2. [HTML](#html)
@@ -49,6 +53,8 @@ Brain Kids is an educational website for children in their early years of school
 10. [Deployment](#deployment)
     1. [Make Branch](#make-branch)
     2. [Marge The Branch Into Main](#merge-the-branch-into-main)
+    3. [Clone](#clone)
+    4. [Fork](#fork)
 11. [Reference](#reference)
 
 ## Project Goals
@@ -160,7 +166,7 @@ The Afacad font style was chosen for this website. It is clear and easy to read.
 ## Structure
 
 The structure implemented for this project is a single HTML page that provides different pages.
-The top of the page allows the user to access the game page, audio control that can be turned on and off, scoreboard and sign-up page. There are social media icons on the footer to promote this website in the future and allow users to give us feedback or ask questions. The logo has an anchor tag that can lead you to the start game page.
+The top of the page allows the user to access the game page, audio control that can be turned on and off, scoreboard and sign-up page. There are social media icons on the footer to promote this website in the future and allow users to give us feedback or ask questions. The logo has an anchor tag that can lead you to the main page.
 
 - Game
 
@@ -207,16 +213,16 @@ The top of the page allows the user to access the game page, audio control that 
 ### Header
 
 - The header shows the logo of Brain Kids which gives the impression that this is a child’s educational website. The sign-up button leads to the sign-up page
+- The logo has an anchor tag that can lead you to the main page from anywhere on the website.
 
-This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section
+This header tells the user the website’s name and what kind of website is. Also, Users know that there is a sign-up section.<br>
+The logo on the Web page provides users with the benefit of being able to return to the main page with a single click from anywhere on the website.
 
 Desktop
 
 ![Header(Desktop) image](./assets/docs/features/header-desktop.png)
 
-Mobile
-
-![Header(Mobile) image](./assets/docs/features/header-mobile.png)
+[Header(Mobile) image](./assets/docs/features/header-mobile.png)
 
 ### Top Main Page
 
@@ -229,8 +235,8 @@ Mobile
 This section provides users with an understanding of the aim of the game. The audio button benefits users by having controls for the sound. To place the score button just under the start button, the user will see that there is a scoreboard feature. They can check their progress between games. With the big red standout start button, users can see at a glance where the start button is to start this game.
 
 ![Main page (Desktop) image](./assets/docs/features/main-desktop.png)
-![Main page (Mobile) image](./assets/docs/features/main-mobile.png)
-![Sound on image](./assets/docs/features/sound-on.png)
+[Main page (Mobile) image](./assets/docs/features/main-mobile.png)  
+[Sound on image](./assets/docs/features/sound-on.png)
 
 ### Game Page
 
@@ -273,8 +279,11 @@ This provides the user with clear feedback that the game is over. By checking th
 - The logo at the top of the page will refresh and clear if the screen is closed. The reset all button will also remove the attempt scores.
 - Back button brings you back to the main page
 - The Reset All button deletes the highest score and attempt score.
+- When there has been no attempt at this game there is a message that shows no attempt has been made on the scoreboard
 
 This benefits the users as they can see how their scores are improving by checking the scoreboard.
+
+![Scoreboard(No attempt)](./assets/docs/features/scoreboard-no-attempt.png)
 
 ![Scoreboard (Desktop) image](./assets/docs/features/scoreboard-desktop.png)
 
@@ -316,6 +325,10 @@ This benefits users by informing us of feedback and also showing how we can be c
 
 [Footer (Mobile) image](./assets/docs/features/footer-mobile.png)
 
+### Future features
+
+This website will add more games in the future that kids can play. The different games are all learning-based. Once a user has completed sign-up, the user will be able to access their scores will be stored in our database to help track their improvements over time
+
 ## Bugs / Improvements
 
 ### Lighthouse
@@ -346,6 +359,17 @@ I searched [Stack overflow](https://stackoverflow.com/questions/1963102/what-doe
 
 ![Stack Overflow solution image](./assets/docs/bugs-improvements/stack-overflow.png)
 
+There are warnings. The signupBtn and the StartPage variables are undefined.To fix it, I found a solution using [W3School](https://www.w3schools.com/js/js_modules.asp) that import, export and module methods can share the variables across the files. So I did try it out. This successfully solves the problem.
+
+![Undefined Variable Issue](./assets/docs/bugs-improvements/undefined-variable.png)
+
+There was an error message caused by clicking the next answer before the animation of the next had finished. This was fixed using a try catch to catch the error
+
+![Try Catch Method To Salve The Issue](./assets/docs/bugs-improvements/try-catch.png)
+
+I also removed ES6 features warnings in JShint using
+[treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
+
 ## Validation
 
 As all of the issues were resolved the HTML, CSS, and JavaScript validation all passed.
@@ -362,9 +386,8 @@ As all of the issues were resolved the HTML, CSS, and JavaScript validation all 
 
 The JSHint validator has no error.
 
-- However, there are warnings. The signupBtn and the StartPage variables are undefined. I can ignore them because these are used across 2 separate JavaScript files and they have already been declared.
-
-- Warning saying declared within loops referencing an outer scoped variable may lead to confusing semantics. I decided to ignore the warning as this was just a warning and it didn’t have any impact on the project.
+However, there are warnings.
+Warning saying Function declared within loops referencing an outer scoped variable may lead to confusing semantics. I decided to ignore the warning as this was just a warning and it didn’t have any impact on the project.
 
 (game.js)
 
@@ -393,26 +416,30 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 
 ### Features test
 
-- Tested start button works
-- Tested audio button can be turned on or off
-- Tested Score button to show the scoreboard and hide the main screen
-- Tested Sign Up button to show the sign-up form
-- Tested the sign-up form to make sure it cannot be submitted unless filled out
-- Tested Submit button works and opens the success message
-- Tested success message has the value of the user's first name and last name rendered on the screen
-- Tested the Home button to show the main screen and hide unnecessary elements
-- Tested questions are generated randomly
-- Tested level goes up. At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1
-- Tested score goes up by 1 if you click the correct answer otherwise do nothing
-- Tested lives are at 3 when the game starts. and goes down by one every time you click a wrong answer
-- Tested if the wrong answer is clicked 3 times, the game over screen shows up
-- Tested the score of the game and that it shows correctly when the game is over
-- Tested the home button hides the game over page and shows the main page
-- Tested Highest score shows and won’t be gone unless the Reset All button is clicked
-- Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)
-- Tested the Reset All button deletes both the highest score and the attempt scores
-- Tested the Back button to show the main page and hide unnecessary elements
-- Tested all the social media icons open up in an external tab
+| Feature                                                                                                                                                        | Result |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Tested start button works                                                                                                                                      | Pass   |
+| Tested audio button can be turned on or off                                                                                                                    | Pass   |
+| Tested Score button to show the scoreboard and hide the main screen                                                                                            | Pass   |
+| Tested Sign Up button to show the sign-up form                                                                                                                 | Pass   |
+| Tested the sign-up form to make sure it cannot be submitted unless filled out                                                                                  | Pass   |
+| Tested Submit button works and opens the success message                                                                                                       | Pass   |
+| Tested success message has the value of the user's first name and last name rendered on the screen                                                             | Pass   |
+| Tested the Home button to show the main screen and hide unnecessary elements                                                                                   | Pass   |
+| Tested questions are generated randomly                                                                                                                        | Pass   |
+| Tested level goes up. At level 0, after 5 correct questions, it will go up a level. After that, for every 6 correct questions, it will increase the level by 1 | Pass   |
+| Tested score goes up by 1 if you click the correct answer otherwise do nothing                                                                                 | Pass   |
+| Tested lives are at 3 when the game starts. and goes down by one every time you click a wrong answer                                                           | Pass   |
+| Tested if the wrong answer is clicked 3 times, the game over screen shows up                                                                                   | Pass   |
+| Tested the score of the game and that it shows correctly when the game is over                                                                                 | Pass   |
+| Tested the home button hides the game over page and shows the main page                                                                                        | Pass   |
+| Tested [You haven’t made any attempt yet] message shows up when there has been no attempt at this game                                                         | Pass   |
+| Tested Highest score shows and won’t be gone unless the Reset All button is clicked                                                                            | Pass   |
+| Tested attempt score shows and adds every time the game is finished (They are in an array so the data will be gone if the page is reloaded)                    | Pass   |
+| Tested the Reset All button deletes both the highest score and the attempt scores                                                                              | Pass   |
+| Tested the Back button to show the main page and hide unnecessary elements                                                                                     | Pass   |
+| Tested all the social media icons open up in an external tab                                                                                                   | Pass   |
+| Tested when the logo is clicked, it returns a user to the main page                                                                                            | pass   |
 
 ### Testing User Stories
 
@@ -522,7 +549,7 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 <details>
 <summary>Scoreboard</summary>
 <img src="./assets/docs/testing/score.png"></img><br>
-<img src="./assets/docs/testing/score2.png"></img><br>
+<img src="./assets/docs/testing/scoreboard-no-attempt.png"></img><br>
 </details>
 <br>
 
@@ -559,6 +586,19 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 10. New files aren't here. Do a git pull origin main – to pull the new changes to the local repository
 11. Run the project and test the new changes that have been applied
 
+### Clone
+
+1. clicking on the code dropdown in the main repository.
+2. Copying the SSH URL
+3. I opened my git bash terminal and cloned the project to a folder on my desktop.
+
+### Fork
+
+A Git fork is when an existing repository has a copy taken of it and it becomes its new repository no longer being attached to or tracking the commits of the original repository. I used the original project I had cloned at the start. I could not fork the project the repository as I am the owner but the steps to fork are
+
+1. Open the repository on GitHub and select the Fork dropdown
+2. Click fork you will have a full copy of the repository.
+
 ## Reference
 
 **Pictures, Audios, Sounds, Logo**  
@@ -571,12 +611,18 @@ Google Chrome, Microsoft Edge, Mozilla Firefox
 [Git commands](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 **HTML, CSS, JavScript**  
-I used Code Institute study materials and the Math walkthrough project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.  
-[w3schools](https://www.w3schools.com/)  
-[stackoverflow](https://stackoverflow.com/)
+I used Code Institute study materials and the Math walkthrough project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.
 
-**Shuffle an array**  
-[Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)
+These links were used to develop this project  
+[w3schools](https://www.w3schools.com/)  
+[stackoverflow](https://stackoverflow.com/)  
+[Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)  
+[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)  
+[Check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
+
+**GitHHub**  
+[Fork a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
+[Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
