@@ -613,10 +613,12 @@ A Git fork is when an existing repository has a copy taken of it and it becomes 
 **HTML, CSS, JavScript**  
 I used Code Institute study materials and the Math walkthrough project in coming up with the idea for my project. I used w3schools to check how to write code as well as the different types of methods that were available in JavaScript. When I run into an issue I use the Stack overflow website to troubleshoot and solve the issue.
 
+These links were used to develop this project  
 [w3schools](https://www.w3schools.com/)  
 [stackoverflow](https://stackoverflow.com/)  
 [Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)  
-[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
+[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)  
+[Check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
