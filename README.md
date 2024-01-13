@@ -362,6 +362,7 @@ I searched [Stack overflow](https://stackoverflow.com/questions/1963102/what-doe
 There are warnings. The signupBtn and the StartPage variables are undefined.To fix it, I found a solution using [W3School](https://www.w3schools.com/js/js_modules.asp) that import, export and module methods can share the variables across the files. So I did try it out. This successfully solves the problem.
 
 ![Undefined Variable Issue](./assets/docs/bugs-improvements/undefined-variable.png)
+![Undefined variable Issue](./assets/docs/bugs-improvements/undefined-variable2.png)
 
 There was an error message caused by clicking the next answer before the animation of the next had finished. This was fixed using a try catch to catch the error
 
@@ -602,10 +603,10 @@ A Git fork is when an existing repository has a copy taken of it and it becomes 
 ## Reference
 
 **Pictures, Audios, Sounds, Logo**  
-[Pexcels](https://www.pexels.com/)  
+[Pexels](https://www.pexels.com/)  
 [Pixabay](https://pixabay.com/ja/)  
 [Canva](https://www.canva.com/colors/color-palette-generator/)  
-[Adbe Colour](https://color.adobe.com/create/color-wheel)
+[Adobe Colour](https://color.adobe.com/create/color-wheel)
 
 **Make branch, Marge branch**  
 [Git commands](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
@@ -617,8 +618,7 @@ These links were used to develop this project
 [w3schools](https://www.w3schools.com/)  
 [stackoverflow](https://stackoverflow.com/)  
 [Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)  
-[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)  
-[Check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
+[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)

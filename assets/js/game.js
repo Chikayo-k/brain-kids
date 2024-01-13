@@ -134,7 +134,7 @@ const startBtn = document.getElementsByClassName("start-btn")[0];
 startBtn.addEventListener("click", showGamePage);
 
 /**
- * Game stars
+ * Game starts
  */
 function gameStarts() {
   //  Render additional questions and subtraction questions three times each.
@@ -218,6 +218,8 @@ function optionNumbers() {
     }
   }
   //Shuffling an array
+  //Reference
+  //https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7
   let shuffleOptions = options.sort(() => Math.random() - 0.5);
   return shuffleOptions;
 }
@@ -339,7 +341,7 @@ function displayScoreLife(score, life) {
 }
 
 /**
- *Display game over pop up and audio when game ends
+ *Display game over pop up and audio when game ends
  */
 function gameOver() {
   count = 0;
@@ -430,8 +432,8 @@ function showScoreBoard() {
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-                                     <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
-                                    `;
+                                    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
+                                   `;
 
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.appendChild(createHighestScoreDiv);
@@ -440,18 +442,18 @@ function showScoreBoard() {
   scoreTable.id = "scoreboard";
 
   let scoreTableHtml = `
-    <thead>
-    <tr>
-      <td>Attempt</td>
-      <td>Score</td>
-    </tr>
-     <p class="no-score-message hide">You haven't made any attempt yet</p>
-    </thead>
-  <tbody>
-  <tbody>    
-  <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
-  
-  `;
+   <thead>
+   <tr>
+     <td>Attempt</td>
+     <td>Score</td>
+   </tr>
+    <p class="no-score-message hide">You haven't made any attempt yet</p>
+   </thead>
+ <tbody>
+ <tbody>    
+ <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
+ 
+ `;
 
   scoreTable.innerHTML = scoreTableHtml;
 
@@ -460,11 +462,11 @@ function showScoreBoard() {
   let tableHtml = "";
   for (let i = 0; i < scoreMemory.length; i++) {
     tableHtml += `
-    <tr>
-      <td>Attempt:${i + 1}</td>
-      <td>${scoreMemory[i]}</td>
-    </tr>  
-  `;
+   <tr>
+     <td>Attempt:${i + 1}</td>
+     <td>${scoreMemory[i]}</td>
+   </tr>  
+ `;
   }
 
   scoreTbody.innerHTML = tableHtml;
@@ -473,6 +475,8 @@ function showScoreBoard() {
   scorePlace.appendChild(scoreTable);
 
   //Show message if there is no attempt otherwise hide the message
+  //Reference
+  //(https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
   const noScoreMessage = document.getElementsByClassName("no-score-message")[0];
   if (scoreMemory.length == undefined || scoreMemory.length == 0) {
     noScoreMessage.classList.remove("hide");
@@ -505,7 +509,7 @@ function showScoreBoard() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
+   <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
