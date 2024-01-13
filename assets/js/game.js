@@ -339,7 +339,7 @@ function displayScoreLife(score, life) {
 }
 
 /**
- *Display game over pop up and audio when game ends
+ *Display game over pop up and audio when game ends
  */
 function gameOver() {
   count = 0;
@@ -430,8 +430,8 @@ function showScoreBoard() {
   const createHighestScoreDiv = document.createElement("div");
   createHighestScoreDiv.id = "highest-div";
   createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-                                     <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
-                                    `;
+                                    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>
+                                   `;
 
   const highestScorePlace = document.getElementById("highest-score");
   highestScorePlace.appendChild(createHighestScoreDiv);
@@ -440,18 +440,18 @@ function showScoreBoard() {
   scoreTable.id = "scoreboard";
 
   let scoreTableHtml = `
-    <thead>
-    <tr>
-      <td>Attempt</td>
-      <td>Score</td>
-    </tr>
-     <p class="no-score-message hide">You haven't made any attempt yet</p>
-    </thead>
-  <tbody>
-  <tbody>    
-  <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
-  
-  `;
+   <thead>
+   <tr>
+     <td>Attempt</td>
+     <td>Score</td>
+   </tr>
+    <p class="no-score-message hide">You haven't made any attempt yet</p>
+   </thead>
+ <tbody>
+ <tbody>    
+ <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
+ 
+ `;
 
   scoreTable.innerHTML = scoreTableHtml;
 
@@ -460,11 +460,11 @@ function showScoreBoard() {
   let tableHtml = "";
   for (let i = 0; i < scoreMemory.length; i++) {
     tableHtml += `
-    <tr>
-      <td>Attempt:${i + 1}</td>
-      <td>${scoreMemory[i]}</td>
-    </tr>  
-  `;
+   <tr>
+     <td>Attempt:${i + 1}</td>
+     <td>${scoreMemory[i]}</td>
+   </tr>  
+ `;
   }
 
   scoreTbody.innerHTML = tableHtml;
@@ -505,7 +505,7 @@ function showScoreBoard() {
     localStorage.setItem("highestScore", 0);
     highestScoreNow = localStorage.getItem("highestScore");
     createHighestScoreDiv.innerHTML = `<h2>Highest Score:${highestScoreNow}</h2> 
-    <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
+   <button id="reset" class="btn" aria-label="Reset all scores">Reset All</button>`;
 
     highestScorePlace.appendChild(createHighestScoreDiv);
 
