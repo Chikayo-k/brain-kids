@@ -417,6 +417,11 @@ td {
   font-size: 1.3rem;
   width: 50%;
   margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+#signup-form .btn {
   padding: 5%;
 }
 
@@ -463,6 +468,11 @@ td {
     width: 50%;
   }
 
+  /* Game over */
+  .home {
+    padding: 5%;
+  }
+
   /* animation */
 
   .animation {
@@ -475,7 +485,7 @@ td {
     background-color: rgb(255, 255, 255, 0.5);
   }
 
-  /*--- Score board ---*/
+  /*--- Scoreboard ---*/
 
   #reset {
     padding: 3%;
@@ -500,6 +510,19 @@ td {
   #reset {
     padding: 1.5%;
   }
+
+  #signup-form .btn {
+    padding: 4%;
+  }
+
+  #submit {
+    width: 30%;
+  }
+
+  #back {
+    margin-left: 80%;
+    width: 35%;
+  }
 }
 
 /*----- Media query: laptop and larger (992px and up) -----*/
@@ -509,9 +532,19 @@ td {
     width: 12%;
   }
 
+  /* Sign Up */
   .sign-up-div {
     width: 20%;
   }
+
+  #submit {
+    width: 25%;
+  }
+  #signup-form .btn {
+    padding: 2.5%;
+  }
+
+  /* Scoreboard */
 
   #game {
     width: 60%;
@@ -520,10 +553,6 @@ td {
   /* animation */
   .animation {
     width: 15%;
-  }
-
-  #submit {
-    width: 20%;
   }
 }
 
