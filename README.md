@@ -618,8 +618,7 @@ These links were used to develop this project
 [w3schools](https://www.w3schools.com/)  
 [stackoverflow](https://stackoverflow.com/)  
 [Medium - shuffling an Array](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7)  
-[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)  
-[Check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
+[How to check if array is empty or does not exist](https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist)
 
 **Remove ES6 features warnings in JShint**  
 [treehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6)
