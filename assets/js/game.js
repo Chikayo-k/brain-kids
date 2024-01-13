@@ -134,7 +134,7 @@ const startBtn = document.getElementsByClassName("start-btn")[0];
 startBtn.addEventListener("click", showGamePage);
 
 /**
- * Game stars
+ * Game starts
  */
 function gameStarts() {
   //  Render additional questions and subtraction questions three times each.
