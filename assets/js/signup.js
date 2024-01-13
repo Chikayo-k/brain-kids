@@ -60,7 +60,7 @@ function go_home() {
 backHomeBtn.addEventListener("click", go_home);
 
 /**
- * When clicked a successful message will be displayed
+ * When clicked a successful message will be displayed
  */
 function submit(event) {
   event.preventDefault();
