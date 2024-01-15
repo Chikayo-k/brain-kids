@@ -452,7 +452,6 @@ function showScoreBoard() {
  <tbody>
  <tbody>    
  <button id="back" class="btn" aria-label="Back to Home page">Back</button> 
- 
  `;
 
   scoreTable.innerHTML = scoreTableHtml;
