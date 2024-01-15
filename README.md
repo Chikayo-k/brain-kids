@@ -606,7 +606,8 @@ A Git fork is when an existing repository has a copy taken of it and it becomes 
 [Pexels](https://www.pexels.com/)  
 [Pixabay](https://pixabay.com/ja/)  
 [Canva](https://www.canva.com/colors/color-palette-generator/)  
-[Adobe Colour](https://color.adobe.com/create/color-wheel)
+[Adobe Colour](https://color.adobe.com/create/color-wheel)  
+[Am I Responsive](https://ui.dev/amiresponsive)
 
 **Make branch, Marge branch**  
 [Git commands](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
