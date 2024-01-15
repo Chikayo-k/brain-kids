@@ -4,7 +4,7 @@ const signupBtn = document.getElementsByClassName("sign-up-btn")[0];
 const backHomeBtn = document.getElementsByClassName("back-home")[0];
 const signupPlace = document.getElementById("signup");
 const confirmationPlace = document.getElementById("confirmation");
-
+//Import startPage variable from game.js
 import { startPage } from "./game.js";
 
 /**
