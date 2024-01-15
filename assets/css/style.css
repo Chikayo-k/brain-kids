@@ -153,9 +153,9 @@ main {
 .score {
   color: #3863fa;
   border: none;
-  padding: 3%;
+  padding: 2%;
   background-color: white;
-  text-decoration: underline;
+  border: 1px solid;
   font-size: 1.3rem;
 }
 
